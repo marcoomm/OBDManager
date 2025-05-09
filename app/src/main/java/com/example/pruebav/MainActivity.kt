@@ -1,0 +1,672 @@
+package com.example.pruebav
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothDevice
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import com.example.pruebav.ui.theme.PruebaVTheme
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+class MainActivity : ComponentActivity() {
+    private val requestBluetoothPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (!isGranted) {
+                Log.e("OBD", "Permiso de Bluetooth denegado.")
+            }
+        }
+
+    private val enableBluetoothLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                Log.i("OBD", "Bluetooth activado correctamente.")
+            } else {
+                Log.e("OBD", "El usuario rechazó activar Bluetooth.")
+            }
+        }
+
+
+    @RequiresApi(Build.VERSION_CODES.S)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requestBluetoothPermissions()
+
+        /*
+        val lifecycleObserver = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_STOP) {
+                // Aquí se ejecuta cuando la app se va al fondo o se cierra
+                OBDManager.detener()
+            }
+        }
+
+        lifecycle.addObserver(lifecycleObserver)
+
+
+         */
+
+        setContent {
+            PruebaVTheme {
+                NavegacionEntreVentanas(this, enableBluetoothLauncher)
+            }
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.S)
+    private fun requestBluetoothPermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            requestBluetoothPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT)
+        }
+    }
+}
+
+@SuppressLint("MissingPermission")
+@Composable
+fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,database:AppDatabase,viewModel: OBDViewModel) {
+
+    val scope = rememberCoroutineScope()
+    var showDeviceList by remember { mutableStateOf(false) }
+    var pairedDevices by remember { mutableStateOf(emptyList<BluetoothDevice>()) }
+    val currentTime by viewModel.fecha.collectAsState()
+    val mostrar = remember { mutableStateOf(false) }
+    val connectionStatus by viewModel.connectionStatus.collectAsState()
+    val isConnected by viewModel.isConnected.collectAsState()
+    val ecuReady by viewModel.ecuReady.collectAsState()
+
+
+    //variables obd
+    val vin by viewModel.vin.collectAsState()
+    val km by viewModel.km.collectAsState()
+    val ncodigos by viewModel.nerrores.collectAsState()
+
+    //Variables NºVin
+    val marca by viewModel.marca.collectAsState()
+    val modelo by viewModel.modelo.collectAsState()
+    val anio by viewModel.anio.collectAsState()
+    val caract by viewModel.caract.collectAsState()
+
+
+    // Variables de los comandos OBD-II -- Pagina principal
+    val vinprueba = remember { mutableStateOf("-") }
+    //var mezcla = remember { mutableStateOf("-") }
+
+
+    LaunchedEffect(isConnected, ecuReady) {
+        if (isConnected && ecuReady) {
+            viewModel.lecturaInicial()
+        }else{
+            OBDManager.desconectar()
+        }
+    }
+
+
+    Scaffold(
+        containerColor = Color.Black,
+        bottomBar = {
+            NavigationBar(
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                NavItem(onClickAction = {  }) {
+                    IconContainer {
+                        StateLayer {
+                            Icon(
+                                painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon3),
+                                contentDescription = "Manager icon"
+                            )
+                        }
+                    }
+                    LabelText(texto = "Asistente")
+                }
+                NavItem(onClickAction = {  }) {
+                    IconContainer {
+                        StateLayer(
+                            modifier = Modifier.background(
+                                Color(0xFF1E88E5),
+                                shape = RoundedCornerShape(50.dp)
+                            )
+                        ) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon2),
+                                contentDescription = "Inicio icon"
+                            )
+                        }
+                    }
+                    Text(
+                        "Inicio",
+                        modifier = Modifier.padding(top = 30.dp, start = 14.dp, end = 5.dp),
+                        fontSize = 13.sp,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                    )
+                }
+                NavItem(onClickAction = { navController.navigate("datos") }) {
+                    IconContainer {
+                        StateLayer {
+                            Icon(
+                                painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon1),
+                                contentDescription = "Manager icon"
+                            )
+                        }
+                    }
+                    LabelText(texto = "Manager")
+                }
+            }
+        }
+    ) { paddingValues ->
+
+        Column(
+            modifier = Modifier
+                .padding(paddingValues)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color(0xFF1E1E1E), Color(0xFF121212))
+                    )
+                )
+                .fillMaxSize()
+        ) {
+            Spacer(modifier = Modifier.height(35.dp))
+            Text(
+                text = "Conexión : $connectionStatus",
+                modifier = Modifier.padding(start = 30.dp),
+                style = MaterialTheme.typography.titleLarge,
+                color = Color.White
+            )
+
+            Spacer(modifier = Modifier.height(25.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Button(modifier = Modifier, colors = ButtonColors(Color(0xFF1E88E5), Color.White,Color(0xFF1E88E5),Color.White),
+                    onClick = {
+                        scope.launch {
+                            val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+                            if (bluetoothAdapter == null) {
+                                viewModel.setConnectionStatus("Bluetooth no disponible")
+                                Log.e("OBD", "Bluetooth no disponible en este dispositivo.")
+                                return@launch
+                            }
+                            if (!bluetoothAdapter.isEnabled) {
+                                viewModel.setConnectionStatus("Activando Bluetooth...")
+                                enableBluetoothLauncher.launch(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE))
+                                return@launch
+                            }
+                            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                                viewModel.setConnectionStatus("Permiso de Bluetooth no concedido")
+                                return@launch
+                            }
+                            pairedDevices = bluetoothAdapter.bondedDevices.toList()
+                            if (pairedDevices.isNotEmpty()) {
+                                showDeviceList = true
+                            } else {
+                                viewModel.setConnectionStatus("No hay dispositivos emparejados")
+                            }
+                        }
+                    }) {
+                    Text("Conectar OBD-II")
+                }
+
+                Button(modifier = Modifier, colors = ButtonColors(Color(0xFF1E88E5), Color.White,Color(0xFF1E88E5),Color.White),
+                    onClick = {
+                        scope.launch(Dispatchers.IO){
+                            viewModel.onDisconnected()
+                            OBDManager.desconectar()
+
+                            vinprueba.value=""
+                            viewModel.setVin("")
+                            viewModel.setKM("")
+                            viewModel.setNErrores("")
+
+                        }
+                    }) {
+                    Text("Desconectar OBD-II")
+                }
+            }
+
+            if (showDeviceList) {
+                AlertDialog(
+                    onDismissRequest = { showDeviceList = false },
+                    title = { Text("Selecciona un dispositivo") },
+                    text = {
+                        Column {
+                            pairedDevices.forEach { device ->
+                                Button(onClick = {
+                                    scope.launch {
+                                        try {
+                                            viewModel.conectarDispositivo(device)
+                                            viewModel.onConnected(device.name ?: "desconocido")
+
+                                            //vinprueba.value="1HGCM82633A004352"
+                                            //viewModel.setVin
+                                            /*
+                                                val numeroVin = NumeroVin.decodeVinHttpClient(vin)
+                                                numeroVin?.let { vinData ->
+                                                    Log.d("VIN", vinData.marca)
+                                                    Log.d("VIN", vinData.modelo)
+                                                    Log.d("VIN",vinData.caract.toString())
+
+                                                    viewModel.setMarca(vinData.marca)
+                                                    viewModel.setModelo(vinData.modelo)
+                                                    viewModel.setAnio(vinData.anioFabricacion.toString())
+                                                    viewModel.setCaract(vinData.caract.toString())
+
+
+
+                                                    val dao: NumeroVinDao = database.numeroVinDao()
+                                                    val existingVin = dao.getNumeroVin(vin)
+                                                    if (existingVin == null) {
+                                                        dao.insertNumeroVin(vinData)
+                                                    }else{
+                                                        Log.i("ExistingVin","Vin ya registrado")
+                                                    }
+                                                }*/
+
+                                        } catch (e: Exception) {
+                                            viewModel.setConnectionStatus("Error al conectar")
+                                        }
+                                    }
+                                    showDeviceList = false
+                                }) {
+                                    Text(device.name ?: "Desconocido")
+                                }
+                            }
+                        }
+                    },
+                    confirmButton = {}
+                )
+            }
+
+            Spacer(modifier=Modifier.padding(top=25.dp))
+
+            VehicleInfoScreen(
+                marca = marca,
+                modelo = modelo,
+                anio = anio,
+                carac = caract,
+                mostrar = mostrar,
+                vin = vin,
+                km = km,
+                nErrores = ncodigos,
+                currentTime = currentTime
+            )
+
+            Botones(context,navController,isConnected)
+
+            Spacer(modifier = Modifier.weight(1.0f))
+       }
+
+
+   }
+}
+
+//elementos composable
+
+@Composable
+fun VinCard(marca: String,modelo: String,anio:String,carac:String,mostrar: MutableState<Boolean>, onDismiss: () -> Unit) {
+
+    if (mostrar.value) {
+        AlertDialog(
+            onDismissRequest = {
+                mostrar.value = false
+                onDismiss()
+            },
+            title = {
+                Text("$marca $modelo")
+            },
+            text = {
+
+                Box{
+                    Column{
+                        Text("Características: $carac")
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text("Año de fabricación: $anio")
+                    }
+                }
+
+            },
+            confirmButton = {
+                Button(onClick = {
+                    mostrar.value = false
+                    onDismiss()
+                }) {
+                    Text("Cerrar")
+                }
+            }
+        )
+    }
+}
+
+
+@Composable
+fun VehicleInfoScreen(
+    marca: String,
+    modelo: String,
+    anio: String,
+    carac: String,
+    mostrar: MutableState<Boolean>,
+    vin: String,
+    km: String,
+    nErrores: String,
+    currentTime: String
+) {
+
+    val vehicleData = listOf(
+        VehicleInfo("Estado", "$nErrores fallos detectados", currentTime),
+        VehicleInfo("VIN", vin, currentTime),
+        VehicleInfo("Km", km, currentTime)
+    )
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(Color(0xFF1E1E1E), Color(0xFF121212))
+                )
+            )
+            .padding(16.dp)
+    ) {
+        Row {
+            Text(
+                text = "Acerca del vehículo",
+                color = Color.White,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(start = 12.dp, bottom = 8.dp)
+            )
+
+            Spacer(modifier = Modifier.width(12.dp))
+
+            Icon(
+                onClick = {
+                    if (vin.length == 17) {
+                        mostrar.value = true
+                    }
+                },
+                modifier = Modifier
+                    .size(35.dp)
+                    .padding(bottom = 10.dp),
+                contentDescription = "seeInfo",
+                painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon)
+            )
+        }
+
+        VinCard(marca, modelo, anio, carac, mostrar, onDismiss = { mostrar.value = false })
+
+        LazyColumn {
+            items(vehicleData) { item ->
+                VehicleInfoCard(item)
+            }
+        }
+    }
+}
+
+
+@Composable
+fun VehicleInfoCard(info: VehicleInfo) {
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .width(145.dp)
+                    .height(70.dp)
+                    .background(Color.White, shape = RoundedCornerShape(8.dp))
+            )
+
+            Spacer(modifier = Modifier.width(30.dp))
+
+            Column {
+                Text(
+                    text = info.title,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    fontSize = 16.sp
+                )
+                Text(
+                    text = info.description,
+                    color = Color.Gray,
+                    fontSize = 14.sp
+                )
+                Text(
+                    text = "Comprobado a las: ${info.checkedTime}",
+                    color = Color.Gray,
+                    fontSize = 12.sp
+                )
+            }
+        }
+    }
+}
+
+
+data class VehicleInfo(
+    val title: String,
+    val description: String,
+    val checkedTime: String
+)
+
+
+
+
+@Composable
+fun Botones(context: Context,navController: NavController,isConnected:Boolean){
+
+   Column(
+       modifier = Modifier
+           .fillMaxWidth()
+           .padding(16.dp)
+   ) {
+       Row(
+           modifier = Modifier.fillMaxWidth(),
+           horizontalArrangement = Arrangement.SpaceEvenly
+       ) {
+           Card(
+               modifier = Modifier
+                   .weight(1f)
+                   .padding(8.dp)
+                   .clickable {
+                       /*
+                       if (isConnected) {
+                           navController.navigate("errores")
+                       } else {
+                           Toast
+                               .makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT)
+                               .show()
+                       }
+
+                        */
+                       navController.navigate("errores")
+                   },
+               shape = RoundedCornerShape(12.dp),
+               colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+           ) {
+               Box(
+                   modifier = Modifier
+                       .padding(12.dp)
+                       .height(70.dp),
+                   contentAlignment = Alignment.Center
+               ) {
+                   Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                       Text("DIAGNÓSTICO", color = Color.White, fontWeight = FontWeight.Bold)
+                       Text("Verifica el estado   del   vehículo", color = Color.LightGray, fontSize = 12.sp)
+                   }
+
+                   Icon(
+                       painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),
+                       contentDescription = "Icono de diagnóstico",
+                       modifier = Modifier
+                           .align(Alignment.BottomEnd)
+                           .padding(end = 12.dp, bottom = 8.dp, top = 15.dp)
+                           .size(20.dp)
+                   )
+               }
+           }
+
+
+           Card(
+               modifier = Modifier
+                   .weight(1f)
+                   .padding(8.dp)
+                   .clickable {
+                       if (isConnected) {
+                           navController.navigate("parametros")
+                       } else {
+                           Toast.makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT).show()
+                       }
+                   },
+               shape = RoundedCornerShape(12.dp),
+               colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+           ) {
+               Box(
+                   modifier = Modifier
+                       .padding(12.dp)
+                       .height(70.dp),
+                   contentAlignment = Alignment.Center
+               ) {
+                   Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                       Text("DATOS EN VIVO", color = Color.White, fontWeight = FontWeight.Bold)
+                       Text("Monitorea datos en tiempo real", color = Color.LightGray, fontSize = 12.sp)
+                   }
+
+                   Icon(
+                       painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),
+                       contentDescription = "Icono de parámetros",
+                       modifier = Modifier
+                           .align(Alignment.BottomEnd)
+                           .padding(end = 12.dp, bottom = 8.dp, top = 15.dp)
+                           .size(20.dp),
+                   )
+               }
+
+           }
+       }
+   }
+}
+
+@Composable
+fun NavigationBar(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+   Row(
+       modifier = modifier
+           .background(Color(29, 27, 32))
+           .padding(start = 8.dp, end = 8.dp)
+           .height(75.dp)
+           .fillMaxWidth(),
+       horizontalArrangement = Arrangement.Center,
+       verticalAlignment = Alignment.CenterVertically
+   ) {
+       content()
+   }
+}
+
+@Composable
+fun NavItem(modifier: Modifier = Modifier, onClickAction: () -> Unit, content: @Composable () -> Unit) {
+   Box(
+       modifier = modifier
+           .padding(top = 12.dp, bottom = 16.dp, start = 30.dp, end = 30.dp)
+           .width(65.dp)
+           .height(72.dp)
+           .clickable { onClickAction() }
+   ) {
+       content()
+   }
+}
+
+@Composable
+fun IconContainer(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+   Box(
+       modifier = modifier
+           .width(60.dp)
+           .height(60.dp)
+   ) {
+       content()
+   }
+}
+
+@Composable
+fun StateLayer(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+   Box(
+       modifier = modifier
+           .width(62.dp)
+           .height(32.dp)
+           .padding(start = 8.dp, end = 12.dp, top = 4.dp, bottom = 4.dp)
+   ) {
+       content()
+   }
+}
+
+@Composable
+fun Icon(
+   modifier: Modifier = Modifier,
+   painter: Painter,
+   contentDescription: String,
+   onClick: (() -> Unit)? = null
+) {
+   Icon(
+       painter = painter,
+       contentDescription = contentDescription,
+       modifier = modifier
+           .size(50.dp)
+           .padding(4.dp)
+           .then(
+               onClick?.let { Modifier.clickable(onClick = it) } ?: Modifier
+           ),
+       tint = Color.White
+   )
+}
+
+
+@Composable
+fun LabelText(modifier: Modifier = Modifier, texto: String) {
+   Text(
+       text = texto,
+       fontSize = 12.sp,
+       color = Color.White,
+       fontWeight = FontWeight.Bold,
+       modifier = modifier
+           .fillMaxWidth()
+           .padding(top = 27.dp, start = 3.dp, end = 5.dp),
+   )
+}

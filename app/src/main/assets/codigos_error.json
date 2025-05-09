@@ -1,0 +1,6242 @@
+[
+  {
+    "codigoError": "P0010",
+    "descripcion": "Arbol de levas posición actuador circuito (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0011",
+    "descripcion": "Arbol de levas posición - sincronización avance excesivo(banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0012",
+    "descripcion": "Arbol de levas posición - sincronización retraso excesivo (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0013",
+    "descripcion": "Arbol de levas posición - actuador circuito (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0014",
+    "descripcion": "Arbol de levas posición - sincronización avance excesivo(banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0015",
+    "descripcion": "Arbol de levas posición - sincronización retraso excesivo (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0016",
+    "descripcion": "Cigüeñal posición árbol de levas posición correlación banco 1 sensor a",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0020",
+    "descripcion": "Arbol de levas posición actuador circuito (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0021",
+    "descripcion": "Arbol de levas postion - sincronización over-advanced or rendimiento del sistema (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0022",
+    "descripcion": "Arbol de levas posición - sincronización retraso excesivo (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0023",
+    "descripcion": "Arbol de levas posición - actuador circuito (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0024",
+    "descripcion": "Arbol de levas posición - sincronización avance excesivo or rendimiento del sistema (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0025",
+    "descripcion": "Arbol de levas posición - sincronización over retaded (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0030",
+    "descripcion": "H02s heater control circuito (banco 1 sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0031",
+    "descripcion": "H02s heater control circuito low (banco 1 sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0032",
+    "descripcion": "H02s heater control circuito high (banco 1 sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0033",
+    "descripcion": "Turbo charger bypass valve control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0034",
+    "descripcion": "Turbo charger bypass valve control circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0035",
+    "descripcion": "Turbo charger bypass valve control circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0036",
+    "descripcion": "H02s heater control circuito (banco 1 sensor 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0037",
+    "descripcion": "H02s heater control circuito low (banco 1 sensor 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0038",
+    "descripcion": "H02s heater control circuito high (banco 1 sensor 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0042",
+    "descripcion": "H02s heater control circuito (banco 1 sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0043",
+    "descripcion": "H02s heater control circuito low (banco 1 sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0044",
+    "descripcion": "H02s heater control circuito high (banco 1 sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0050",
+    "descripcion": "H02s heater control circuito (banco 2 sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0051",
+    "descripcion": "H02s heater control circuito low (banco 2 sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0052",
+    "descripcion": "H02s heater control circuito high (banco 2 sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0056",
+    "descripcion": "H02s heater control circuito (banco 2 sensor 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0057",
+    "descripcion": "H02s heater control circuito low (banco 2 sensor 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0058",
+    "descripcion": "H02s heater control circuito high (banco 2 sensor 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0062",
+    "descripcion": "H02s heater control circuito (banco 2 sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0063",
+    "descripcion": "H02s heater control circuito low (banco 2 sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0064",
+    "descripcion": "H02s heater control circuito high (banco 2 sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0065",
+    "descripcion": "Air assisted injector control rango / rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0066",
+    "descripcion": "Air assisted injector control circuito or circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0067",
+    "descripcion": "Air assisted injector control circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0070",
+    "descripcion": "Ambient air temperature sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0071",
+    "descripcion": "Ambient air temperature sensor rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0072",
+    "descripcion": "Ambient air temperature sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0073",
+    "descripcion": "Ambient air temperature sensor circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0074",
+    "descripcion": "Ambient air temperature sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0075",
+    "descripcion": "Intake valve control solenoid circuito (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0076",
+    "descripcion": "Intake valve control solenoid circuito low (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0077",
+    "descripcion": "Intake valve control solenoid circuito high (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0078",
+    "descripcion": "Exhaust valve control solenoid circuito (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0079",
+    "descripcion": "Exhaust valve control solenoid circuito low (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0080",
+    "descripcion": "Exhaust valve control solenoid circuito high (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0081",
+    "descripcion": "Intake valve control solenoid circuito (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0082",
+    "descripcion": "Intake valve control solenoid circuito low (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0083",
+    "descripcion": "Intake valve control solenoid circuito high (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0084",
+    "descripcion": "Exhaust valve control solenoid circuito (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0085",
+    "descripcion": "Exhaust valve control solenoid circuito low (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0086",
+    "descripcion": "Exhaust valve control solenoid circuito high (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0030",
+    "descripcion": "- heated oxygen sensor (h02s) heater control circuito banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0031",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito low voltage banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0032",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito high voltage banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0036",
+    "descripcion": "- heated oxygen sensor (ho2s) heater control circuito banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0037",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito low voltage banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0038",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito high voltage banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0056",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0057",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito low voltage banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0058",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito high voltage banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0068",
+    "descripcion": "- throttle body airflow rendimiento (pcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0100",
+    "descripcion": "- maf sensor circuito insufficient activity",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0101",
+    "descripcion": "- mass air flow (maf) sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0102",
+    "descripcion": "- mass air flow (maf) sensor circuito low frequency",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0103",
+    "descripcion": "- mass air flow (maf) sensor circuito high frequency",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0104",
+    "descripcion": "- mass air flow circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0105",
+    "descripcion": "- map sensor circuito insufficient activity",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0106",
+    "descripcion": "- manifold absolute pressure (map) rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0107",
+    "descripcion": "- manifold absolute pressure (map) sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0108",
+    "descripcion": "- manifold absolute pressure (map) sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0109",
+    "descripcion": "- manifold absolute pressure circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0110",
+    "descripcion": "- intake air temperature (iat) sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0111",
+    "descripcion": "- intake air temperature (iat) sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0112",
+    "descripcion": "- intake air temperature (iat) sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0113",
+    "descripcion": "- intake air temperature (iat) sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0114",
+    "descripcion": "- intake air temperature circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0115",
+    "descripcion": "- engine coolant temperature (ect) sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0116",
+    "descripcion": "- engine coolant temperature (ect) sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0117",
+    "descripcion": "- engine coolant temperature (ect) sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0118",
+    "descripcion": "- engine coolant temperature (ect) sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0119",
+    "descripcion": "- engine coolant temperature circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0120",
+    "descripcion": "- tp rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0121",
+    "descripcion": "- tp sensor circuito insufficient activity",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0122",
+    "descripcion": "- throttle posición (tp) sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0123",
+    "descripcion": "- throttle posición (tp) sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0124",
+    "descripcion": "- throttle posición sensor 1 circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0125",
+    "descripcion": "- engine coolant temperature (ect) insufficient for closed loop fuel control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0126",
+    "descripcion": "- insufficient ect for stable operation",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0128",
+    "descripcion": "- coolant thermostat below thermostat regulating temperature",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0130",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito closed loop (cl) rendimiento banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0131",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low voltage banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0132",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito high voltage banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0133",
+    "descripcion": "- heated oxygen sensor (ho2s) slow response banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0134",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito insufficient activity banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0135",
+    "descripcion": "- heated oxygen sensor (ho2s) heater rendimiento banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0136",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0137",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low voltage banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0138",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito high voltage banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0139",
+    "descripcion": "- heated oxygen sensor (ho2s) slow response banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0140",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito insufficient activity banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0141",
+    "descripcion": "- heated oxygen sensor (ho2s) heater rendimiento banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0142",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 1 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0143",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low voltage banco 1 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0144",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito high voltage banco 1 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0145",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 1 sensor 2 slow response",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0146",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito insufficient activity banco 1 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0147",
+    "descripcion": "- heated oxygen sensor (ho2s) heater rendimiento banco 1 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0150",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito closed loop (cl) rendimiento banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0151",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low voltage banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0152",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito high voltage banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0153",
+    "descripcion": "- heated oxygen sensor (ho2s) slow response banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0154",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito insufficient activity banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0155",
+    "descripcion": "- heated oxygen sensor (ho2s) heater rendimiento banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0156",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0157",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low voltage banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0158",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito high voltage banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0159",
+    "descripcion": "- heated oxygen sensor (ho2s) slow response banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0160",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito insufficient activity banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0161",
+    "descripcion": "- heated oxygen sensor (ho2s) heater rendimiento banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0162",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 2 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0163",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 2 sensor 3 low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0164",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 2 sensor 3 high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0165",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 2 sensor 3 slow response",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0166",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito banco 2 sensor 3 no activity detected",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0167",
+    "descripcion": "- heated oxygen sensor (ho2s) heater circuito banco 2 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0169",
+    "descripcion": "- fuel composición sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0170",
+    "descripcion": "- fuel trim banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0171",
+    "descripcion": "- fuel trim system lean banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0172",
+    "descripcion": "- fuel trim system rich banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0173",
+    "descripcion": "- fuel trim banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0174",
+    "descripcion": "- fuel trim system lean banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0175",
+    "descripcion": "- fuel trim system rich banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0176",
+    "descripcion": "- fuel composición sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0177",
+    "descripcion": "- fuel composición sensor circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0178",
+    "descripcion": "- fuel composición sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0179",
+    "descripcion": "- fuel composición sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0180",
+    "descripcion": "- fuel temperature sensor 1 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0181",
+    "descripcion": "- fuel temp. sensor 1 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0182",
+    "descripcion": "- fuel temperature sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0183",
+    "descripcion": "- fuel temperature sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0184",
+    "descripcion": "- fuel temperature sensor 1 circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0185",
+    "descripcion": "- fuel temperature sensor 2 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0186",
+    "descripcion": "- fuel temp. sensor 2 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0187",
+    "descripcion": "- fuel temperature sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0188",
+    "descripcion": "- fuel temperature sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0189",
+    "descripcion": "- fuel temperature sensor 2 circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0190",
+    "descripcion": "- fuel rail pressure sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0191",
+    "descripcion": "- fuel rail pressure sensor circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0192",
+    "descripcion": "- fuel rail pressure sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0193",
+    "descripcion": "- fuel rail pressure sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0194",
+    "descripcion": "- fuel rail pressure sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0195",
+    "descripcion": "- engine oil temperature sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0196",
+    "descripcion": "- engine oil temperature sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0197",
+    "descripcion": "- engine oil temperature sensor low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0198",
+    "descripcion": "- engine oil temperature sensor high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0199",
+    "descripcion": "- engine oil temperature sensor intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0200",
+    "descripcion": "- injector control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0201",
+    "descripcion": "- injector 1 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0202",
+    "descripcion": "- injector 2 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0203",
+    "descripcion": "- injector 3 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0204",
+    "descripcion": "- injector 4 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0205",
+    "descripcion": "- injector 5 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0206",
+    "descripcion": "- injector 6 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0207",
+    "descripcion": "- injector 7 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0208",
+    "descripcion": "- injector 8 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0209",
+    "descripcion": "- injector 9 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0210",
+    "descripcion": "- injector 10 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0211",
+    "descripcion": "- injector 11 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0212",
+    "descripcion": "- injector 12 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0213",
+    "descripcion": "- cold start injector 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0214",
+    "descripcion": "- cold start injector 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0215",
+    "descripcion": "- engine shutoff control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0216",
+    "descripcion": "- injection sincronización control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0217",
+    "descripcion": "- engine overtemp condition",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0218",
+    "descripcion": "- transmission fluid overtemperature",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0219",
+    "descripcion": "- engine overspeed condition",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0220",
+    "descripcion": "- app sensor 2 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0221",
+    "descripcion": "- app (throttle posición) sensor 2 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0222",
+    "descripcion": "- app (throttle posición) sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0223",
+    "descripcion": "- app (throttle posición) sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0224",
+    "descripcion": "- throttle posición sensor 2 intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0225",
+    "descripcion": "- app sensor 3 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0226",
+    "descripcion": "- app sensor 3 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0227",
+    "descripcion": "- app sensor 3 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0228",
+    "descripcion": "- app sensor 3 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0229",
+    "descripcion": "- throttle posición sensor 3 intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0230",
+    "descripcion": "- fuel pump relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0231",
+    "descripcion": "- fuel pump feedback circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0232",
+    "descripcion": "- fuel pump feedback circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0233",
+    "descripcion": "- fuel pump secondary circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0234",
+    "descripcion": "- turbocharger engine overboost condition",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0235",
+    "descripcion": "- turbocharger boost sensor 1 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0236",
+    "descripcion": "- turbocharger boost system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0237",
+    "descripcion": "- turbocharger boost sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0238",
+    "descripcion": "- turbocharger boost sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0239",
+    "descripcion": "- turbocharger boost sensor 2 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0240",
+    "descripcion": "- turbocharger boost sensor 2 rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0241",
+    "descripcion": "- turbocharger boost sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0242",
+    "descripcion": "- turbocharger boost sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0243",
+    "descripcion": "- turbocharger wastegate solenoid 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0244",
+    "descripcion": "- turbocharger wastegate solenoid 1 rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0245",
+    "descripcion": "- turbocharger wastegate solenoid 1 low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0246",
+    "descripcion": "- turbocharger wastegate solenoid 1 high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0247",
+    "descripcion": "- turbocharger wastegate solenoid 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0248",
+    "descripcion": "- turbocharger wastegate solenoid 2 rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0249",
+    "descripcion": "- turbocharger wastegate solenoid 2 low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0250",
+    "descripcion": "- turbocharger wastegate solenoid 2 high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0251",
+    "descripcion": "- injection pump fuel metering control \"a\" fallo (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0252",
+    "descripcion": "- injection pump fuel metering control \"a\" rango/rendimiento (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0253",
+    "descripcion": "- injection pump fuel metering control \"a\" low (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0254",
+    "descripcion": "- injection pump fuel metering control \"a\" high (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0255",
+    "descripcion": "- injection pump fuel metering control \"a\" intermittent (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0256",
+    "descripcion": "- injection pump fuel metering control \"b\" fallo (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0257",
+    "descripcion": "- injection pump fuel metering control \"b\" rango/rendimiento (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0258",
+    "descripcion": "- injection pump fuel metering control \"b\" low (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0259",
+    "descripcion": "- injection pump fuel metering control \"b\" high (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0260",
+    "descripcion": "- injection pump fuel metering control \"b\" intermittent (cam/rotor/injector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0261",
+    "descripcion": "- cylinder 1 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0262",
+    "descripcion": "- cylinder 1 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0263",
+    "descripcion": "- cylinder 1 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0264",
+    "descripcion": "- cylinder 2 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0265",
+    "descripcion": "- cylinder 2 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0266",
+    "descripcion": "- cylinder 2 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0267",
+    "descripcion": "- cylinder 3 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0268",
+    "descripcion": "- cylinder 3 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0269",
+    "descripcion": "- cylinder 3 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0270",
+    "descripcion": "- cylinder 4 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0271",
+    "descripcion": "- cylinder 4 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0272",
+    "descripcion": "- cylinder 4 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0273",
+    "descripcion": "- cylinder 5 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0274",
+    "descripcion": "- cylinder 5 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0275",
+    "descripcion": "- cylinder 5 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0276",
+    "descripcion": "- cylinder 6 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0277",
+    "descripcion": "- cylinder 6 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0278",
+    "descripcion": "- cylinder 6 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0279",
+    "descripcion": "- cylinder 7 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0280",
+    "descripcion": "- cylinder 7 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0281",
+    "descripcion": "- cylinder 7 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0282",
+    "descripcion": "- cylinder 8 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0283",
+    "descripcion": "- cylinder 8 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0284",
+    "descripcion": "- cylinder 8 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0285",
+    "descripcion": "- cylinder 9 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0286",
+    "descripcion": "- cylinder 9 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0287",
+    "descripcion": "- cylinder 9 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0288",
+    "descripcion": "- cylinder 10 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0289",
+    "descripcion": "- cylinder 10 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0290",
+    "descripcion": "- cylinder 10 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0291",
+    "descripcion": "- cylinder 11 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0292",
+    "descripcion": "- cylinder 11 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0293",
+    "descripcion": "- cylinder 11 contribution/balance fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0294",
+    "descripcion": "- cylinder 12 injector circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0295",
+    "descripcion": "- cylinder 12 injector circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0296",
+    "descripcion": "- cylinder 12 contribution/rango fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0300",
+    "descripcion": "- engine misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0301",
+    "descripcion": "- cylinder 1 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0302",
+    "descripcion": "- cylinder 2 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0303",
+    "descripcion": "- cylinder 3 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0304",
+    "descripcion": "- cylinder 4 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0305",
+    "descripcion": "- cylinder 5 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0306",
+    "descripcion": "- cylinder 6 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0307",
+    "descripcion": "- cylinder 7 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0308",
+    "descripcion": "- cylinder 8 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0309",
+    "descripcion": "- cylinder 9 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0310",
+    "descripcion": "- cylinder 10 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0311",
+    "descripcion": "- cylinder 11 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0312",
+    "descripcion": "- cylinder 12 misfire detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0313",
+    "descripcion": "- misfire detected with low fuel level",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0315",
+    "descripcion": "- cigüeñal posición (ckp) system variation values are not stored in the pcm memory",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0318",
+    "descripcion": "- rough road sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0320",
+    "descripcion": "- ignition/distributor engine speed entrada circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0321",
+    "descripcion": "- ignition/distributor engine speed entrada circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0322",
+    "descripcion": "- ic module 4x reference circuito no frequency",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0323",
+    "descripcion": "- ignition/distributor engine speed entrada circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0324",
+    "descripcion": "- knock sensor (ks) module rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0325",
+    "descripcion": "- pcm knock sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0326",
+    "descripcion": "- knock sensor circuito excessive spark retard",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0327",
+    "descripcion": "- knock sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0328",
+    "descripcion": "- knock sensor 1 circuito high entrada (banco 1 or single sensor)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0329",
+    "descripcion": "- knock sensor 1 circuito intermittent (banco 1 or single sensor)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0330",
+    "descripcion": "- knock sensor (ks) circuito banco 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0331",
+    "descripcion": "- knock sensor 2 circuito rango/rendimiento (banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0332",
+    "descripcion": "- knock sensor 2 circuito low entrada (banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0333",
+    "descripcion": "- knock sensor 2 circuito high entrada (banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0334",
+    "descripcion": "- knock sensor 2 circuito intermittent (banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0335",
+    "descripcion": "- ckp sensor a circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0336",
+    "descripcion": "- cigüeñal posición (ckp) sensor a rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0337",
+    "descripcion": "- cigüeñal posición (ckp) sensor circuito low duty cycle",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0338",
+    "descripcion": "- cigüeñal posición (ckp) sensor circuito high duty cycle",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0339",
+    "descripcion": "- cigüeñal posición (ckp) sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0340",
+    "descripcion": "- árbol de levas posición (cmp) sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0341",
+    "descripcion": "- árbol de levas posición (cmp) sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0342",
+    "descripcion": "- árbol de levas posición sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0343",
+    "descripcion": "- árbol de levas posición sensor circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0344",
+    "descripcion": "- árbol de levas posición sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0350",
+    "descripcion": "- ignition coil primary/secondary circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0351",
+    "descripcion": "- ignition coil 1 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0352",
+    "descripcion": "- ignition coil 2 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0353",
+    "descripcion": "- ignition coil 3 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0354",
+    "descripcion": "- ignition coil 4 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0355",
+    "descripcion": "- ignition coil 5 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0356",
+    "descripcion": "- ignition coil 6 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0357",
+    "descripcion": "- ignition coil 7 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0358",
+    "descripcion": "- ignition coil 8 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0359",
+    "descripcion": "- ignition coil i primary/secondary circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0360",
+    "descripcion": "- ignition coil j primary/secondary circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0361",
+    "descripcion": "- ignition coil k primary/secondary circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0362",
+    "descripcion": "- ignition coil l primary/secondary circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0370",
+    "descripcion": "- sincronización reference high resolution signal a fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0371",
+    "descripcion": "- ic 24x reference circuito too many pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0372",
+    "descripcion": "- ic 24x reference circuito missing pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0373",
+    "descripcion": "- sincronización reference high resolution signal a intermittent/erratic pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0374",
+    "descripcion": "- sincronización reference high resolution signal a no pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0375",
+    "descripcion": "- sincronización reference high resolution signal b fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0376",
+    "descripcion": "- sincronización reference high resolution signal b too many pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0377",
+    "descripcion": "- sincronización reference high resolution signal b too few pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0378",
+    "descripcion": "- sincronización reference high resolution signal b intermittent/erratic pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0379",
+    "descripcion": "- sincronización reference high resolution signal b no pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0380",
+    "descripcion": "- glow plug/heater circuito \"a\" fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0381",
+    "descripcion": "- glow plug/heater indicator circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0382",
+    "descripcion": "- exhaust gas recirculation flow fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0385",
+    "descripcion": "- cigüeñal posición (ckp) sensor b circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0386",
+    "descripcion": "- cigüeñal posición (ckp) sensor b rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0387",
+    "descripcion": "- cigüeñal posición sensor b circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0388",
+    "descripcion": "- cigüeñal posición sensor b circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0389",
+    "descripcion": "- cigüeñal posición sensor b circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0400",
+    "descripcion": "- exhaust gas recirculation flow fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0401",
+    "descripcion": "- exhaust gas recirculation (egr) flow insufficient",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0402",
+    "descripcion": "- exhaust gas recirculation flow excessive detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0403",
+    "descripcion": "- exhaust gas recirculation (egr) solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0404",
+    "descripcion": "- exhaust gas recirculation (egr) open posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0405",
+    "descripcion": "- exhaust gas recirculation (egr) posición sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0406",
+    "descripcion": "- exhaust gas recirculation sensor a circuito high",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0407",
+    "descripcion": "- exhaust gas recirculation sensor b circuito low",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0408",
+    "descripcion": "- exhaust gas recirculation sensor b circuito high",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0410",
+    "descripcion": "- secondary air injection (air) system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0411",
+    "descripcion": "- secondary air injection (air) system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0412",
+    "descripcion": "- secondary air injection (air) solenoid relay control circuito banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0413",
+    "descripcion": "- secondary air injection system switching valve a circuito open",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0414",
+    "descripcion": "- secondary air injection system switching valve a circuito shorted",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0415",
+    "descripcion": "- secondary air injection system switching valve b circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0416",
+    "descripcion": "- secondary air injection system switching valve b circuito open",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0417",
+    "descripcion": "- secondary air injection system switching valve b circuito shorted",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0418",
+    "descripcion": "- secondary air injection (air) pump relay control circuito banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0419",
+    "descripcion": "- secondary air injection (air) pump relay control circuito banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0420",
+    "descripcion": "- catalyst system low efficiency",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0421",
+    "descripcion": "- warm up catalyst efficiency below threshold (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0422",
+    "descripcion": "- catalyst system low efficiency banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0423",
+    "descripcion": "- heated catalyst efficiency below threshold (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0424",
+    "descripcion": "- heated catalyst temperature below threshold (banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0430",
+    "descripcion": "- catalyst system low efficiency banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0431",
+    "descripcion": "- warm up catalyst efficiency below threshold (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0432",
+    "descripcion": "- catalyst system low efficiency banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0433",
+    "descripcion": "- heated catalyst efficiency below threshold (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0434",
+    "descripcion": "- heated catalyst temperature below threshold (banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0440",
+    "descripcion": "- evaporative emission (evap) system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0441",
+    "descripcion": "- evaporative emission control system incorrect purge flow",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0442",
+    "descripcion": "- evaporative emission (evap) system small leak detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0443",
+    "descripcion": "- evap purge solenoid valve 1 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0444",
+    "descripcion": "- evaporative emission control system purge control valve circuito open",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0445",
+    "descripcion": "- evaporative emission control system purge control valve circuito shorted",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0446",
+    "descripcion": "- evap vent solenoid valve control system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0447",
+    "descripcion": "- evaporative emission control system vent control circuito open",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0448",
+    "descripcion": "- evaporative emission control system vent control circuito shorted",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0449",
+    "descripcion": "- evaporative emission (evap) vent solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0450",
+    "descripcion": "- fuel tank pressure sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0451",
+    "descripcion": "- evaporative emission control system pressure sensor rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0452",
+    "descripcion": "- fuel tank pressure sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0453",
+    "descripcion": "- fuel tank pressure sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0454",
+    "descripcion": "- evaporative emission control system pressure sensor intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0455",
+    "descripcion": "- evaporative emission (evap) system leak detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0460",
+    "descripcion": "- fuel level sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0461",
+    "descripcion": "- fuel level sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0462",
+    "descripcion": "- fuel level sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0463",
+    "descripcion": "- fuel level sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0464",
+    "descripcion": "- fuel level sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0465",
+    "descripcion": "- purge flow sensor circuito fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0466",
+    "descripcion": "- purge flow sensor circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0467",
+    "descripcion": "- purge flow sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0468",
+    "descripcion": "- purge flow sensor circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0469",
+    "descripcion": "- purge flow sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0470",
+    "descripcion": "- exhaust pressure sensor fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0471",
+    "descripcion": "- exhaust pressure sensor rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0472",
+    "descripcion": "- exhaust pressure sensor low",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0473",
+    "descripcion": "- exhaust pressure sensor high",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0474",
+    "descripcion": "- exhaust pressure sensor intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0475",
+    "descripcion": "- exhaust pressure control valve fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0476",
+    "descripcion": "- exhaust pressure control valve rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0477",
+    "descripcion": "- exhaust pressure control valve low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0478",
+    "descripcion": "- exhaust pressure control valve high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0479",
+    "descripcion": "- exhaust pressure control valve intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0480",
+    "descripcion": "- cooling fan relay 1 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0481",
+    "descripcion": "- cooling fan relay 2 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0482",
+    "descripcion": "- cooling fan 3 control circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0483",
+    "descripcion": "- cooling fan rationality check fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0484",
+    "descripcion": "- cooling fan circuito over current",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0485",
+    "descripcion": "- cooling fan power/ground circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0496",
+    "descripcion": "- evaporative emission (evap) system flow during non-purge",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0500",
+    "descripcion": "- vehicle speed sensor (vss) circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0501",
+    "descripcion": "- vehicle speed sensor rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0502",
+    "descripcion": "- vehicle speed sensor (vss) circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0503",
+    "descripcion": "- vehicle speed sensor (vss) circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0505",
+    "descripcion": "- idle control system fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0506",
+    "descripcion": "- idle speed low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0507",
+    "descripcion": "- idle speed high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0510",
+    "descripcion": "- closed throttle posición switch fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0512",
+    "descripcion": "- start switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0520",
+    "descripcion": "- engine oil pressure sensor/switch circuito fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0521",
+    "descripcion": "- engine oil pressure sensor/switch circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0522",
+    "descripcion": "- engine oil pressure sensor/switch circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0523",
+    "descripcion": "- engine oil pressure sensor/switch circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0526",
+    "descripcion": "- cooling fan speed sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0530",
+    "descripcion": "- a/c refrigerant pressure sensor circuito fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0531",
+    "descripcion": "- a/c refrigerant pressure sensor circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0532",
+    "descripcion": "- air conditioning (a/c) refrigerant pressure sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0533",
+    "descripcion": "- air conditioning (a/c) refrigerant pressure sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0534",
+    "descripcion": "- air conditioner refrigerant charge loss",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0550",
+    "descripcion": "- power steering pressure (psp) switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0551",
+    "descripcion": "- power steering pressure sensor circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0552",
+    "descripcion": "- power steering pressure sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0553",
+    "descripcion": "- power steering pressure sensor circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0554",
+    "descripcion": "- power steering pressure sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0560",
+    "descripcion": "- system voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0561",
+    "descripcion": "- system voltage unstable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0562",
+    "descripcion": "- system voltage low (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0563",
+    "descripcion": "- system voltage high (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0564",
+    "descripcion": "- cruise control multi-function switch circuito (pcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0565",
+    "descripcion": "- cruise control on signal fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0566",
+    "descripcion": "- cruise control off signal fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0567",
+    "descripcion": "- cruise control resume signal fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0568",
+    "descripcion": "- cruise control set signal fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0569",
+    "descripcion": "- cruise control coast signal fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0570",
+    "descripcion": "- cruise control accel signal fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0571",
+    "descripcion": "- cruise control brake switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0573",
+    "descripcion": "- cruise control/brake switch a circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0574",
+    "descripcion": "- vehicle speed too high - above 110 mph - cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0575",
+    "descripcion": "- cruise control related fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0576",
+    "descripcion": "- cruise control related fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0576",
+    "descripcion": "- cruise control related fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0578",
+    "descripcion": "- cruise control related fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0579",
+    "descripcion": "- cruise control related fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0580",
+    "descripcion": "- cruise control related fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0600",
+    "descripcion": "- serial communication link fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0601",
+    "descripcion": "- control module read only memory (rom)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0602",
+    "descripcion": "- control module not programmed",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0603",
+    "descripcion": "- control module long term memory reset",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0604",
+    "descripcion": "- control module random access memory (ram)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0605",
+    "descripcion": "- control module programming read only memory (rom)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0606",
+    "descripcion": "- control module internal rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0607",
+    "descripcion": "- ecu fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0608",
+    "descripcion": "- control module vss salida \"a\" fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0609",
+    "descripcion": "- control module vss salida \"b\" fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0610",
+    "descripcion": "- control module vehicle options incorrect",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0615",
+    "descripcion": "- starter relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0616",
+    "descripcion": "- starter relay control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0617",
+    "descripcion": "- starter relay control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0620",
+    "descripcion": "- generator control circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0621",
+    "descripcion": "- generator l-terminal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0622",
+    "descripcion": "- generator f-terminal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0625",
+    "descripcion": "- generator f-terminal circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0626",
+    "descripcion": "- generator f-terminal circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0628",
+    "descripcion": "- fuel pump relay control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0629",
+    "descripcion": "- fuel pump relay control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0638",
+    "descripcion": "- throttle actuador control (tac) command rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0641",
+    "descripcion": "- pcm voltage out of tolerance condition on the 5-volt reference circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0645",
+    "descripcion": "- air conditioning (a/c) clutch relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0646",
+    "descripcion": "- air conditioning (a/c) clutch relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0647",
+    "descripcion": "- air conditioning (a/c) clutch relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0650",
+    "descripcion": "- fallo indicator lamp (mil) control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0651",
+    "descripcion": "- pcm voltage out of tolerance condition on the 5-volt reference circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0654",
+    "descripcion": "- engine rpm salida circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0655",
+    "descripcion": "- engine hot lamp salida control circuito malfucntion",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0656",
+    "descripcion": "- fuel level salida circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0660",
+    "descripcion": "- intake manifold tuning (imt) valve solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0661",
+    "descripcion": "- intake manifold tuning (imt) valve solenoid control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0662",
+    "descripcion": "- intake manifold tuning (imt) valve solenoid control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0685",
+    "descripcion": "- engine controls ignition relay control circuito (pcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0691",
+    "descripcion": "- cooling fan relay control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0693",
+    "descripcion": "- cooling fan relay control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0692",
+    "descripcion": "- cooling fan relay control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0694",
+    "descripcion": "- cooling fan relay control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0700",
+    "descripcion": "- transmission control system fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0701",
+    "descripcion": "- transmission control system rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0702",
+    "descripcion": "- transmission control system electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0703",
+    "descripcion": "- brake switch circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0704",
+    "descripcion": "- clutch switch entrada circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0705",
+    "descripcion": "- trans rango switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0706",
+    "descripcion": "- trans rango switch rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0707",
+    "descripcion": "- transmission rango sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0708",
+    "descripcion": "- transmission rango sensor circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0709",
+    "descripcion": "- transmission rango sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0710",
+    "descripcion": "- transmission fluid temperature sensor circuito fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0711",
+    "descripcion": "- tft sensor circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0712",
+    "descripcion": "- transmission fluid temperature (tft) sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0713",
+    "descripcion": "- transmission fluid temperature (tft) sensor circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0714",
+    "descripcion": "- transmission fluid temperature sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0715",
+    "descripcion": "- entrada/turbine speed sensor circuito fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0716",
+    "descripcion": "- entrada speed sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0717",
+    "descripcion": "- entrada speed sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0718",
+    "descripcion": "- entrada/turbine speed sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0719",
+    "descripcion": "- brake switch circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0720",
+    "descripcion": "- salida speed sensor circuito fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0721",
+    "descripcion": "- salida speed sensor rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0722",
+    "descripcion": "- salida speed sensor circuito low entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0723",
+    "descripcion": "- salida speed sensor intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0724",
+    "descripcion": "- brake switch circuito high entrada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0725",
+    "descripcion": "- engine speed entrada circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0726",
+    "descripcion": "- engine speed entrada circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0727",
+    "descripcion": "- engine speed circuito no signal",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0728",
+    "descripcion": "- engine speed entrada circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0730",
+    "descripcion": "- incorrect gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0731",
+    "descripcion": "- incorrect 1st gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0732",
+    "descripcion": "- incorrect 2nd gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0733",
+    "descripcion": "- incorrect 3rd gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0734",
+    "descripcion": "- incorrect 4th gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0735",
+    "descripcion": "- gear 5 incorrect ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0736",
+    "descripcion": "- reverse incorrect gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0740",
+    "descripcion": "- tcc enable solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0741",
+    "descripcion": "- tcc system stuck off",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0742",
+    "descripcion": "- tcc system stuck on",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0743",
+    "descripcion": "- tcc enable solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0744",
+    "descripcion": "- torque converter clutch circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0745",
+    "descripcion": "- pressure control solenoid fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0746",
+    "descripcion": "- pressure control solenoid rendimiento or stuck off",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0747",
+    "descripcion": "- pressure control solenoid stuck on",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0748",
+    "descripcion": "- pressure control solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0749",
+    "descripcion": "- pressure control solenoid intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0750",
+    "descripcion": "- shift solenoid a fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0751",
+    "descripcion": "- 1-2 shift solenoid valve rendimiento - no first or fourth gear",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0752",
+    "descripcion": "- 1-2 shift solenoid valve rendimiento - no second or third gear",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0753",
+    "descripcion": "- 1-2 shift solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0754",
+    "descripcion": "- shift solenoid a intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0755",
+    "descripcion": "- shift solenoid b fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0756",
+    "descripcion": "- 2-3 shift solenoid valve rendimiento - no first or second gear",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0757",
+    "descripcion": "- 2-3 shift solenoid valve rendimiento - no third or fourth gear",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0758",
+    "descripcion": "- 2-3 shift solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0759",
+    "descripcion": "- shift solenoid b intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0760",
+    "descripcion": "- shift solenoid c fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0761",
+    "descripcion": "- shift solenoid c rendimiento or stuck off",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0762",
+    "descripcion": "- shift solenoid c stuck on",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0763",
+    "descripcion": "- shift solenoid c electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0764",
+    "descripcion": "- shift solenoid c intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0765",
+    "descripcion": "- shift solenoid d fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0766",
+    "descripcion": "- shift solenoid d rendimiento or stuck off",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0767",
+    "descripcion": "- shift solenoid d stuck on",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0768",
+    "descripcion": "- shift solenoid d electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0769",
+    "descripcion": "- shift solenoid d intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0770",
+    "descripcion": "- shift solenoid e fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0771",
+    "descripcion": "- shift solenoid e rendimiento or stuck off",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0772",
+    "descripcion": "- shift solenoid e stuck on",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0773",
+    "descripcion": "- shift solenoid e electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0774",
+    "descripcion": "- shift solenoid e intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0780",
+    "descripcion": "- shift fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0781",
+    "descripcion": "- 1-2 shift fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0782",
+    "descripcion": "- 2-3 shift fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0783",
+    "descripcion": "- 3-4 shift fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0784",
+    "descripcion": "- 4-5 shift fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0785",
+    "descripcion": "- 3-2 shift solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0786",
+    "descripcion": "- shift/sincronización solenoid rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0787",
+    "descripcion": "- shift/sincronización solenoid low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0788",
+    "descripcion": "- shift/sincronización solenoid high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0789",
+    "descripcion": "- shift/sincronización solenoid intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0790",
+    "descripcion": "- normal/rendimiento switch circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0801",
+    "descripcion": "- reverse inhibit control circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0803",
+    "descripcion": "- 1-4 upshift (skip shift) solenoid control circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0804",
+    "descripcion": "- 1-4 upshift (skip shift) lamp control circuito fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0850",
+    "descripcion": "- park/neutral posición (pnp) switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0856",
+    "descripcion": "- powertrain indicated traction control fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0894",
+    "descripcion": "- transmission component slipping",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0897",
+    "descripcion": "- pcm detects a calculated transmission fluid life of 10 percent or less",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0962",
+    "descripcion": "- line pressure control (pc) solenoid control circuito low voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0963",
+    "descripcion": "- line pressure control (pc) solenoid control circuito high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0966",
+    "descripcion": "- clutch pressure control (pc) solenoid control circuito low voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0967",
+    "descripcion": "- clutch pressure control (pc) solenoid control circuito high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0970",
+    "descripcion": "- shift pressure control (pc) solenoid control circuito low voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0971",
+    "descripcion": "- shift pressure control (pc) solenoid control high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0973",
+    "descripcion": "- pcm detects an open or short to ground in the 1-2 ss valve circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0974",
+    "descripcion": "- pcm detects a continuous short to voltage in the 1-2 ss valve circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0976",
+    "descripcion": "- pcm detects a continuous open or short to ground in the 2-3 ss valve circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0977",
+    "descripcion": "- pcm detects a continuous short to voltage in the 2-3 ss valve circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0979",
+    "descripcion": "- shift solenoid (ss) 3 control circuito low voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0980",
+    "descripcion": "- shift solenoid (ss) 3 control circuito high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0982",
+    "descripcion": "- shift solenoid (ss) 4 control circuito high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0983",
+    "descripcion": "- shift solenoid (ss) 4 control circuito high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0985",
+    "descripcion": "- shift solenoid (ss) 5 control circuito low voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0986",
+    "descripcion": "- shift solenoid (ss) 5 control circuito high voltage (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1031",
+    "descripcion": "- heated oxygen sensor (ho2s) heater current monitor control circuito bancos 1 and 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1032",
+    "descripcion": "- heated oxygen sensor (ho2s) heater warm up control circuito bancos 1 and 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1101",
+    "descripcion": "- actual measured airflow from maf, map, egr, and tp is not within rango of the calculated airflow",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1105",
+    "descripcion": "- secondary vacuum sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1106",
+    "descripcion": "- manifold absolute pressure (map) sensor circuito intermittent high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1107",
+    "descripcion": "- manifold absolute pressure (map) sensor circuito intermittent low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1108",
+    "descripcion": "- baro to map sensor comparison too high",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1109",
+    "descripcion": "- secondary port throttle system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1111",
+    "descripcion": "- intake air temperature (iat) sensor circuito intermittent high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1112",
+    "descripcion": "- intake air temperature (iat) sensor circuito intermittent low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1113",
+    "descripcion": "- intake resonance switchover solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1114",
+    "descripcion": "- engine coolant temperature (ect) sensor circuito intermittent low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1115",
+    "descripcion": "- engine coolant temperature (ect) sensor circuito intermittent high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1116",
+    "descripcion": "- ect signal unstable or intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1117",
+    "descripcion": "- engine coolant temp. signal out-of-rango low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1118",
+    "descripcion": "- engine coolant temp. signal out-of-rango high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1119",
+    "descripcion": "- ect signal out-of-rango with tft sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1120",
+    "descripcion": "- throttle posición (tp) sensor 1 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1121",
+    "descripcion": "- throttle posición (tp) sensor circuito intermittent high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1122",
+    "descripcion": "- throttle posición (tp) sensor circuito intermittent low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1125",
+    "descripcion": "- accelerator pedal posición (app) system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1130",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low variance banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1131",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low variance banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1132",
+    "descripcion": "- heated oxygen sensor (ho2s) circuito low variance banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1133",
+    "descripcion": "- heated oxygen sensor (ho2s) insufficient switching banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1134",
+    "descripcion": "- heated oxygen sensor (ho2s) transition time ratio banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1135",
+    "descripcion": "- heated oxygen sensor (ho2s) lean mean banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1136",
+    "descripcion": "- heated oxygen sensor (ho2s) rich mean banco 1 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1137",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 1 sensor 2 lean system or low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1138",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 1 sensor 2 rich or high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1139",
+    "descripcion": "- heated oxygen sensor (ho2s) insuff. switching banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1140",
+    "descripcion": "- heated oxygen sensor (ho2s) transition time ratio banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1141",
+    "descripcion": "- heated oxygen sensor (ho2s) heater control circuito banco 1 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1143",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 1 sensor 3 lean system or low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1144",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 1 sensor 3 rich or high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1145",
+    "descripcion": "- heated oxygen sensor (ho2s) cross counts banco 1 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1153",
+    "descripcion": "- heated oxygen sensor (ho2s) insufficient switching banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1154",
+    "descripcion": "- heated oxygen sensor (ho2s) transition time ratio banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1155",
+    "descripcion": "- heated oxygen sensor (ho2s) lean mean banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1156",
+    "descripcion": "- heated oxygen sensor (ho2s) rich mean banco 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1157",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 2 sensor 2 lean system or low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1158",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 2 sensor 2 rich or high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1159",
+    "descripcion": "- heated oxygen sensor (ho2s) cross counts banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1161",
+    "descripcion": "- heated oxygen sensor (ho2s) heater control circuito banco 2 sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1163",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 2 sensor 3 lean system or low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1164",
+    "descripcion": "- heated oxygen sensor (ho2s) banco 2 sensor 3 rich or high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1165",
+    "descripcion": "- heated oxygen sensor (ho2s) cross counts banco 2 sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1170",
+    "descripcion": "- banco to banco fuel trim offset",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1171",
+    "descripcion": "- fuel system lean during acceleration",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1172",
+    "descripcion": "- fuel transfer pump flow insufficient",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1185",
+    "descripcion": "- engine oil temperature circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1186",
+    "descripcion": "- eot circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1187",
+    "descripcion": "- eot sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1188",
+    "descripcion": "- eot sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1189",
+    "descripcion": "- engine oil pressure (eop) switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1190",
+    "descripcion": "- engine vacuum leak",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1191",
+    "descripcion": "- intake air duct air leak",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1200",
+    "descripcion": "- injector control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1201",
+    "descripcion": "- (alt. fuel) gas mass sensor circuito rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1202",
+    "descripcion": "- (alt. fuel) gas mass sensor circuito low frequency",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1203",
+    "descripcion": "- (alt. fuel) gas mass sensor circuito high frequency",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1211",
+    "descripcion": "- mass air flow circuito intermittent high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1212",
+    "descripcion": "- mass air flow circuito intermittent low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1214",
+    "descripcion": "- injection pump sincronización offset",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1215",
+    "descripcion": "- ground fault detection indicated",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1216",
+    "descripcion": "- fuel solenoid response time too short",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1217",
+    "descripcion": "- fuel solenoid response time too long",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1218",
+    "descripcion": "- injection pump calibration circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1219",
+    "descripcion": "- throttle posición sensor reference voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1220",
+    "descripcion": "- throttle posición (tp) sensor 2 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1221",
+    "descripcion": "- fuel pump secondary circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1222",
+    "descripcion": "- injector control circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1225",
+    "descripcion": "- injector circuito cylinder 2 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1228",
+    "descripcion": "- injector circuito cylinder 3 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1231",
+    "descripcion": "- injector circuito cylinder 4 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1234",
+    "descripcion": "- injector circuito cylinder 5 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1237",
+    "descripcion": "- injector circuito cylinder 6 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1240",
+    "descripcion": "- injector circuito cylinder 7 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1243",
+    "descripcion": "- injector circuito cylinder 8 intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1245",
+    "descripcion": "- intake plenum switchover valve",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1250",
+    "descripcion": "- early fuel evaporation heater circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1257",
+    "descripcion": "- supercharger system overboost",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1258",
+    "descripcion": "- engine coolant overtemperature - above 268°f - protection mode active",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1260",
+    "descripcion": "- last test failed failed scc enter:more info.",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1270",
+    "descripcion": "- accelerator pedal posición sensor a/d converter error",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1271",
+    "descripcion": "- accelerator pedal posición (app) sensor 1-2 correlación",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1272",
+    "descripcion": "- accelerator pedal posición sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1273",
+    "descripcion": "- \"accelerator pedal posición sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1274",
+    "descripcion": "- injectors wired incorrectly",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1275",
+    "descripcion": "- accelerator pedal posición (app) sensor 1 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1276",
+    "descripcion": "- accelerator pedal posición sensor 1 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1277",
+    "descripcion": "- accelerator pedal posición sensor 1 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1278",
+    "descripcion": "- accelerator pedal posición sensor 1 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1280",
+    "descripcion": "- accelerator pedal posición (app) sensor 2 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1281",
+    "descripcion": "- accelerator pedal posición sensor 2 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1282",
+    "descripcion": "- accelerator pedal posición sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1283",
+    "descripcion": "- accelerator pedal posición sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1285",
+    "descripcion": "- accelerator pedal posición sensor 3 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1286",
+    "descripcion": "- accelerator pedal posición sensor 3 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1287",
+    "descripcion": "- accelerator pedal posición sensor 3 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1288",
+    "descripcion": "- accelerator pedal posición sensor 3 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1300",
+    "descripcion": "- ignitor circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1305",
+    "descripcion": "- ignition coil 2 primary feedback circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1310",
+    "descripcion": "- ignition coil 3 primary feedback circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1315",
+    "descripcion": "- ignition coil 4 primary feedback circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1320",
+    "descripcion": "- ic 4x reference circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1321",
+    "descripcion": "- electronic ignition system fault line",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1322",
+    "descripcion": "- ei system or ignition control extra or missing",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1323",
+    "descripcion": "- ic 24x reference circuito low frequency",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1324",
+    "descripcion": "- crank rpm too low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1335",
+    "descripcion": "- ckp circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1336",
+    "descripcion": "- cigüeñal posición (ckp) system variation not learned",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1345",
+    "descripcion": "- cigüeñal posición (ckp)-árbol de levas posición (cmp) correlación",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1346",
+    "descripcion": "- intake árbol de levas posición [cmp] sensor rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1350",
+    "descripcion": "- ignition control system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1351",
+    "descripcion": "- ignition coil control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1352",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1353",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 3",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1354",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 4",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1355",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1356",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1357",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1358",
+    "descripcion": "- ic salida high/pulse detected when gnd_cyl. 8",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1359",
+    "descripcion": "- ignition coil group 1 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1360",
+    "descripcion": "- ignition coil group 2 control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1361",
+    "descripcion": "- ignition coil control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1362",
+    "descripcion": "- ic cylinder 2 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1363",
+    "descripcion": "- ic cylinder 3 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1364",
+    "descripcion": "- ic cylinder 4 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1365",
+    "descripcion": "- ic cylinder 5 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1366",
+    "descripcion": "- ic cylinder 6 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1367",
+    "descripcion": "- ic cylinder 7 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1368",
+    "descripcion": "- ic cylinder 8 not toggling after enable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1370",
+    "descripcion": "- ic 4x reference circuito too many pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1371",
+    "descripcion": "- ic 4x reference circuito too few pulses",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1372",
+    "descripcion": "- cigüeñal posición (ckp) sensor a-b correlación",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1374",
+    "descripcion": "- 3x reference circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1375",
+    "descripcion": "- ic 24x reference circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1376",
+    "descripcion": "- ignition ground circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1377",
+    "descripcion": "- ic cam pulse to 4x reference pulse",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1380",
+    "descripcion": "- misfire detected - rough road data not available",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1381",
+    "descripcion": "- misfire detected - no communication with brake control module",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1390",
+    "descripcion": "- wheel speed sensor 1 - g - sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1391",
+    "descripcion": "- wheel speed sensor 1 - g - sensor circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1392",
+    "descripcion": "- wheel speed sensor 1 - g - sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1393",
+    "descripcion": "- wheel speed sensor 1 - g - sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1394",
+    "descripcion": "- wheel speed sensor 1 - g - sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1395",
+    "descripcion": "- wheel speed sensor 2 - g - sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1396",
+    "descripcion": "- wheel speed sensor 2 - g - sensor circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1397",
+    "descripcion": "- wheel speed sensor 2 - g - sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1398",
+    "descripcion": "- wheel speed sensor 2 - g - sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1399",
+    "descripcion": "- wheel speed sensor 2 - g - sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1403",
+    "descripcion": "- exhaust gas recirculation system valve 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1404",
+    "descripcion": "- exhaust gas recirculation (egr) closed posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1405",
+    "descripcion": "- exhaust gas recirculation system valve 3",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1406",
+    "descripcion": "- egr valve pintle posición circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1407",
+    "descripcion": "- egr air intrusion in exhaust supply to egr valve",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1408",
+    "descripcion": "- intake manifold pressure sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1409",
+    "descripcion": "- egr vacuum system leak",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1410",
+    "descripcion": "- fuel tank pressure system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1415",
+    "descripcion": "- secondary air injection (air) system banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1416",
+    "descripcion": "- secondary air injection (air) system banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1418",
+    "descripcion": "- secondary air injection system relay a control circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1420",
+    "descripcion": "- intake air low pressure switch circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1421",
+    "descripcion": "- intake air low pressure switch circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1423",
+    "descripcion": "- intake air high pressure switch circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1431",
+    "descripcion": "- fuel level sensor 2 circuito rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1432",
+    "descripcion": "- fuel level sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1433",
+    "descripcion": "- fuel level sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1441",
+    "descripcion": "- evaporative emission (evap) system flow during non-purge",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1442",
+    "descripcion": "- evap vacuum sw. high voltage during ign. on",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1450",
+    "descripcion": "- barometric pressure sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1451",
+    "descripcion": "- barometric press. sensor rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1460",
+    "descripcion": "- cooling fan control system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1480",
+    "descripcion": "- cooling fan 1 control circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1481",
+    "descripcion": "- cooling fan speed sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1482",
+    "descripcion": "- cooling fan speed salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1483",
+    "descripcion": "- engine cooling rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1484",
+    "descripcion": "- cooling fan rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1500",
+    "descripcion": "- starter signal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1501",
+    "descripcion": "- theft deterrent system",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1501",
+    "descripcion": "- vehicle speed sensor circuito intermittent",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1502",
+    "descripcion": "- theft deterrent fuel enable signal not received",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1503",
+    "descripcion": "- theft deterrent fuel enable signal not correct",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1504",
+    "descripcion": "- vehicle speed salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1508",
+    "descripcion": "- idle speed low - idle air control (iac) system not responding",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1509",
+    "descripcion": "- idle speed high - idle air control (iac) system not responding",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1510",
+    "descripcion": "- throttle control rendimiento del sistema - throttle limitation active",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1511",
+    "descripcion": "- throttle control system - backup rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1514",
+    "descripcion": "- airflow to tp sensor correlación high",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1515",
+    "descripcion": "- electronic throttle system throttle posición",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1516",
+    "descripcion": "- throttle actuador control (tac) module throttle actuador posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1517",
+    "descripcion": "- electronic throttle module",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1518",
+    "descripcion": "- electronic throttle module to pcm communication",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1519",
+    "descripcion": "- throttle actuador control (tac) module internal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1520",
+    "descripcion": "- transmission rango switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1521",
+    "descripcion": "- transmission engaged at high throttle angle",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1522",
+    "descripcion": "- park/neutral to drive/reverse at high rpm",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1523",
+    "descripcion": "- throttle closed posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1524",
+    "descripcion": "- throttle closed posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1525",
+    "descripcion": "- throttle body servicerequired",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1526",
+    "descripcion": "- minimum throttle posición not learned",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1527",
+    "descripcion": "- transmission rango to pressure switch correlación",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1528",
+    "descripcion": "- governor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1529",
+    "descripcion": "- heated windshield request problema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1530",
+    "descripcion": "- throttle actuador control (tac) module internal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1531",
+    "descripcion": "- a/c low side temperature sensor fault",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1532",
+    "descripcion": "- a/c evaporator temp. sens. circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1533",
+    "descripcion": "- a/c evaporator temp. sens. circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1534",
+    "descripcion": "- a/c high side temp. sensor low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1535",
+    "descripcion": "- a/c high side temperature sensor circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1536",
+    "descripcion": "- engine coolant overtemperature - air conditioning (a/c) disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1537",
+    "descripcion": "- a/c request circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1538",
+    "descripcion": "- a/c request circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1539",
+    "descripcion": "- a/c clutch status circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1540",
+    "descripcion": "- air conditioning (a/c) refrigerant overpressure - air conditioning (a/c) disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1541",
+    "descripcion": "- a/c high side over temperature",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1542",
+    "descripcion": "- a/c system high pressure high temperature",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1543",
+    "descripcion": "- a/c rendimiento del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1544",
+    "descripcion": "- a/c refrigerant condition very low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1545",
+    "descripcion": "- air conditioning (a/c) clutch relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1546",
+    "descripcion": "- a/c clutch status circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1547",
+    "descripcion": "- a/c rendimiento del sistema degraded",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1548",
+    "descripcion": "- a/c recirculation circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1551",
+    "descripcion": "- throttle valve rest posición not reached during learn",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1554",
+    "descripcion": "- cruise control feedback circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1555",
+    "descripcion": "- electronic variable orifice salida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1558",
+    "descripcion": "- cruise control servo indicates low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1559",
+    "descripcion": "- cruise control power management mode",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1560",
+    "descripcion": "- transaxle not in drive - cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1561",
+    "descripcion": "- cruise vent solenoid",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1562",
+    "descripcion": "- cruise vacuum solenoid",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1563",
+    "descripcion": "- cruise vehicle speed/set speed difference too high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1564",
+    "descripcion": "- vehicle acceleration too high - cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1565",
+    "descripcion": "- cruise servo posición sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1566",
+    "descripcion": "- engine rpm too high - cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1567",
+    "descripcion": "- active bancoing control active - cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1568",
+    "descripcion": "- cruise servo stroke greater than commanded in cruise",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1569",
+    "descripcion": "- cruise servo stroke high while not in cruise",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1570",
+    "descripcion": "- traction control active - cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1571",
+    "descripcion": "- traction control torque request circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1572",
+    "descripcion": "- asr active circuito low too long",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1573",
+    "descripcion": "- pcm/ebtcm serial data circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1574",
+    "descripcion": "- stoplamp switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1575",
+    "descripcion": "- extended travel brake switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1576",
+    "descripcion": "- bbv sensor circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1577",
+    "descripcion": "- bbv sensor circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1578",
+    "descripcion": "- bbv sensor circuito low vacuum",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1579",
+    "descripcion": "- p/n to d/r at high throttle angle - power reduction mode active",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1580",
+    "descripcion": "- cruise move circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1581",
+    "descripcion": "- cruise move circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1582",
+    "descripcion": "- cruise direction circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1583",
+    "descripcion": "- cruise direction circuitohigh voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1584",
+    "descripcion": "- cruise control disabled",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1585",
+    "descripcion": "- cruise control inhibit salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1586",
+    "descripcion": "- cruise control brake switch 2 circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1587",
+    "descripcion": "- cruise control clutch control circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1588",
+    "descripcion": "- cruise control clutch control circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1599",
+    "descripcion": "- engine stall or near stall detected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1600",
+    "descripcion": "- tcm internal watchdog operation",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1601",
+    "descripcion": "- serial comm. problema with device 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1602",
+    "descripcion": "- knock sensor (ks) module rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1603",
+    "descripcion": "- loss of sdm serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1604",
+    "descripcion": "- loss of ipc serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1605",
+    "descripcion": "- loss of hvac serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1606",
+    "descripcion": "- serial communication problema with device 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1607",
+    "descripcion": "- serial communication problema with device 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1608",
+    "descripcion": "- serial communication problema with device 8",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1609",
+    "descripcion": "- loss of tcs serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1610",
+    "descripcion": "- loss of pzm serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1611",
+    "descripcion": "- loss of cvrtd serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1612",
+    "descripcion": "- loss of ipm serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1613",
+    "descripcion": "- loss of dim serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1614",
+    "descripcion": "- loss of rim serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1615",
+    "descripcion": "- loss of vtd serial data",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1617",
+    "descripcion": "- engine oil level switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1619",
+    "descripcion": "- engine oil life monitor reset circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1620",
+    "descripcion": "- low coolant circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1621",
+    "descripcion": "- control module long term memory rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1622",
+    "descripcion": "- cylinder select",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1623",
+    "descripcion": "- transmission temp pull-up resistor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1624",
+    "descripcion": "- customer snapshot requested - data available",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1625",
+    "descripcion": "- tcm system reset",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1626",
+    "descripcion": "- theft deterrent fuel enable signal not received",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1627",
+    "descripcion": "- a/d rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1628",
+    "descripcion": "- ect pull-up resistor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1629",
+    "descripcion": "- theft deterrent system - cranking signal",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1630",
+    "descripcion": "- theft deterrent learn mode active",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1631",
+    "descripcion": "- theft deterrent start enable signal not correct",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1632",
+    "descripcion": "- theft deterrent fuel disable signal received",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1633",
+    "descripcion": "- ignition 0 switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1634",
+    "descripcion": "- ignition 1 switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1635",
+    "descripcion": "- 5 volt reference circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1636",
+    "descripcion": "- pcm stack overrun",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1637",
+    "descripcion": "- generator l-terminal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1638",
+    "descripcion": "- generator f-terminal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1639",
+    "descripcion": "- 5 volt reference 2 circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1640",
+    "descripcion": "- driver-1-entrada high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1641",
+    "descripcion": "- fallo indicator lamp (mil) control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1642",
+    "descripcion": "- vehicle speed salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1643",
+    "descripcion": "- engine speed salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1644",
+    "descripcion": "- traction control delivered torque salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1645",
+    "descripcion": "- evaporative emission (evap) vent solenoid contorl circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1646",
+    "descripcion": "- evaporative emission (evap) vent solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1647",
+    "descripcion": "- driver 1 line 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1650",
+    "descripcion": "- control module salida b circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1651",
+    "descripcion": "- fan 1 relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1652",
+    "descripcion": "- powertrain induced chassis pitch salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1653",
+    "descripcion": "- oil level lamp control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1654",
+    "descripcion": "- cruise control inhibit salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1655",
+    "descripcion": "- evap purge solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1656",
+    "descripcion": "- driver 2 line 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1657",
+    "descripcion": "- 1-4 upshift solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1658",
+    "descripcion": "- starter enable relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1660",
+    "descripcion": "- cooling fan control circuitos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1661",
+    "descripcion": "- mil control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1662",
+    "descripcion": "- cruise lamp control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1663",
+    "descripcion": "- oil life lamp control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1664",
+    "descripcion": "- 1-4 upshift lamp control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1665",
+    "descripcion": "- driver 3 line 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1666",
+    "descripcion": "- driver 3 line 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1667",
+    "descripcion": "- reverse inhibit solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1669",
+    "descripcion": "- abs unit expected",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1670",
+    "descripcion": "- driver 4",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1671",
+    "descripcion": "- driver 4 line 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1672",
+    "descripcion": "- low engine oil level lamp control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1673",
+    "descripcion": "- engine hot lamp control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1674",
+    "descripcion": "- tachometer control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1675",
+    "descripcion": "- evap vent solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1676",
+    "descripcion": "- driver 4 line 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1677",
+    "descripcion": "- driver 4 line 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1680",
+    "descripcion": "- driver 5 (ecu fallo)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1681",
+    "descripcion": "- driver 5 line 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1682",
+    "descripcion": "- driver 5 line 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1683",
+    "descripcion": "- driver 5 line 3",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1684",
+    "descripcion": "- driver 5 line 4",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1685",
+    "descripcion": "- driver 5 line 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1686",
+    "descripcion": "- driver 5 line 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1687",
+    "descripcion": "- driver 5 line 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1689",
+    "descripcion": "- delivered torque circuito fault",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1690",
+    "descripcion": "- ecm loop overrun",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1691",
+    "descripcion": "- coolant gage circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1692",
+    "descripcion": "- coolant gage circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1693",
+    "descripcion": "- tachometer circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1694",
+    "descripcion": "- tachometer circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1695",
+    "descripcion": "- remote keyless entry circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1696",
+    "descripcion": "- remote keyless entry voltage high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1700",
+    "descripcion": "- transmission control module (tcm) requested mil illumination",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1701",
+    "descripcion": "- trans. mil request circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1705",
+    "descripcion": "- p/n signal salida circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1719",
+    "descripcion": "- incorrect shifting detected (tcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1740",
+    "descripcion": "- torque reduction signal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1743",
+    "descripcion": "- tp signal from ecm",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1760",
+    "descripcion": "- tcm supply voltage interrupted",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1779",
+    "descripcion": "- engine torque delivered to tcm signal",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1780",
+    "descripcion": "- park/neutral posición [pnp] switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1781",
+    "descripcion": "- engine torque signal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1790",
+    "descripcion": "- transmission control module checksum",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1791",
+    "descripcion": "- transmission control module loop",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1791",
+    "descripcion": "- throttle/pedal posición signal (2000+)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1792",
+    "descripcion": "- transmission control module reprogrammable memory",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1792",
+    "descripcion": "- ecm to tcm engine coolant signal",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1793",
+    "descripcion": "- transmission control module stack overrun",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1793",
+    "descripcion": "- wheel speed signal (2000+)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1795",
+    "descripcion": "- can bus - throttle body posición",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1800",
+    "descripcion": "- tcm power relay control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1801",
+    "descripcion": "- rendimiento selector switch failure",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1804",
+    "descripcion": "- ground control relay",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1810",
+    "descripcion": "- tfp valve posición switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1811",
+    "descripcion": "- maximum adapt and long shift",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1812",
+    "descripcion": "- transmission over temperature condition",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1813",
+    "descripcion": "- torque control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1814",
+    "descripcion": "- torque converter overstressed",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1815",
+    "descripcion": "- transmission rango switch - start in wrong rango",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1816",
+    "descripcion": "- tfp valve posición sw. - park/neu. with drive ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1817",
+    "descripcion": "- tfp valve posición sw. - reverse with drive ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1818",
+    "descripcion": "- tfp valve posición sw. - drive without drive ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1819",
+    "descripcion": "- internal mode switch - no startwrong rango",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1820",
+    "descripcion": "- internal mode switch circuito a low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1822",
+    "descripcion": "- internal mode switch circuito b high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1823",
+    "descripcion": "- internal mode switch circuito p low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1825",
+    "descripcion": "- internal mode switch - invalid rango",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1826",
+    "descripcion": "- internal mode switch circuito c - high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1831",
+    "descripcion": "- pressure control (pc) solenoid power circuito - low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1832",
+    "descripcion": "- pressure control (pc)/shift lock solenoid control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1833",
+    "descripcion": "- a/t solenoids power circuito - low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1834",
+    "descripcion": "- torque converter clutch (tcc)/shift solenoid (ss) control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1835",
+    "descripcion": "- kick-down switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1836",
+    "descripcion": "- kick-down switch failed open",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1837",
+    "descripcion": "- kick-down switch failed short",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1842",
+    "descripcion": "- 1-2 shift solenoid circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1843",
+    "descripcion": "- 1-2 shift solenoid circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1844",
+    "descripcion": "- torque reduction signal circuito desired by tcm",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1845",
+    "descripcion": "- 2-3 shift solenoid circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1847",
+    "descripcion": "- 2-3 shift solenoid circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1850",
+    "descripcion": "- brake band apply solenoid circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1851",
+    "descripcion": "- brake band apply solenoid rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1852",
+    "descripcion": "- brake band apply solenoidlow voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1853",
+    "descripcion": "- brake band apply solenoid high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1860",
+    "descripcion": "- tcc pwm solenoid circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1864",
+    "descripcion": "- torque converter clutch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1865",
+    "descripcion": "- 4-5 shift solenoid (ss) valve control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1866",
+    "descripcion": "- torque converter clutch (tcc) pulse width modulation (pwm) solenoid control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1867",
+    "descripcion": "- torque converter clutch (tcc) pulse width modulation (pwm) solenoid control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1868",
+    "descripcion": "- transmission fluid life",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1870",
+    "descripcion": "- transmission component slipping",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1871",
+    "descripcion": "- undefined gear ratio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1873",
+    "descripcion": "- tcc stator temp. switch circuito low",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1874",
+    "descripcion": "- tcc stator temp. switch circuito high",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1875",
+    "descripcion": "- 4wd low switch circuito electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1884",
+    "descripcion": "- tcc enable/shift light circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1886",
+    "descripcion": "- shift sincronización solenoid",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1887",
+    "descripcion": "- tcc release switch circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1890",
+    "descripcion": "- ecm data entrada circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1890",
+    "descripcion": "- throttle posición signal entrada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1891",
+    "descripcion": "- throttle posición sensor pwm signal low",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1892",
+    "descripcion": "- throttle posición sensor pwm signal high",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1893",
+    "descripcion": "- engine torque signal low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1894",
+    "descripcion": "- engine torque signal high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1895",
+    "descripcion": "- tcm to ecm torque reduction circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2008",
+    "descripcion": "- intake manifold runner control (imrc) solenoid control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2009",
+    "descripcion": "- intake manifold runner control (imrc) solenoid control circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2010",
+    "descripcion": "- intake manifold runner control (imrc) solenoid control circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2066",
+    "descripcion": "- fuel level sensor 2 rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2067",
+    "descripcion": "- fuel level sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2068",
+    "descripcion": "- fuel level sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2096",
+    "descripcion": "- post catalyst fuel trim system low limit",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2097",
+    "descripcion": "- post catalyst fuel trim system high limit",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2098",
+    "descripcion": "- post catalyst fuel trim system low limit",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2099",
+    "descripcion": "- post catalyst fuel trim system high limit",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2100",
+    "descripcion": "- throttle actuador control (tac) motor control circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2101",
+    "descripcion": "- control module throttle actuador posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2105",
+    "descripcion": "- throttle actuador control (tac) system - forced engine shutdown",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2107",
+    "descripcion": "- throttle actuador control (tac) module internal circuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2108",
+    "descripcion": "- throttle actuador control (tac) module rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2119",
+    "descripcion": "- throttle closed posición rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2120",
+    "descripcion": "- accelerator pedal posición (app) sensor 1 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2121",
+    "descripcion": "- accelerator pedal posición (app) sensor 1 rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2122",
+    "descripcion": "- accelerator pedal posición (app) sensor 1 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2123",
+    "descripcion": "- accelerator pedal posición (app) sensor 1 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2125",
+    "descripcion": "- accelerator pedal posición (app) sensor 2 circuito",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2127",
+    "descripcion": "- accelerator pedal posición (app) sensor 2 circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2128",
+    "descripcion": "- accelerator pedal posición (app) sensor 2 circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2135",
+    "descripcion": "- throttle posición (tp) sensor 1-2 correlación",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2138",
+    "descripcion": "- accelerator pedal posición (app) sensor 1-2 correlación",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2176",
+    "descripcion": "- minimum throttle posición not learned",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2500",
+    "descripcion": "- generator l-terminal circuito low voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2501",
+    "descripcion": "- generator l-terminal circuito high voltage",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2535",
+    "descripcion": "- ignition 1 switch circuito high voltage (pcm)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2610",
+    "descripcion": "- ecu fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2763",
+    "descripcion": "- short to voltage in the tcc solenoid",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2764",
+    "descripcion": "- open or short to ground in the tcc pwm solenoid valve circuito  p2a00 - ho2s circuito closed loop (cl) rendimiento banco 1 sensor 1 (pcm)  p2a01 - ho2s circuito closed loop (cl) rendimiento banco 1 sensor 2 (pcm)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+]

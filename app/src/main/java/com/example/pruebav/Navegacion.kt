@@ -1,0 +1,47 @@
+package com.example.pruebav
+
+import android.app.Application
+import android.content.Context
+import android.content.Intent
+import androidx.activity.result.ActivityResultLauncher
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+
+
+@Composable
+fun NavegacionEntreVentanas(
+    context: Context,
+    enableBluetoothLauncher: ActivityResultLauncher<Intent>,
+) {
+
+    // Crear ViewModel una sola vez aquí
+    val application = context.applicationContext as Application
+    val viewModel: OBDViewModel = viewModel(
+        factory = ViewModelProvider.AndroidViewModelFactory(application)
+    )
+    val controlador = rememberNavController()
+    val db = AppDatabase.getDatabase(context)
+
+    NavHost(navController = controlador, startDestination = "inicio") {
+        composable("inicio") {
+            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, db, viewModel)
+        }
+        composable("parametros") {
+            Parametros(context, controlador, viewModel)
+        }
+        composable("errores") {
+            CError(context, controlador, viewModel)
+        }
+        composable("datos") {
+            Datos(controlador, db)
+        }
+    }
+}
