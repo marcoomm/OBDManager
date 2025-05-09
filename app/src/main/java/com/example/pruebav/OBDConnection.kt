@@ -265,13 +265,14 @@ class OBDConnection(private val context: Context) {
 
             // Aquí asumimos que si formattedValue lanza excepción, no hay datos válidos.
             val listaErrores = if (result.formattedValue.isEmpty()) {
-                emptyList() // No hay errores
+                null// No hay errores
             } else {
                 result.formattedValue.trim().split(',', ' ').filter { it.isNotBlank() }
             }
 
-            datos["listaErrores"] = listaErrores.joinToString(separator = "\n")
-
+            listaErrores?.let {
+                datos["listaErrores"] = it.joinToString(separator = "\n")
+            }
             Log.d("OBD:Lectura", "Codigos de error cargados $datos")
 
         } catch (e: Exception) {

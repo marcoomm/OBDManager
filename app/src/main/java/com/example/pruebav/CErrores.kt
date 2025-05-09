@@ -78,7 +78,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
     var erroresEncontrados by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
 
     LaunchedEffect(Unit) {
-        //delay(5000)
+        delay(1000)
 
         cargando=false
 
