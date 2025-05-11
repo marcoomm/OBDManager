@@ -59,7 +59,7 @@ import com.example.pruebav.database.guardarParametros
 @Composable
 fun Parametros(context: Context, navController: NavController, viewModel: OBDViewModel) {
 
-    val vinS by viewModel.vin.collectAsState()
+    val vin by viewModel.vin.collectAsState()
     val datosMap by viewModel.parametros.collectAsState()
 
     // Si quieres una lista de objetos Parametro para la UI:
@@ -253,7 +253,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
 
             // BOTÓN FIJO ARRIBA DE LA NAVIGATION BAR
             Button(
-                onClick = { guardarParametros(context, vinS, listaParametros) },
+                onClick = { guardarParametros(context, vin, listaParametros) },
                 colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor =Color(0xFF1E88E5)),
                 modifier = Modifier
                     .fillMaxWidth()

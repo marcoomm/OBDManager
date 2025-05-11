@@ -5,10 +5,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
@@ -32,7 +28,7 @@ fun NavegacionEntreVentanas(
 
     NavHost(navController = controlador, startDestination = "inicio") {
         composable("inicio") {
-            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, db, viewModel)
+            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, viewModel)
         }
         composable("parametros") {
             Parametros(context, controlador, viewModel)

@@ -6238,5 +6238,5 @@
     "descripcion": "- open or short to ground in the tcc pwm solenoid valve circuito  p2a00 - ho2s circuito closed loop (cl) rendimiento banco 1 sensor 1 (pcm)  p2a01 - ho2s circuito closed loop (cl) rendimiento banco 1 sensor 2 (pcm)",
     "categoria": "Motor",
     "componente": "Sensor de motor"
-  },
+  }
 ]

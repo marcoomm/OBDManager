@@ -94,13 +94,13 @@ class MainActivity : ComponentActivity() {
 
 @SuppressLint("MissingPermission")
 @Composable
-fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,database:AppDatabase,viewModel: OBDViewModel) {
+fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,viewModel: OBDViewModel) {
 
     val scope = rememberCoroutineScope()
     var showDeviceList by remember { mutableStateOf(false) }
     var pairedDevices by remember { mutableStateOf(emptyList<BluetoothDevice>()) }
-    val currentTime by viewModel.fecha.collectAsState()
     val mostrar = remember { mutableStateOf(false) }
+    val currentTime by viewModel.fecha.collectAsState()
     val connectionStatus by viewModel.connectionStatus.collectAsState()
     val isConnected by viewModel.isConnected.collectAsState()
     val ecuReady by viewModel.ecuReady.collectAsState()

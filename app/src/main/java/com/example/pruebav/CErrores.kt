@@ -193,27 +193,9 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                         CircularProgressIndicator(color = Color.White)
                     }
                 } else {
-                    ErrorList(listaErrores = erroresList)
+                    ErrorList(context,listaErrores = erroresList)
                 }
             }
-
-            Button(
-                onClick = {
-                    if(!cargando){
-                        guardarErrores(context, erroresList)
-                    }else{
-                        Toast.makeText(context, "Cargando datos...", Toast.LENGTH_SHORT).show()
-                    }},
-                colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor = Color(0xFF1E88E5)),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-                    .height(50.dp),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Text(text = "Guardar Datos", fontSize = 16.sp, fontWeight = FontWeight.Bold)
-            }
-
         }
     }
 }
@@ -221,7 +203,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
 //elementos composable
 
 @Composable
-fun ErrorList(listaErrores: List<ErroresCoche>) {
+fun ErrorList(context: Context,listaErrores: List<ErroresCoche>) {
     if (listaErrores.isEmpty()) {
         Box(
             modifier = Modifier
@@ -254,6 +236,20 @@ fun ErrorList(listaErrores: List<ErroresCoche>) {
             items(listaErrores) { error ->
                 ErrorCard(info = error)
             }
+        }
+
+        Button(
+            onClick = {
+                guardarErrores(context, listaErrores)
+            },
+            colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor = Color(0xFF1E88E5)),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+                .height(50.dp),
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Text(text = "Guardar Datos", fontSize = 16.sp, fontWeight = FontWeight.Bold)
         }
     }
 }

@@ -273,7 +273,7 @@ class OBDConnection(private val context: Context) {
             listaErrores?.let {
                 datos["listaErrores"] = it.joinToString(separator = "\n")
             }
-            Log.d("OBD:Lectura", "Codigos de error cargados $datos")
+            Log.d("OBD:Lectura", "Codigos de error actualizados $datos")
 
         } catch (e: Exception) {
             Log.e("OBD:Lectura", "Probablemente sin errores: ${e.message}")
@@ -479,7 +479,9 @@ class OBDConnection(private val context: Context) {
             delay(300)*/
 
 
-            datos["RPM"] = rpm.formattedValue + rpm.unit
+            datos["RPM"] = rpm.formattedValue
+            datos["Nivel de combustible"] = fuelLevel!!.formattedValue
+            datos["Tipo de combustible"] = fuelType!!.formattedValue
 
             /*
             datos["Nivel combustible"] = fuelLevel.formattedValue + fuelLevel.unit

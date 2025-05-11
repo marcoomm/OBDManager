@@ -123,7 +123,7 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         }
         // Una vez conectado, registramos fecha y hora actual
         val fechaActual = LocalDateTime.now()
-        val formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
+        val formato = DateTimeFormatter.ofPattern("HH:mm")
         val fechaFormateada = fechaActual.format(formato)
         _fecha.value = fechaFormateada  // o llama a tu setFecha()
         _isConnected.value = true

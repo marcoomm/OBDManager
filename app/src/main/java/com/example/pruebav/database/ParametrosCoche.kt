@@ -13,6 +13,7 @@ import androidx.room.Query
 import com.example.pruebav.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -23,7 +24,7 @@ import kotlinx.coroutines.withContext
 )
 data class ParametrosCoche(
     @PrimaryKey val vin: String,
-    val parametros: List<Parametro> // Tendrás que convertirlo con TypeConverter
+    val parametros: List<Parametro>
 )
 
 data class Parametro(
@@ -31,7 +32,6 @@ data class Parametro(
     val valor: String,
     val categoria: String
 )
-
 
 @Dao
 interface ParametrosDao {
@@ -48,23 +48,29 @@ interface ParametrosDao {
 
 fun guardarParametros(context: Context, vin: String, parametros: List<Parametro>) {
     val entry = ParametrosCoche(vin, parametros)
-
     val db = AppDatabase.getDatabase(context)
+
     CoroutineScope(Dispatchers.IO).launch {
         try {
             db.parametrosDao().insertarParametros(entry)
+
+            val pa = db.parametrosDao().obtenerParametros(vin)
+            Log.d("BBDD", pa.toString())
+
             withContext(Dispatchers.Main) {
                 Toast.makeText(context, "Datos guardados correctamente", Toast.LENGTH_SHORT).show()
-                Log.d("OBD","Guardados correctamente")
+                Log.d("OBD", "Guardados correctamente")
             }
+
         } catch (e: Exception) {
-            withContext(Dispatchers.Main){
-                Toast.makeText(context, "Error al guardar los datos: ${e.message}", Toast.LENGTH_LONG).show()
-                Log.d("OBD","Error al guardar")
+            withContext(Dispatchers.Main) {
+                Toast.makeText(context, "Error al guardar los datos", Toast.LENGTH_LONG).show()
+                Log.e("OBD", "Error al guardar", e)
             }
         }
     }
 }
+
 
 
 // Modificación aquí para obtener un solo ParametrosCoche en vez de una lista
