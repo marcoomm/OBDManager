@@ -92,18 +92,18 @@ fun Datos(navController: NavController, database: AppDatabase) {
             todosCoches.forEach{ coche ->
                 Log.d("Coche", "${coche.marca} ${coche.modelo}")
             }
-
-            /*
-            if (vinS != "") {
-                //vins = database.numeroVinDao().getAllVins() ?: emptyList()
-                //errores = database.erroresDao().obtenerErroresCoche(vinS) ?: emptyList()
-
+            todosVin.forEach { vin ->
+                Log.d("VIN", vin)
             }
-            */
-
         }
     }
-
+    LaunchedEffect(seleccionadoCoche) {
+        cargando = true
+        parametros = null
+        errores = emptyList()
+        seleccionadoVin = ""
+        option = "Parametros"
+    }
 
     Scaffold(
         containerColor = Color.Black,
@@ -246,63 +246,72 @@ fun Datos(navController: NavController, database: AppDatabase) {
                         ) {
                             DropdownMenuItem(
                                 onClick = {
-                                    option = "Parametros"
-                                    CoroutineScope(Dispatchers.IO).launch {
-                                        if (seleccionadoCoche != null) {
-                                            val vin = database.numeroVinDao().getVinFromCoche(
-                                                seleccionadoCoche!!.marca, seleccionadoCoche!!.modelo
-                                            )
+                                    option = "Parámetros"
+                                    cargando = true // Activa el indicador de carga inmediatamente
 
-                                            val datos = database.parametrosDao().obtenerParametros(vin)
+                                    seleccionadoCoche?.let { coche ->
+                                        CoroutineScope(Dispatchers.IO).launch {
+                                            try {
+                                                val vin = database.numeroVinDao().getVinFromCoche(coche.marca, coche.modelo)
+                                                val datos = database.parametrosDao().obtenerParametros(vin)
 
-                                            withContext(Dispatchers.Main) {
-                                                seleccionadoVin = vin
-                                                parametros = datos
-                                                cargando = false
-                                            }
-                                        } else {
-                                            Log.e("OBD_Database", "los datos no se pueden cargar suprimo")
-                                            withContext(Dispatchers.Main) {
-                                                cargando = false // También aquí, por si no hay coche válido
+                                                withContext(Dispatchers.Main) {
+                                                    seleccionadoVin = vin
+                                                    parametros = datos
+                                                    cargando = false
+                                                }
+                                            } catch (e: Exception) {
+                                                Log.e("OBD_Database", "Error al obtener parámetros del coche: ${e.message}")
+                                                withContext(Dispatchers.Main) {
+                                                    cargando = false
+                                                }
                                             }
                                         }
+                                    } ?: run {
+                                        Log.e("OBD_Database", "Los datos no se pueden cargar. Coche no seleccionado.")
+                                        cargando = false
                                     }
 
                                     expandedOption = false
                                 },
-                                text = { Text("Parametros", color = Color.White, fontSize = 16.sp) })
+                                text = { Text("Parámetros", color = Color.White, fontSize = 16.sp) }
+                            )
 
                             HorizontalDivider()
 
                             DropdownMenuItem(
                                 onClick = {
-                                    option = "Codigos de error"
+                                    option = "Códigos de error"
+                                    cargando = true // Activa el indicador de carga desde el principio
 
-                                    CoroutineScope(Dispatchers.IO).launch {
-                                        if (seleccionadoCoche != null) {
-                                            val vin = database.numeroVinDao().getVinFromCoche(
-                                                seleccionadoCoche!!.marca, seleccionadoCoche!!.modelo
-                                            )
+                                    seleccionadoCoche?.let { coche ->
+                                        CoroutineScope(Dispatchers.IO).launch {
+                                            try {
+                                                val vin = database.numeroVinDao().getVinFromCoche(coche.marca, coche.modelo)
+                                                val datos = database.erroresDao().obtenerErroresCoche(vin)
 
-                                            val datos = database.erroresDao().obtenerErroresCoche(vin)
-
-                                            withContext(Dispatchers.Main) {
-                                                seleccionadoVin = vin
-                                                if (datos != null) {
-                                                    errores = datos
+                                                withContext(Dispatchers.Main) {
+                                                    seleccionadoVin = vin
+                                                    errores = datos ?: emptyList()
+                                                    cargando = false
+                                                }
+                                            } catch (e: Exception) {
+                                                Log.e("OBD_Database", "Error al obtener datos del coche: ${e.message}")
+                                                withContext(Dispatchers.Main) {
+                                                    cargando = false
                                                 }
                                             }
-                                            cargando = false
-                                        } else {
-                                            Log.e("OBD_Database", "los datos no se pueden cargar suprimo")
-                                            withContext(Dispatchers.Main) {
-                                                cargando = false // También aquí, por si no hay coche válido
-                                            }
                                         }
+                                    } ?: run {
+                                        Log.e("OBD_Database", "Los datos no se pueden cargar. Coche no seleccionado.")
+                                        cargando = false
                                     }
+
                                     expandedOption = false
                                 },
-                                text = { Text("Códigos de error", color = Color.White, fontSize = 16.sp) })
+                                text = { Text("Códigos de error", color = Color.White, fontSize = 16.sp) }
+                            )
+
                         }
                     }
                 }
@@ -342,7 +351,7 @@ fun Datos(navController: NavController, database: AppDatabase) {
                     }
                 } else {
                     // No se ha seleccionado un coche
-                    DatosVacios()
+                    PantallaCarga()
                 }
 
 

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.bluetooth.BluetoothDevice
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pruebav.database.CodigosError
@@ -47,13 +48,13 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
 
 
     //variables obd
-    private var _vin = MutableStateFlow("")
+    private var _vin = MutableStateFlow("NO DATA")
     var vin: StateFlow<String> = _vin
-    private val _km = MutableStateFlow("")
+    private val _km = MutableStateFlow("NO DATA")
     var km: StateFlow<String> = _km
-    private val _nerrores = MutableStateFlow("")
+    private val _nerrores = MutableStateFlow("NO DATA")
     var nerrores: StateFlow<String> = _nerrores
-    private val _fecha = MutableStateFlow("")
+    private val _fecha = MutableStateFlow("-")
     var fecha: StateFlow<String> = _fecha
 
     fun setVin(nvin:String) {
@@ -121,49 +122,59 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
             OBDManager.viewModel = this@OBDViewModel
             obdConnection.connectToOBD(device)
         }
-        // Una vez conectado, registramos fecha y hora actual
-        val fechaActual = LocalDateTime.now()
-        val formato = DateTimeFormatter.ofPattern("HH:mm")
-        val fechaFormateada = fechaActual.format(formato)
-        _fecha.value = fechaFormateada  // o llama a tu setFecha()
-        _isConnected.value = true
     }
 
 
+    private var lecturaIniciada = false
+
     fun lecturaInicial() {
+        if (lecturaIniciada) return // Solo se ejecuta una vez
+        lecturaIniciada = true
+
         viewModelScope.launch {
             runCatching {
+                // Iniciar conexión OBD y leer datos iniciales
                 val datosIniciales = withContext(Dispatchers.IO) {
                     OBDManager.iniciar(obdConnection)
                     OBDManager.leerDatosIniciales()
                 }
 
-                // Estos ya pueden estar en Main, si no son costosos
+                // Asigna los valores obtenidos al StateFlow
                 val vinLimpio = OBDManager.limpiarVin(datosIniciales["vin"] ?: "")
                 _vin.value = vinLimpio
                 _km.value = datosIniciales["km"] ?: ""
                 _nerrores.value = datosIniciales["numerCodes"] ?: ""
 
-                delay(1000)
+                delay(1000) // Espera para simular proceso de lectura
 
+                // Leer los códigos de error
                 val errores = withContext(Dispatchers.IO) {
                     OBDManager.leerCodigos()
                 }
                 _codigosError.value = errores
 
-                // Luego lanzar la lectura periódica
-                lecturaParametros()
+                // Establecer la fecha y hora actual
+                val fechaActual = LocalDateTime.now()
+                val formato = DateTimeFormatter.ofPattern("HH:mm")
+                _fecha.value = fechaActual.format(formato)
+                _isConnected.value = true
+
             }.onFailure {
                 it.printStackTrace()
             }
         }
     }
 
+    private var leyendoParametros = false
 
-    private fun lecturaParametros() {
-        viewModelScope.launch(Dispatchers.IO) {
-            //while (isConnected.value) {
+    fun lecturaParametros() {
+        if (leyendoParametros) return // Solo se ejecuta si no estamos ya leyendo parámetros
+
+        leyendoParametros = true
+        viewModelScope.launch {
+            while (_isConnected.value) { // Mientras esté conectado
                 try {
+                    // Leer los parámetros cada 200ms
                     val datos = OBDManager.leerParametros()
 
                     // Asigna el resultado al StateFlow
@@ -172,10 +183,17 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-                //delay(1000)
-            //}
+                delay(200) // Espera de 200ms para la próxima lectura
+            }
+            leyendoParametros = false // Detiene la lectura cuando ya no está conectado
         }
     }
+
+
+    fun detenerLectura() {
+        leyendoParametros = false
+    }
+
 }
 
 object OBDManager {

@@ -35,6 +35,45 @@ data class NumeroVin(
     companion object {
         suspend fun decodeVinHttpClient(vin: String): NumeroVin? = withContext(Dispatchers.IO) {
             val apiUrl = "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvaluesextended/$vin?format=json"
+            val wmiToMarca = mapOf(
+                "WVW" to "Volkswagen",
+                "WAU" to "Audi",
+                "WBA" to "BMW",
+                "WDB" to "Mercedes-Benz",
+                "ZFA" to "Fiat",
+                "ZFF" to "Ferrari",
+                "ZAR" to "Alfa Romeo",
+                "VF1" to "Renault",
+                "VF3" to "Peugeot",
+                "VSS" to "SEAT",
+                "TMB" to "Skoda",
+                "YS3" to "Saab",
+                "YV1" to "Volvo",
+                "SALL" to "Land Rover",
+                "SAJ" to "Jaguar",
+                "ZAM" to "Maserati",
+                "ZHW" to "Lamborghini",
+                "XLR" to "Dacia",
+                "UU1" to "Dacia",
+                "XL9" to "Spyker",
+                "XMC" to "McLaren",
+                "WME" to "Smart",
+                "W0L" to "Opel",
+                "VLU" to "Renault Trucks",
+                "U5Y" to "Kia",
+                "TMA" to "Hyundai",
+                "SB1" to "Toyota",
+                "VNK" to "Toyota",
+                "TRU" to "Audi",
+                "SHS" to "Honda",
+                "SJN" to "Nissan"
+                // Añade más si necesitas
+            )
+
+            fun obtenerMarcaDesdeWMI(vin: String): String {
+                val wmi = vin.take(3).uppercase()
+                return wmiToMarca[wmi] ?: "Desconocida"
+            }
 
             try {
                 val connection = URL(apiUrl).openConnection() as HttpURLConnection
@@ -46,6 +85,14 @@ data class NumeroVin(
                 val json = JSONObject(response)
                 val result = json.getJSONArray("Results").getJSONObject(0)
 
+                val marcaApi = result.optString("Make", "").takeIf { it.isNotBlank() } ?: "Desconocida"
+                val marcaFinal = if (marcaApi == "Desconocida" || marcaApi.isBlank()) {
+                    obtenerMarcaDesdeWMI(vin)
+                } else {
+                    marcaApi
+                }
+
+
                 val fuelType = result.optString("FuelTypePrimary").takeIf { it.isNotBlank() }
                 val bodyClass = result.optString("BodyClass").takeIf { it.isNotBlank() }
                 val transmission = result.optString("TransmissionStyle").takeIf { it.isNotBlank() }
@@ -55,12 +102,13 @@ data class NumeroVin(
 
                 NumeroVin(
                     vin = vin,
-                    marca = result.optString("Make", "Desconocida"),
+                    marca = marcaFinal,
                     modelo = result.optString("Model", "Desconocido"),
                     caract = caract,
                     anioFabricacion = result.optString("ModelYear", null.toString()).toIntOrNull(),
                     numeroSerie = result.optString("SerialNumber", "-")
                 )
+
             } catch (e: Exception) {
                 e.printStackTrace()
                 null

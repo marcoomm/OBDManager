@@ -28,7 +28,7 @@ fun NavegacionEntreVentanas(
 
     NavHost(navController = controlador, startDestination = "inicio") {
         composable("inicio") {
-            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, viewModel)
+            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, viewModel,db)
         }
         composable("parametros") {
             Parametros(context, controlador, viewModel)

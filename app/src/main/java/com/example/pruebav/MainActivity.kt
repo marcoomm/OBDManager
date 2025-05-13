@@ -34,7 +34,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
+import com.example.pruebav.database.NumeroVin
+import com.example.pruebav.database.NumeroVinDao
 import com.example.pruebav.ui.theme.PruebaVTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -62,19 +65,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         requestBluetoothPermissions()
 
-        /*
-        val lifecycleObserver = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_STOP) {
-                // Aquí se ejecuta cuando la app se va al fondo o se cierra
-                OBDManager.detener()
-            }
-        }
-
-        lifecycle.addObserver(lifecycleObserver)
-
-
-         */
-
         setContent {
             PruebaVTheme {
                 NavegacionEntreVentanas(this, enableBluetoothLauncher)
@@ -94,7 +84,7 @@ class MainActivity : ComponentActivity() {
 
 @SuppressLint("MissingPermission")
 @Composable
-fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,viewModel: OBDViewModel) {
+fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,viewModel: OBDViewModel,database: AppDatabase) {
 
     val scope = rememberCoroutineScope()
     var showDeviceList by remember { mutableStateOf(false) }
@@ -126,10 +116,47 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     LaunchedEffect(isConnected, ecuReady) {
         if (isConnected && ecuReady) {
             viewModel.lecturaInicial()
-        }else{
+        } else if (!isConnected) {
             OBDManager.desconectar()
+            viewModel.detenerLectura()
         }
     }
+
+    LaunchedEffect(vin){
+
+        val numeroVin = NumeroVin.decodeVinHttpClient(vin)
+        numeroVin?.let { vinData ->
+            Log.d("VIN", vinData.marca)
+            Log.d("VIN", vinData.modelo)
+            Log.d("VIN",vinData.caract.toString())
+
+            viewModel.setMarca(vinData.marca)
+            viewModel.setModelo(vinData.modelo)
+            viewModel.setAnio(vinData.anioFabricacion.toString())
+            viewModel.setCaract(vinData.caract.toString())
+
+            val dao: NumeroVinDao = database.numeroVinDao()
+            val existingVin = dao.getNumeroVin(vin)
+            if (existingVin == null) {
+                dao.insertNumeroVin(vinData)
+                Toast
+                    .makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT)
+                    .show()
+            }else{
+                Toast
+                    .makeText(context, "Coche ya registrado", Toast.LENGTH_SHORT)
+                    .show()
+                Log.i("ExistingVin","Vin ya registrado")
+            }
+        }
+    }
+
+    DisposableEffect(Unit) {
+        onDispose {
+            viewModel.detenerLectura()
+        }
+    }
+
 
 
     Scaffold(
@@ -240,6 +267,34 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                     Text("Conectar OBD-II")
                 }
 
+                if (showDeviceList) {
+                    AlertDialog(
+                        onDismissRequest = { showDeviceList = false },
+                        title = { Text("Selecciona un dispositivo") },
+                        text = {
+                            Column {
+                                pairedDevices.forEach { device ->
+                                    Button(onClick = {
+                                        scope.launch {
+                                            try {
+                                                viewModel.conectarDispositivo(device)
+                                                viewModel.onConnected(device.name ?: "desconocido")
+
+                                            } catch (e: Exception) {
+                                                viewModel.setConnectionStatus("Error al conectar")
+                                            }
+                                        }
+                                        showDeviceList = false
+                                    }) {
+                                        Text(device.name ?: "Desconocido")
+                                    }
+                                }
+                            }
+                        },
+                        confirmButton = {}
+                    )
+                }
+
                 Button(modifier = Modifier, colors = ButtonColors(Color(0xFF1E88E5), Color.White,Color(0xFF1E88E5),Color.White),
                     onClick = {
                         scope.launch(Dispatchers.IO){
@@ -257,58 +312,6 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 }
             }
 
-            if (showDeviceList) {
-                AlertDialog(
-                    onDismissRequest = { showDeviceList = false },
-                    title = { Text("Selecciona un dispositivo") },
-                    text = {
-                        Column {
-                            pairedDevices.forEach { device ->
-                                Button(onClick = {
-                                    scope.launch {
-                                        try {
-                                            viewModel.conectarDispositivo(device)
-                                            viewModel.onConnected(device.name ?: "desconocido")
-
-                                            //vinprueba.value="1HGCM82633A004352"
-                                            //viewModel.setVin
-                                            /*
-                                                val numeroVin = NumeroVin.decodeVinHttpClient(vin)
-                                                numeroVin?.let { vinData ->
-                                                    Log.d("VIN", vinData.marca)
-                                                    Log.d("VIN", vinData.modelo)
-                                                    Log.d("VIN",vinData.caract.toString())
-
-                                                    viewModel.setMarca(vinData.marca)
-                                                    viewModel.setModelo(vinData.modelo)
-                                                    viewModel.setAnio(vinData.anioFabricacion.toString())
-                                                    viewModel.setCaract(vinData.caract.toString())
-
-
-
-                                                    val dao: NumeroVinDao = database.numeroVinDao()
-                                                    val existingVin = dao.getNumeroVin(vin)
-                                                    if (existingVin == null) {
-                                                        dao.insertNumeroVin(vinData)
-                                                    }else{
-                                                        Log.i("ExistingVin","Vin ya registrado")
-                                                    }
-                                                }*/
-
-                                        } catch (e: Exception) {
-                                            viewModel.setConnectionStatus("Error al conectar")
-                                        }
-                                    }
-                                    showDeviceList = false
-                                }) {
-                                    Text(device.name ?: "Desconocido")
-                                }
-                            }
-                        }
-                    },
-                    confirmButton = {}
-                )
-            }
 
             Spacer(modifier=Modifier.padding(top=25.dp))
 
@@ -319,9 +322,9 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 carac = caract,
                 mostrar = mostrar,
                 vin = vin,
-                km = km,
-                nErrores = ncodigos,
-                currentTime = currentTime
+                currentTime = currentTime,
+                errores = ncodigos,
+                km = km
             )
 
             Botones(context,navController,isConnected)
@@ -379,15 +382,14 @@ fun VehicleInfoScreen(
     carac: String,
     mostrar: MutableState<Boolean>,
     vin: String,
-    km: String,
-    nErrores: String,
-    currentTime: String
+    currentTime: String,
+    errores: String,
+    km: String
 ) {
-
     val vehicleData = listOf(
-        VehicleInfo("Estado", "$nErrores fallos detectados", currentTime),
-        VehicleInfo("VIN", vin, currentTime),
-        VehicleInfo("Km", km, currentTime)
+        VehicleInfo("Estado", "Nºerrores detectados", currentTime),
+        VehicleInfo("VIN", "Número de bastidor", currentTime),
+        VehicleInfo("Km", "Distancia desde borrado", currentTime)
     )
 
     Column(
@@ -409,7 +411,7 @@ fun VehicleInfoScreen(
                 modifier = Modifier.padding(start = 12.dp, bottom = 8.dp)
             )
 
-            Spacer(modifier = Modifier.width(12.dp))
+            //Spacer(modifier = Modifier.width(8.dp))
 
             Icon(
                 onClick = {
@@ -429,20 +431,27 @@ fun VehicleInfoScreen(
 
         LazyColumn {
             items(vehicleData) { item ->
-                VehicleInfoCard(item)
+                val dato = when (item.title) {
+                    "Estado" -> errores
+                    "VIN" -> vin
+                    "Km" -> km
+                    else -> ""
+                }
+
+                VehicleInfoCard(item, dato)
             }
         }
     }
 }
 
 
-@Composable
-fun VehicleInfoCard(info: VehicleInfo) {
 
+@Composable
+fun VehicleInfoCard(info: VehicleInfo, valor: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp),
+            .padding(vertical = 5.dp),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
     ) {
@@ -452,10 +461,19 @@ fun VehicleInfoCard(info: VehicleInfo) {
         ) {
             Box(
                 modifier = Modifier
-                    .width(145.dp)
+                    .width(160.dp)
                     .height(70.dp)
                     .background(Color.White, shape = RoundedCornerShape(8.dp))
-            )
+                    .padding(8.dp)
+            ) {
+                Text(
+                    text = valor,
+                    color = Color.Black,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    modifier = Modifier.align(Alignment.Center)
+                )
+            }
 
             Spacer(modifier = Modifier.width(30.dp))
 
@@ -482,12 +500,12 @@ fun VehicleInfoCard(info: VehicleInfo) {
 }
 
 
+
 data class VehicleInfo(
     val title: String,
     val description: String,
     val checkedTime: String
 )
-
 
 
 
@@ -551,11 +569,14 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .weight(1f)
                    .padding(8.dp)
                    .clickable {
+                       /*
                        if (isConnected) {
-                           navController.navigate("parametros")
                        } else {
                            Toast.makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT).show()
                        }
+
+                        */
+                       navController.navigate("parametros")
                    },
                shape = RoundedCornerShape(12.dp),
                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)

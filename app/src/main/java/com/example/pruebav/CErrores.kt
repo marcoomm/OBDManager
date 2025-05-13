@@ -62,10 +62,11 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
 
     var cargando by remember { mutableStateOf(true) }
     val vin by viewModel.vin.collectAsState()
-    val listaErrores by viewModel.codigosError.collectAsState()
+    val codigosError by viewModel.codigosError.collectAsState()
+    val listaerrores by viewModel.listacodigos.collectAsState()
 
-    val erroresList = remember(listaErrores, vin) {
-        listaErrores.map { (codigo, descripcion) ->
+    val erroresList = remember(codigosError, vin) {
+        codigosError.map { (codigo, descripcion) ->
             ErroresCoche(
                 codigoError = codigo,
                 vin = vin,
@@ -73,8 +74,6 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
             )
         }
     }
-
-    val listaerrores by viewModel.listacodigos.collectAsState()
     var erroresEncontrados by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
 
     LaunchedEffect(Unit) {
@@ -83,7 +82,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
         cargando=false
 
         // Extraemos los códigos puros del mapa
-        val codigosPuros = listaErrores["listaErrores"]
+        val codigosPuros = codigosError["listaErrores"]
             ?.split("\n")
             ?.filter { it.isNotBlank() }
             ?: emptyList()
@@ -129,7 +128,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                     LabelText(texto = "Asistente")
                 }
 
-                NavItem(onClickAction = { }) {
+                NavItem(onClickAction = { navController.navigate("inicio") }) {
                     IconContainer {
                         StateLayer {
                             Icon(
@@ -145,7 +144,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                     )
                 }
 
-                NavItem(onClickAction = { navController.navigate("") }) {
+                NavItem(onClickAction = { navController.navigate("datos") }) {
                     IconContainer {
                         StateLayer {
                             Icon(

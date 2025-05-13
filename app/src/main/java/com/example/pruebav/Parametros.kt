@@ -29,6 +29,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -62,12 +63,35 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
     val vin by viewModel.vin.collectAsState()
     val datosMap by viewModel.parametros.collectAsState()
 
-    // Si quieres una lista de objetos Parametro para la UI:
     val listaParametros by rememberUpdatedState(datosMap.map { (nombre, valor) -> Parametro(nombre, valor, categoria = "") })
 
     var expanded by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf("Todo") }
     val isLoading by remember { mutableStateOf(false) }
+    val lifecycleOwner = LocalLifecycleOwner.current
+
+
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
+                Lifecycle.Event.ON_RESUME -> {
+                    viewModel.lecturaParametros()
+                }
+                Lifecycle.Event.ON_PAUSE -> {
+                    viewModel.detenerLectura()
+                }
+                else -> {}
+            }
+        }
+
+        lifecycleOwner.lifecycle.addObserver(observer)
+
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+            viewModel.detenerLectura()
+        }
+    }
+
 
     /*
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -161,6 +185,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
             Spacer(modifier = Modifier.height(12.dp))
 
             // FILTER BUTTON
+            /*
             Row(
                 modifier = Modifier.fillMaxWidth().height(40.dp).padding(start=35.dp,end=22.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -221,8 +246,9 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
 
 
             }
+            */
 
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(52.dp))
 
             /*
             val filtrados = when (selectedOption) {
@@ -358,7 +384,7 @@ fun ParameterCard(info: Parametro) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp)
-            .height(80.dp),  // Haciendo la tarjeta más estrecha
+            .height(80.dp),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
     ) {
