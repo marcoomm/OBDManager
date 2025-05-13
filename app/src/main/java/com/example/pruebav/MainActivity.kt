@@ -122,7 +122,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
         }
     }
 
-    LaunchedEffect(vin){
+    /*LaunchedEffect(vin){
 
         val numeroVin = NumeroVin.decodeVinHttpClient(vin)
         numeroVin?.let { vinData ->
@@ -149,7 +149,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 Log.i("ExistingVin","Vin ya registrado")
             }
         }
-    }
+    }*/
 
     DisposableEffect(Unit) {
         onDispose {
