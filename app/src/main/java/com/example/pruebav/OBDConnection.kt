@@ -206,8 +206,13 @@ class OBDConnection(private val context: Context) {
                 "$rawKm km"
             }
 
-            val turboTemp = obdConnection!!.run((SafeObdCommand(TurboTemperatureCommand()))).formattedValue.takeIf { it.isNotBlank() } ?: "nodisponible"
-            Log.d("turboOBD",turboTemp)
+            val turboTemp = try{
+                obdConnection!!.run((SafeObdCommand(TurboTemperatureCommand())))
+            } catch (e: Exception) {
+                null
+            }
+            datos["turbotemp"] = turboTemp?.formattedValue ?: "No Data"
+            Log.d("turbotemp", ": ${datos["turbotemp"]}")
 
             /*
 
@@ -255,9 +260,9 @@ class OBDConnection(private val context: Context) {
             val troubleCodesCommand = SafeObdCommand(TroubleCodesCommand())
             val result = obdConnection!!.run(troubleCodesCommand)
 
-            // Aquí asumimos que si formattedValue lanza excepción, no hay datos válidos.
             val listaErrores = if (result.formattedValue.isEmpty()) {
-                null// No hay errores
+                null
+                //Log.d("OBD:Lectura","no hay errores")
             } else {
                 result.formattedValue.trim().split(',', ' ').filter { it.isNotBlank() }
             }
@@ -269,8 +274,8 @@ class OBDConnection(private val context: Context) {
 
         } catch (e: Exception) {
             Log.e("OBD:Lectura", "Probablemente sin errores: ${e.message}")
-            e.printStackTrace() // Esto imprime la traza completa
-            datos["listaErrores"] = "" // Manejo limpio en caso de error
+            e.printStackTrace()
+            datos["listaErrores"] = ""
         }
         return datos
     }
@@ -281,7 +286,7 @@ class OBDConnection(private val context: Context) {
         try{
 
             try {
-                val rpm = obdConnection!!.run(SafeObdCommand(RPMCommand()))
+                val rpm = obdConnection!!.run(SafeObdCommand1(RPMCommand()))
                 datos["RPM"] = rpm.formattedValue
             } catch (e: Exception) {
                 datos["RPM"] = "No Data"

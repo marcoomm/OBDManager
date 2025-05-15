@@ -192,7 +192,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                         CircularProgressIndicator(color = Color.White)
                     }
                 } else {
-                    ErrorList(context,listaErrores = erroresList)
+                    ErrorList(context,vin,listaErrores = erroresList)
                 }
             }
         }
@@ -202,7 +202,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
 //elementos composable
 
 @Composable
-fun ErrorList(context: Context,listaErrores: List<ErroresCoche>) {
+fun ErrorList(context: Context,vin:String,listaErrores: List<ErroresCoche>) {
     if (listaErrores.isEmpty()) {
         Box(
             modifier = Modifier
@@ -239,7 +239,7 @@ fun ErrorList(context: Context,listaErrores: List<ErroresCoche>) {
 
         Button(
             onClick = {
-                guardarErrores(context, listaErrores)
+                guardarErrores(context, vin,listaErrores)
             },
             colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor = Color(0xFF1E88E5)),
             modifier = Modifier

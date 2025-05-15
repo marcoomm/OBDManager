@@ -51,11 +51,14 @@ interface ErroresCocheDao {
     suspend fun borrarErroresPorVin(vin: String)
 }
 
-fun guardarErrores(context: Context, errores: List<ErroresCoche>) {
+fun guardarErrores(context: Context, vin: String ,errores: List<ErroresCoche>) {
     val db = AppDatabase.getDatabase(context)
     CoroutineScope(Dispatchers.IO).launch {
         try {
             db.erroresDao().insertarErroresCoche(errores)
+
+            val pa = db.erroresDao().obtenerErroresCoche(vin)
+            Log.d("BBDD", pa.toString())
 
             withContext(Dispatchers.Main) {
                 Toast.makeText(context, "Errores guardados correctamente", Toast.LENGTH_SHORT).show()

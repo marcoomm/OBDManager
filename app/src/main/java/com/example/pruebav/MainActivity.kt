@@ -157,8 +157,6 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
         }
     }
 
-
-
     Scaffold(
         containerColor = Color.Black,
         bottomBar = {
