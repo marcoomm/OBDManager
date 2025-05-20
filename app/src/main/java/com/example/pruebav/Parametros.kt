@@ -26,6 +26,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,6 +36,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -56,30 +58,24 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.pruebav.database.Parametro
 import com.example.pruebav.database.guardarParametros
+import kotlinx.coroutines.launch
 
 @Composable
 fun Parametros(context: Context, navController: NavController, viewModel: OBDViewModel) {
-
     val vin by viewModel.vin.collectAsState()
     val datosMap by viewModel.parametros.collectAsState()
-
     val listaParametros by rememberUpdatedState(datosMap.map { (nombre, valor) -> Parametro(nombre, valor, categoria = "") })
 
     var expanded by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf("Todo") }
-    val isLoading by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
     val lifecycleOwner = LocalLifecycleOwner.current
-
 
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
             when (event) {
-                Lifecycle.Event.ON_RESUME -> {
-                    viewModel.lecturaParametros()
-                }
-                Lifecycle.Event.ON_PAUSE -> {
-                    viewModel.detenerLectura()
-                }
+                Lifecycle.Event.ON_RESUME -> viewModel.lecturaParametros()
+                Lifecycle.Event.ON_PAUSE -> viewModel.detenerLectura()
                 else -> {}
             }
         }
@@ -91,7 +87,6 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
             viewModel.detenerLectura()
         }
     }
-
 
     /*
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -248,7 +243,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
             }
             */
 
-            Spacer(modifier = Modifier.height(52.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             /*
             val filtrados = when (selectedOption) {
@@ -261,7 +256,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
             */
 
             Box(modifier = Modifier.weight(1f)) {
-                if(isLoading){
+               /* if(isLoading){
                     Box(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
@@ -269,17 +264,24 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                         CircularProgressIndicator(color = Color.White)
                     }
                 }else{
+                    */
+                    ParametersScreen(datosMap)
+                    /*
                     LazyColumn(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
                         items(listaParametros) { param ->
                             ParameterCard(info = param)
                         }
                     }
-                }
+
+                     */
+                //}
             }
 
             // BOTÓN FIJO ARRIBA DE LA NAVIGATION BAR
             Button(
-                onClick = { guardarParametros(context, vin, listaParametros) },
+                onClick = { coroutineScope.launch{
+                    guardarParametros(context, vin, listaParametros)
+                } },
                 colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor =Color(0xFF1E88E5)),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -377,6 +379,37 @@ fun Temperature() {
         }
     }
 }*/
+
+@Composable
+fun ParametersScreen(parametros:List<Parametro>) {
+
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        items(parametros) { parametro ->
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = parametro.nombre,
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Text(
+                        text = parametro.valor,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+            }
+        }
+    }
+}
+
 
 @Composable
 fun ParameterCard(info: Parametro) {

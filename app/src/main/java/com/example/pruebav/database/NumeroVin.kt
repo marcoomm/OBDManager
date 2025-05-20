@@ -26,12 +26,22 @@ import java.net.URL
 )
 data class NumeroVin(
     @PrimaryKey val vin: String,
-    @ColumnInfo(name = "marca", defaultValue = "'Desconocida'") val marca: String,
-    @ColumnInfo(name = "modelo", defaultValue = "'Desconocido'") val modelo: String,
-    @ColumnInfo(name = "caract") val caract: String?,
-    @ColumnInfo(name = "anio_fabricacion") val anioFabricacion: Int?,
-    @ColumnInfo(name = "numero_serie") val numeroSerie: String
-) {
+    @ColumnInfo(name = "marca", defaultValue = "'Desconocida'")
+    val marca: String = "Desconocida",
+
+    @ColumnInfo(name = "modelo", defaultValue = "'Desconocido'")
+    val modelo: String = "Desconocido",
+
+    @ColumnInfo(name = "caract")
+    val caract: String? = null,
+
+    @ColumnInfo(name = "anio_fabricacion")
+    val anioFabricacion: Int? = null,
+
+    @ColumnInfo(name = "numero_serie", defaultValue = "'-'")
+    val numeroSerie: String = "-"
+)
+ {
     companion object {
         suspend fun decodeVinHttpClient(vin: String): NumeroVin? = withContext(Dispatchers.IO) {
             val apiUrl = "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvaluesextended/$vin?format=json"
@@ -67,7 +77,6 @@ data class NumeroVin(
                 "TRU" to "Audi",
                 "SHS" to "Honda",
                 "SJN" to "Nissan"
-                // Añade más si necesitas
             )
 
             fun obtenerMarcaDesdeWMI(vin: String): String {
@@ -85,13 +94,7 @@ data class NumeroVin(
                 val json = JSONObject(response)
                 val result = json.getJSONArray("Results").getJSONObject(0)
 
-                val marcaApi = result.optString("Make", "").takeIf { it.isNotBlank() } ?: "Desconocida"
-                val marcaFinal = if (marcaApi == "Desconocida" || marcaApi.isBlank()) {
-                    obtenerMarcaDesdeWMI(vin)
-                } else {
-                    marcaApi
-                }
-
+                val marcaFinal = obtenerMarcaDesdeWMI(vin)
 
                 val fuelType = result.optString("FuelTypePrimary").takeIf { it.isNotBlank() }
                 val bodyClass = result.optString("BodyClass").takeIf { it.isNotBlank() }
@@ -114,9 +117,9 @@ data class NumeroVin(
                 null
             }
         }
-
     }
 }
+
 
 @Dao
 interface NumeroVinDao {
@@ -131,11 +134,18 @@ interface NumeroVinDao {
     suspend fun getAllVins(): List<String>?
 
     @RewriteQueriesToDropUnusedColumns
-    @Query("SELECT vin FROM numero_vin WHERE marca = :marca and modelo = :modelo")
-    suspend fun getVinFromCoche(marca: String,modelo: String):String
+    @Query("SELECT vin FROM numero_vin WHERE marca = :marca AND modelo = :modelo LIMIT 1")
+    suspend fun getVinFromCoche(marca: String, modelo: String): String?
 
     @Query("SELECT marca, modelo FROM numero_vin")
     suspend fun getCoches(): List<CocheMarcaModelo>
+
+    @Query("""
+    SELECT numero_vin.vin 
+    FROM numero_vin 
+    INNER JOIN parametros ON numero_vin.vin = parametros.vin
+""")
+    suspend fun obtenerVinesCoincidentes(): List<String>
 
 
 }

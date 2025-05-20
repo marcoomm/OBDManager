@@ -41,6 +41,7 @@ import com.example.pruebav.database.NumeroVinDao
 import com.example.pruebav.ui.theme.PruebaVTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
     private val requestBluetoothPermissionLauncher =
@@ -82,6 +83,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("MissingPermission")
 @Composable
 fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,viewModel: OBDViewModel,database: AppDatabase) {
@@ -112,7 +114,6 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     val vinprueba = remember { mutableStateOf("-") }
     //var mezcla = remember { mutableStateOf("-") }
 
-
     LaunchedEffect(isConnected, ecuReady) {
         if (isConnected && ecuReady) {
             viewModel.lecturaInicial()
@@ -122,34 +123,29 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
         }
     }
 
-    /*LaunchedEffect(vin){
+    LaunchedEffect(vin) {
+        if (isConnected && ecuReady && viewModel.shouldProcessVin(vin)) {
+            val numeroVin = NumeroVin.decodeVinHttpClient(vin)
+            numeroVin?.let { vinData ->
+                Log.d("VIN", "Marca: ${vinData.marca}")
 
-        val numeroVin = NumeroVin.decodeVinHttpClient(vin)
-        numeroVin?.let { vinData ->
-            Log.d("VIN", vinData.marca)
-            Log.d("VIN", vinData.modelo)
-            Log.d("VIN",vinData.caract.toString())
+                val dao = database.numeroVinDao()
+                val existingVin = dao.getNumeroVin(vin)
 
-            viewModel.setMarca(vinData.marca)
-            viewModel.setModelo(vinData.modelo)
-            viewModel.setAnio(vinData.anioFabricacion.toString())
-            viewModel.setCaract(vinData.caract.toString())
-
-            val dao: NumeroVinDao = database.numeroVinDao()
-            val existingVin = dao.getNumeroVin(vin)
-            if (existingVin == null) {
-                dao.insertNumeroVin(vinData)
-                Toast
-                    .makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT)
-                    .show()
-            }else{
-                Toast
-                    .makeText(context, "Coche ya registrado", Toast.LENGTH_SHORT)
-                    .show()
-                Log.i("ExistingVin","Vin ya registrado")
-            }
+                if (existingVin == null) {
+                    dao.insertNumeroVin(vinData)
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Log.i("VIN", "El VIN ya estaba registrado")
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(context, "Coche ya registrado", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } ?: Log.e("VIN", "No se pudo decodificar el VIN")
         }
-    }*/
+    }
 
     DisposableEffect(Unit) {
         onDispose {

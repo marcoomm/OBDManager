@@ -4,13 +4,16 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.bluetooth.BluetoothDevice
 import android.content.Context
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pruebav.database.CodigosError
 import com.example.pruebav.database.Parametro
 import com.example.pruebav.database.cargarCodigosDesdeJson
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -18,6 +21,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import kotlin.coroutines.cancellation.CancellationException
 
 class OBDViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -125,8 +129,21 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
+    private var lastCheckedVin: String? = null
+
+    fun shouldProcessVin(currentVin: String): Boolean {
+        return if (currentVin.isNotBlank() && currentVin != lastCheckedVin) {
+            lastCheckedVin = currentVin
+            true
+        } else {
+            false
+        }
+    }
+
+
     private var lecturaIniciada = false
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun lecturaInicial() {
         if (lecturaIniciada) return // Solo se ejecuta una vez
         lecturaIniciada = true
@@ -166,33 +183,49 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private var leyendoParametros = false
+    private var lecturaJob: Job? = null
 
     fun lecturaParametros() {
-        if (leyendoParametros) return // Solo se ejecuta si no estamos ya leyendo parámetros
-
+        if (leyendoParametros) return
         leyendoParametros = true
-        viewModelScope.launch {
-            while (_isConnected.value) { // Mientras esté conectado
+
+        lecturaJob = viewModelScope.launch {
+            while (_isConnected.value) {
+                val start = System.currentTimeMillis()
+
                 try {
-                    // Leer los parámetros cada 200ms
-                    val datos = OBDManager.leerParametros()
-
-                    // Asigna el resultado al StateFlow
-                    _parametros.value = datos.map { (nombre, valor) -> Parametro(nombre, valor, categoria = "") }
-
+                    val datos = withContext(Dispatchers.IO) {
+                        OBDManager.leerParametros()
+                    }
+                    _parametros.value = datos.map { (nombre, valor) ->
+                        Log.d("VIEWMODEL", "Parametro $nombre = $valor")
+                        Parametro(nombre, valor, categoria = "")
+                    }
                 } catch (e: Exception) {
-                    e.printStackTrace()
+                    if (e is CancellationException) {
+                        Log.d("OBD", "Lectura cancelada correctamente")
+                        throw e
+                    } else {
+                        Log.e("OBD", "Error al leer parámetros: ${e.message}")
+                        e.printStackTrace()
+                    }
                 }
-                delay(200) // Espera de 200ms para la próxima lectura
+
+
+                val tiempo = System.currentTimeMillis() - start
+                Log.d("OBD", "Lectura completa en $tiempo ms")
+                if (tiempo < 3000) delay(3000 - tiempo)
             }
-            leyendoParametros = false // Detiene la lectura cuando ya no está conectado
+            leyendoParametros = false
         }
     }
 
-
     fun detenerLectura() {
+        lecturaJob?.cancel()
+        lecturaJob = null
         leyendoParametros = false
     }
+
 
 }
 

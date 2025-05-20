@@ -38,55 +38,50 @@ interface ParametrosDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertarParametros(parametros: ParametrosCoche)
 
-    @Query("SELECT * FROM parametros WHERE vin = :vin")
+    @Query("SELECT * FROM parametros WHERE vin = :vin COLLATE NOCASE")
     suspend fun obtenerParametros(vin: String): ParametrosCoche?
 
     @Query("DELETE FROM parametros WHERE vin = :vin")
     suspend fun borrarParametros(vin: String)
+
+    @Query("SELECT * FROM parametros")
+    suspend fun verTodo(): List<ParametrosCoche>
+
+    @Query("SELECT vin FROM parametros")
+    suspend fun verVinParametros(): List<String>
+
 }
 
 
-fun guardarParametros(context: Context, vin: String, parametros: List<Parametro>) {
-    val entry = ParametrosCoche(vin, parametros)
+suspend fun guardarParametros(context: Context, vin: String, parametros: List<Parametro>) {
+    val entry = ParametrosCoche(vin.uppercase().trim(), parametros)
     val db = AppDatabase.getDatabase(context)
 
-    CoroutineScope(Dispatchers.IO).launch {
-        try {
-            db.parametrosDao().insertarParametros(entry)
-
-            val pa = db.parametrosDao().obtenerParametros(vin)
-            Log.d("BBDD", pa.toString())
-
-            withContext(Dispatchers.Main) {
-                Toast.makeText(context, "Datos guardados correctamente", Toast.LENGTH_SHORT).show()
-                Log.d("OBD", "Guardados correctamente")
-            }
-
-        } catch (e: Exception) {
-            withContext(Dispatchers.Main) {
-                Toast.makeText(context, "Error al guardar los datos", Toast.LENGTH_LONG).show()
-                Log.e("OBD", "Error al guardar", e)
-            }
+    try {
+        db.parametrosDao().insertarParametros(entry)
+        val pa = db.parametrosDao().obtenerParametros(vin.uppercase().trim())
+        Log.d("BBDD", pa.toString())
+        withContext(Dispatchers.Main) {
+            Toast.makeText(context, "Datos guardados correctamente para:'${vin}'", Toast.LENGTH_SHORT).show()
+        }
+    } catch (e: Exception) {
+        withContext(Dispatchers.Main) {
+            Toast.makeText(context, "Error al guardar los datos", Toast.LENGTH_LONG).show()
+            Log.e("OBD", "Error al guardar", e)
         }
     }
 }
 
-
-
 // Modificación aquí para obtener un solo ParametrosCoche en vez de una lista
-suspend fun obtenerParametros(context: Context, vin: String, callback: (ParametrosCoche?) -> Unit) {
+suspend fun obtenerParametros(context: Context, vin: String): ParametrosCoche? {
     val db = AppDatabase.getDatabase(context)
-    CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val parametros = db.parametrosDao().obtenerParametros(vin)
-            CoroutineScope(Dispatchers.Main).launch {
-                callback(parametros) // Pasar el objeto ParametrosCoche obtenido al callback
-            }
-        } catch (e: Exception) {
-            CoroutineScope(Dispatchers.Main).launch {
-                Toast.makeText(context, "Error al obtener los datos: ${e.message}", Toast.LENGTH_LONG).show()
-            }
+    return try {
+        db.parametrosDao().obtenerParametros(vin)
+    } catch (e: Exception) {
+        withContext(Dispatchers.Main) {
+            Toast.makeText(context, "Error al obtener los datos: ${e.message}", Toast.LENGTH_LONG).show()
         }
+        null
     }
 }
 

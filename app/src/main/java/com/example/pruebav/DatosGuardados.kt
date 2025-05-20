@@ -18,6 +18,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -37,8 +38,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -58,19 +61,20 @@ import com.example.pruebav.database.NumeroVinDao
 import com.example.pruebav.database.Parametro
 import com.example.pruebav.database.ParametrosCoche
 import com.example.pruebav.database.ParametrosDao
+import com.example.pruebav.database.obtenerParametros
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.coroutines.cancellation.CancellationException
 
 @Composable
 fun Datos(navController: NavController, database: AppDatabase) {
 
-    // Cargar datos al inicio (lógica de Room usando coroutines)
     val coroutineScope = rememberCoroutineScope()
     var expandedVin by remember { mutableStateOf(false) }
     var expandedOption by remember { mutableStateOf(false) }
-    var option by remember { mutableStateOf("Parametros") }
+    var option by remember { mutableStateOf("") }
     var cargando by remember { mutableStateOf(false) }
 
     var todosVin  by remember { mutableStateOf<List<String>>(emptyList()) }
@@ -81,29 +85,50 @@ fun Datos(navController: NavController, database: AppDatabase) {
 
     var parametros by remember { mutableStateOf<ParametrosCoche?>(null) }
     var errores by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
+    val context = LocalContext.current
 
 
     LaunchedEffect(Unit) {
         coroutineScope.launch {
 
             todosVin = database.numeroVinDao().getAllVins()!!
-            todosCoches = database.numeroVinDao().getCoches()
+            todosVin.forEach { vin ->
+                Log.d("VIN", "VIN leído: '${vin.uppercase()}' con longitud ${vin.length}")
+            }
 
+            todosCoches = database.numeroVinDao().getCoches()
             todosCoches.forEach{ coche ->
                 Log.d("Coche", "${coche.marca} ${coche.modelo}")
             }
-            todosVin.forEach { vin ->
-                Log.d("VIN", vin)
+
+            val listaVin = database.parametrosDao().verVinParametros()
+            listaVin.forEach{ vin->
+                Log.d("VIN en parametros",":${vin}' + ${vin.length}")
+            }
+
+            val vinsCoincidentes = database.numeroVinDao().obtenerVinesCoincidentes()
+            Log.d("VINs", vinsCoincidentes.joinToString())
+
+        }
+    }
+    LaunchedEffect(seleccionadoVin, option) {
+        if (seleccionadoVin.isNotBlank()) {
+            try {
+                if (option == "Parámetros") {
+                    //parametros = obtenerParametros(context, vin = seleccionadoVin)
+                    val resultado = database.parametrosDao().obtenerParametros(seleccionadoVin.trim().uppercase())
+                    Log.d("debug", "Resultado obtenerParametros: $resultado")
+
+                } else {
+                    errores = database.erroresDao().obtenerErroresCoche(seleccionadoVin.trim().uppercase()) ?: emptyList()
+                }
+            } catch (e: Exception) {
+                Log.e("OBD_Database", "Error al leer datos: ${e.message}")
             }
         }
     }
-    LaunchedEffect(seleccionadoCoche) {
-        cargando = true
-        parametros = null
-        errores = emptyList()
-        seleccionadoVin = ""
-        option = "Parametros"
-    }
+
+
 
     Scaffold(
         containerColor = Color.Black,
@@ -188,131 +213,77 @@ fun Datos(navController: NavController, database: AppDatabase) {
                     .padding(start = 22.dp, end = 22.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Button(
-                    onClick = { expandedVin = !expandedVin },
-                    modifier = Modifier.width(145.dp).height(35.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor =Color(0xFF1E88E5)),
-                ) {
-                    Text(text = "Filtrar coche")
-                    Row(modifier = Modifier
-                        .padding(top = 30.dp)
-                    ){
-                        DropdownMenu(
-                            expanded = expandedVin,
-                            onDismissRequest = { expandedVin = false },
-                            modifier = Modifier.background(Color(0xFF1E88E5))
-                        ) {
+                Box { // Contenedor para el botón + menú desplegable
+                    Button(
+                        onClick = { expandedVin = !expandedVin },
+                        modifier = Modifier.width(145.dp).height(35.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            contentColor = Color.White,
+                            containerColor = Color(0xFF1E88E5)
+                        )
+                    ) {
+                        Text(text = "Filtrar coche")
+                    }
 
-                            todosCoches.forEach{coche->
-                                DropdownMenuItem(
-                                    onClick = {
-                                        seleccionadoCoche = coche
-                                        expandedVin = false
-                                        cargando=true
-                                    },text = { Text(text = "${coche.marca} ${coche.modelo}", color = Color.White, fontSize = 16.sp) }
-                                )
+                    DropdownMenu(
+                        expanded = expandedVin,
+                        onDismissRequest = { expandedVin = false },
+                        modifier = Modifier.background(Color(0xFF1E88E5)),
+                        offset = DpOffset(x = 0.dp, y = 5.dp)
+                    ) {
+                        todosVin.forEachIndexed { index, vin ->
+                            DropdownMenuItem(
+                                onClick = {
+                                    seleccionadoVin = vin.uppercase()
+                                    Log.d("vinseleccionado", seleccionadoVin)
+                                    expandedVin = false
+                                },
+                                text = { Text(vin, color = Color.White, fontSize = 16.sp) }
+                            )
+                            if (index < todosVin.lastIndex) {
+                                HorizontalDivider(color = Color.White.copy(alpha = 0.3f))
                             }
-
-                            /*
-                            vins.forEach { vin ->
-                                DropdownMenuItem(
-                                    onClick = {
-                                        vinS = vin
-                                        expandedVin = false
-                                    },
-                                    text = { Text(vin, color = Color.White, fontSize = 16.sp) }
-                                )
-                            }*/
                         }
                     }
+
                 }
-
-                Button(
-                    onClick = { expandedOption = !expandedOption },
-                    modifier = Modifier.width(170.dp).height(35.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor =Color(0xFF1E88E5)),
-                ) {
-                    Text(text = "Cambiar datos")
-                    Row(
-                        modifier = Modifier
-                            .padding(top = 30.dp, start = 15.dp)
+                Box {
+                    Button(
+                        onClick = { expandedOption = !expandedOption },
+                        modifier = Modifier.width(170.dp).height(35.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            contentColor = Color.White,
+                            containerColor = Color(0xFF1E88E5)
+                        )
                     ) {
-                        DropdownMenu(
-                            expanded = expandedOption,
-                            onDismissRequest = { expandedOption = false },
-                            modifier = Modifier.background(Color(0xFF1E88E5))
-                        ) {
-                            DropdownMenuItem(
-                                onClick = {
-                                    option = "Parámetros"
-                                    cargando = true // Activa el indicador de carga inmediatamente
+                        Text(text = "Cambiar datos")
+                    }
 
-                                    seleccionadoCoche?.let { coche ->
-                                        CoroutineScope(Dispatchers.IO).launch {
-                                            try {
-                                                val vin = database.numeroVinDao().getVinFromCoche(coche.marca, coche.modelo)
-                                                val datos = database.parametrosDao().obtenerParametros(vin)
+                    DropdownMenu(
+                        expanded = expandedOption,
+                        onDismissRequest = { expandedOption = false },
+                        modifier = Modifier.background(Color(0xFF1E88E5)),
+                        offset = DpOffset(x = 25.dp, y = 0.dp)
+                    ) {
+                        DropdownMenuItem(
+                            onClick = {
+                                option = "Parámetros"
+                                expandedOption = false
+                            },
+                            text = { Text("Parámetros", color = Color.White, fontSize = 16.sp) }
+                        )
 
-                                                withContext(Dispatchers.Main) {
-                                                    seleccionadoVin = vin
-                                                    parametros = datos
-                                                    cargando = false
-                                                }
-                                            } catch (e: Exception) {
-                                                Log.e("OBD_Database", "Error al obtener parámetros del coche: ${e.message}")
-                                                withContext(Dispatchers.Main) {
-                                                    cargando = false
-                                                }
-                                            }
-                                        }
-                                    } ?: run {
-                                        Log.e("OBD_Database", "Los datos no se pueden cargar. Coche no seleccionado.")
-                                        cargando = false
-                                    }
+                        HorizontalDivider()
 
-                                    expandedOption = false
-                                },
-                                text = { Text("Parámetros", color = Color.White, fontSize = 16.sp) }
-                            )
-
-                            HorizontalDivider()
-
-                            DropdownMenuItem(
-                                onClick = {
-                                    option = "Códigos de error"
-                                    cargando = true // Activa el indicador de carga desde el principio
-
-                                    seleccionadoCoche?.let { coche ->
-                                        CoroutineScope(Dispatchers.IO).launch {
-                                            try {
-                                                val vin = database.numeroVinDao().getVinFromCoche(coche.marca, coche.modelo)
-                                                val datos = database.erroresDao().obtenerErroresCoche(vin)
-
-                                                withContext(Dispatchers.Main) {
-                                                    seleccionadoVin = vin
-                                                    errores = datos ?: emptyList()
-                                                    cargando = false
-                                                }
-                                            } catch (e: Exception) {
-                                                Log.e("OBD_Database", "Error al obtener datos del coche: ${e.message}")
-                                                withContext(Dispatchers.Main) {
-                                                    cargando = false
-                                                }
-                                            }
-                                        }
-                                    } ?: run {
-                                        Log.e("OBD_Database", "Los datos no se pueden cargar. Coche no seleccionado.")
-                                        cargando = false
-                                    }
-
-                                    expandedOption = false
-                                },
-                                text = { Text("Códigos de error", color = Color.White, fontSize = 16.sp) }
-                            )
-
-                        }
+                        DropdownMenuItem(
+                            onClick = {
+                                option = "Códigos de error"
+                                expandedOption = false
+                            },
+                            text = { Text("Códigos de error", color = Color.White, fontSize = 16.sp) }
+                        )
                     }
                 }
             }
@@ -531,7 +502,6 @@ data class CocheMarcaModelo(
     val marca: String,
     val modelo: String
 )
-
 
 @Database(entities = [ParametrosCoche::class, ErroresCoche::class, NumeroVin::class, Coche::class, CodigosError::class], version = 2, exportSchema = false)
 @TypeConverters(Converters::class)
