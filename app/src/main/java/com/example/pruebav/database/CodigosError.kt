@@ -25,8 +25,8 @@ import java.io.InputStreamReader
 data class CodigosError(
     @PrimaryKey val codigoError: String,
     @ColumnInfo(name = "descripcion", defaultValue = "'Sin descripción'") val descripcion: String,
-    @ColumnInfo(name = "categoria") val categoria: String, // NOT NULL porque no es nullable
-    @ColumnInfo(name = "componente") val componente: String // NOT NULL porque no es nullable
+    @ColumnInfo(name = "categoria") val categoria: String,
+    @ColumnInfo(name = "componente") val componente: String
 
 )
 

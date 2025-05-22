@@ -7,8 +7,10 @@ import android.bluetooth.BluetoothSocket
 import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.core.app.ActivityCompat
 import com.github.eltonvs.obd.command.NonNumericResponseException
 import com.github.eltonvs.obd.command.ObdCommand
@@ -46,6 +48,7 @@ import com.github.eltonvs.obd.command.at.SetSpacesCommand
 import com.github.eltonvs.obd.command.at.SetTimeoutCommand
 import com.github.eltonvs.obd.command.control.DTCNumberCommand
 import com.github.eltonvs.obd.command.control.DistanceSinceCodesClearedCommand
+import com.github.eltonvs.obd.command.control.ResetTroubleCodesCommand
 import com.github.eltonvs.obd.command.control.TimeSinceCodesClearedCommand
 import com.github.eltonvs.obd.command.egr.CommandedEgrCommand
 import com.github.eltonvs.obd.command.egr.EgrErrorCommand
@@ -134,7 +137,7 @@ class OBDConnection(private val context: Context) {
             try{
                 obdConnection!!.run(SetTimeoutCommand(50)) // en ms
                 obdConnection!!.run(ResetAdapterCommand())
-                delay(1000)
+                delay(200)
                 obdConnection!!.run(SetEchoCommand(Switcher.OFF))
                 delay(300)
                 obdConnection!!.run(SetLineFeedCommand(Switcher.OFF))
@@ -275,18 +278,28 @@ class OBDConnection(private val context: Context) {
         return datos
     }
 
+    suspend fun deleteCodes(): Boolean {
+        return try {
+            val delete = obdConnection?.run(SafeObdCommand1(ResetTroubleCodesCommand()))
+            delete != null
+        } catch (e: Exception) {
+            Log.d("OBD:Delete", "Error al borrar los códigos: ${e.message}")
+            e.printStackTrace()
+            false
+        }
+    }
+
     suspend fun readAllParameters(): Map<String, String> {
         val datos = mutableMapOf<String, String>()
 
         try {
             try {
-                val rpm = obdConnection!!.run(SafeObdCommand1(RPMCommand()))
+                val rpm = obdConnection!!.run(SafeObdCommand1(RPMCommand()), delayTime = 100)
                 datos["RPM"] = rpm.formattedValue
             } catch (e: Exception) {
                 datos["RPM"] = "No Data"
             }
             Log.d("rpm", ": ${datos["RPM"]}")
-            delay(150)
 
             try {
                 val speed = obdConnection!!.run(SafeObdCommand1(SpeedCommand()))
@@ -297,6 +310,7 @@ class OBDConnection(private val context: Context) {
             Log.d("speed", ": ${datos["Speed"]}")
             delay(150)
 
+            /*
             val massAirFlow = try {
                 obdConnection!!.run(SafeObdCommand1(MassAirFlowCommand()))
             } catch (e: Exception) {
@@ -305,7 +319,6 @@ class OBDConnection(private val context: Context) {
             datos["Mass Air Flow"] = massAirFlow?.formattedValue ?: "No Data"
             Log.d("massAirFlow", ": ${datos["Mass Air Flow"]}")
             delay(150)
-
             try {
                 val runtime = obdConnection!!.run(SafeObdCommand1(RuntimeCommand()))
                 datos["Runtime"] = runtime.formattedValue
@@ -313,7 +326,7 @@ class OBDConnection(private val context: Context) {
                 datos["Runtime"] = "No Data"
             }
             Log.d("runtime", ": ${datos["Runtime"]}")
-            delay(150)
+            delay(150)*/
 
             val load = try {
                 obdConnection!!.run(SafeObdCommand1(LoadCommand()))
@@ -324,6 +337,7 @@ class OBDConnection(private val context: Context) {
             Log.d("engineLoad", ": ${datos["Engine Load"]}")
             delay(150)
 
+            /*
             val absoluteLoad = try {
                 obdConnection!!.run(SafeObdCommand1(AbsoluteLoadCommand()))
             } catch (e: Exception) {
@@ -331,7 +345,7 @@ class OBDConnection(private val context: Context) {
             }
             datos["Absolute Load"] = absoluteLoad?.formattedValue ?: "No Data"
             Log.d("engineAbsoluteLoad", ": ${datos["Absolute Load"]}")
-            delay(150)
+            delay(150)*/
 
             val throttle = try {
                 obdConnection!!.run(SafeObdCommand1(ThrottlePositionCommand()))
@@ -342,6 +356,7 @@ class OBDConnection(private val context: Context) {
             Log.d("throttlePosition", ": ${datos["Throttle Position"]}")
             delay(150)
 
+            /*
             val relativeThrottle = try {
                 obdConnection!!.run(SafeObdCommand1(RelativeThrottlePositionCommand()))
             } catch (e: Exception) {
@@ -349,7 +364,7 @@ class OBDConnection(private val context: Context) {
             }
             datos["Relative Throttle Position"] = relativeThrottle?.formattedValue ?: "No Data"
             Log.d("relativeThrottlePosition", ": ${datos["Relative Throttle Position"]}")
-            delay(150)
+            delay(150)*/
 
             val fuelType = try {
                 obdConnection!!.run(SafeObdCommand1(FuelTypeCommand()))
@@ -369,6 +384,7 @@ class OBDConnection(private val context: Context) {
             Log.d("fuelLevel", ": ${datos["Fuel Level"]}")
             delay(150)
 
+            /*
             val barometricPressure = try {
                 obdConnection!!.run(SafeObdCommand1(BarometricPressureCommand()))
             } catch (e: Exception) {
@@ -376,7 +392,7 @@ class OBDConnection(private val context: Context) {
             }
             datos["Barometric Pressure"] = barometricPressure?.formattedValue ?: "No Data"
             Log.d("barometricPressure", ": ${datos["Barometric Pressure"]}")
-            delay(150)
+            delay(150)*/
 
             val intakeManifoldPressure = try {
                 obdConnection!!.run(SafeObdCommand1(IntakeManifoldPressureCommand()))
@@ -405,6 +421,17 @@ class OBDConnection(private val context: Context) {
             Log.d("fuelRailPressure", ": ${datos["Fuel Rail Pressure"]}")
             delay(150)
 
+            val fueltrim = try{
+                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.LONG_TERM_BANK_1)))
+                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.LONG_TERM_BANK_2)))
+                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.SHORT_TERM_BANK_1)))
+                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.SHORT_TERM_BANK_2)))
+            }  catch(e:Exception){
+                null
+            }
+            Log.d("fuelTrim", fueltrim!!.formattedValue)
+
+            /*
             val fuelRailGaugePressure = try {
                 obdConnection!!.run(SafeObdCommand1(FuelRailGaugePressureCommand()))
             } catch (e: Exception) {
@@ -412,7 +439,7 @@ class OBDConnection(private val context: Context) {
             }
             datos["Fuel Rail Gauge Pressure"] = fuelRailGaugePressure?.formattedValue ?: "No Data"
             Log.d("fuelRailGaugePressure", ": ${datos["Fuel Rail Gauge Pressure"]}")
-            delay(150)
+            delay(150)*/
 
             val airIntakeTemperature = try {
                 obdConnection!!.run(SafeObdCommand1(AirIntakeTemperatureCommand()))
@@ -450,25 +477,6 @@ class OBDConnection(private val context: Context) {
             Log.d("oilTemperature", ": ${datos["Oil Temperature"]}")
             delay(150)
 
-            val commandedEgr = try {
-                obdConnection!!.run(SafeObdCommand1(CommandedEgrCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["Commanded EGR"] = commandedEgr?.formattedValue ?: "No Data"
-            Log.d("commandedEgr", ": ${datos["Commanded EGR"]}")
-            delay(150)
-
-            val egrError = try {
-                obdConnection!!.run(SafeObdCommand1(EgrErrorCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["EGR Error"] = egrError?.formattedValue ?: "No Data"
-            Log.d("egrError", ": ${datos["EGR Error"]}")
-            delay(150)
-
-            Log.d("OBD:Lectura", "Lectura de datos correctamente")
 
         } catch (e: NonNumericResponseException) {
             Log.e("OBD", "Respuesta no numérica: ${e.message}")
@@ -483,31 +491,70 @@ class OBDConnection(private val context: Context) {
     suspend fun readBasicParameters(): Map<String, String> = coroutineScope {
         val obdConn = obdConnection ?: return@coroutineScope emptyMap<String, String>()
 
-        val rpm = async {
+        val rpmDeferred = async {
             try {
-                "RPM" to obdConn.run(SafeObdCommand1(RPMCommand())).formattedValue
+                "RPM" to obdConn.run(SafeObdCommand(RPMCommand())).formattedValue
             } catch (e: Exception) {
-                "RPM" to "No Data"
+                "RPM" to "Error"
             }
         }
 
-        val speed = async {
+        val speedDeferred = async {
             try {
-                "Speed" to obdConn.run(SafeObdCommand1(SpeedCommand())).formattedValue
+                "Speed" to obdConn.run(SafeObdCommand(SpeedCommand())).formattedValue
             } catch (e: Exception) {
-                "Speed" to "No Data"
+                "Speed" to "Error"
             }
         }
 
-        val engineTemp = async {
+        val tempDeferred = async {
             try {
-                "Engine Coolant Temperature" to obdConn.run(SafeObdCommand1(EngineCoolantTemperatureCommand())).formattedValue
+                "Engine Coolant Temperature" to obdConn.run(SafeObdCommand(EngineCoolantTemperatureCommand())).formattedValue
             } catch (e: Exception) {
-                "Engine Coolant Temperature" to "No Data"
+                "Engine Coolant Temperature" to "Error"
             }
         }
 
-        listOf(rpm.await(), speed.await(), engineTemp.await()).toMap()
+        listOf(
+            rpmDeferred.await(),
+            speedDeferred.await(),
+            tempDeferred.await()
+        ).toMap()
+    }
+
+    suspend fun readAllFastParameters(): Map<String, String> = coroutineScope {
+        val obdConn = obdConnection ?: return@coroutineScope emptyMap()
+
+        val comandos: List<Pair<String, ObdCommand>> = listOf(
+            "RPM" to RPMCommand(),
+            "Speed" to SpeedCommand(),
+            "Engine Load" to LoadCommand(),
+            "Throttle Position" to ThrottlePositionCommand(),
+            "Fuel Type" to FuelTypeCommand(),
+            "Fuel Level" to FuelLevelCommand(),
+            "Intake Manifold Pressure" to IntakeManifoldPressureCommand(),
+            "Fuel Pressure" to FuelPressureCommand(),
+            "Fuel Rail Pressure" to FuelRailPressureCommand(),
+            "Air Intake Temperature" to AirIntakeTemperatureCommand(),
+            "Ambient Air Temperature" to AmbientAirTemperatureCommand(),
+            "Engine Coolant Temperature" to EngineCoolantTemperatureCommand(),
+            "Oil Temperature" to OilTemperatureCommand()
+        )
+
+        val deferreds = comandos.map { (nombre, cmd) ->
+            async {
+                val resultado = try {
+                    val res = obdConn.run(SafeObdCommand1(cmd))
+                    nombre to res.formattedValue
+                } catch (e: Exception) {
+                    nombre to "No Data"
+                }
+                Log.d("OBD", "${resultado.first}: ${resultado.second}")
+                resultado
+            }
+        }
+
+        deferreds.awaitAll().toMap()
     }
 
 }
@@ -653,81 +700,3 @@ class TurboTemperatureCommand : ObdCommand() {
 
 
 
-/*
-class CustomCommand : ObdCommand() {
-    // Required
-    override val tag = "CUSTOM_COMMAND"
-    override val name = "Custom Command"
-    override val mode = "01"
-    override val pid = "FF"
-
-    // Optional
-    override val defaultUnit = ""
-    override val handler = { it: ObdRawResponse -> "Calculations to parse value from ${it.processedValue}" }
-}
-
-
-class VinRawCommand : ObdCommand() {
-    override val tag = "VIN_COMMAND"
-    override val name = "VIN Command"
-    override val mode = "09" // Comando para obtener el VIN
-    override val pid = "02" // PID para obtener el VIN
-
-    override val handler = { rawResponse: ObdRawResponse ->
-        // Convertir la respuesta cruda a String y depurar
-        val vinRawString = rawResponse.processedValue.toString()
-
-        Log.d("VIN_RAW", "Raw VIN response: $vinRawString")
-
-        // Filtrar solo caracteres alfanuméricos y tomar solo los 17 primeros caracteres
-        vinRawString.filter { it.isLetterOrDigit() }.take(17)
-    }
-}
-class VINCommand1 : ObdCommand() {
-    override val tag = "VIN"
-    override val name = "Vehicle Identification Number (VIN)"
-    override val mode = "09"
-    override val pid = "02"
-
-    override val defaultUnit = ""
-    override val handler = { it: ObdRawResponse ->
-        // Paso 1: Eliminar caracteres no deseados
-        val cleanedValue = removeAll(it.value, WHITESPACE_PATTERN, BUS_INIT_PATTERN)
-
-        // Paso 2: Llamar a parseVIN para convertir a formato legible
-        parseVIN(cleanedValue)
-    }
-
-    // Función para procesar y extraer el VIN
-    private fun parseVIN(rawValue: String): String {
-        val workingData =
-            if (rawValue.contains(":")) {
-                // CAN(ISO-15765) protocol.
-                // 9 es el inicio de la secuencia con los bytes de información a seguir
-                val value = rawValue.replace(".:".toRegex(), "").substring(9)
-                if (STARTS_WITH_ALPHANUM_PATTERN.matcher(convertHexToString(value)).find()) {
-                    rawValue.replace("0:49", "").replace(".:".toRegex(), "")
-                } else {
-                    value
-                }
-            } else {
-                // Protocolos ISO9141-2, KWP2000 Fast y KWP2000 5Kbps (ISO15031)
-                rawValue.replace("49020.".toRegex(), "")
-            }
-
-        // Convertir de hexadecimal a cadena
-        return convertHexToString(workingData).replace("[\u0000-\u001f]".toRegex(), "")
-    }
-
-    // Función para convertir de hexadecimal a texto ASCII
-    private fun convertHexToString(hex: String): String {
-        val stringBuilder = StringBuilder()
-        for (i in hex.indices step 2) {
-            val hexPair = hex.substring(i, i + 2) // Obtener cada par de caracteres hexadecimales
-            val decimal = Integer.parseInt(hexPair, 16) // Convertir el par hexadecimal a decimal
-            stringBuilder.append(decimal.toChar()) // Convertir el valor decimal a un carácter
-        }
-        return stringBuilder.toString() // Retornar la cadena resultante
-    }
-}
- */

@@ -7,6 +7,7 @@ import android.content.Context
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pruebav.database.CodigosError
@@ -100,6 +101,10 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         _caract.value = value
     }
 
+    //variables codigos de error
+
+
+
     //composables
 
     private val _parametros = MutableStateFlow<List<Parametro>>(emptyList())
@@ -182,6 +187,22 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    val toastMessage = mutableStateOf<String?>(null)
+    private val deleteResult = mutableStateOf<Boolean?>(null)
+
+    fun borrarCodigos() {
+        viewModelScope.launch {
+            val resultado = OBDManager.borrarCodigos()
+            deleteResult.value = resultado
+
+            if (resultado) {
+                toastMessage.value = "Códigos de error borrados correctamente"
+            } else {
+                toastMessage.value = "No se pudieron borrar los códigos de error"
+            }
+        }
+    }
+
     private var leyendoParametros = false
     private var lecturaJob: Job? = null
 
@@ -194,13 +215,22 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
                 val start = System.currentTimeMillis()
 
                 try {
+
+                    /*
+                    val rpm = withContext(Dispatchers.IO){
+                        OBDManager.leerRPM()
+                    }
+                    _rpm.value = rpm!!
+                    */
+
                     val datos = withContext(Dispatchers.IO) {
-                        OBDManager.leerParametros()
+                        OBDManager.leerBasic()
                     }
                     _parametros.value = datos.map { (nombre, valor) ->
                         Log.d("VIEWMODEL", "Parametro $nombre = $valor")
                         Parametro(nombre, valor, categoria = "")
                     }
+
                 } catch (e: Exception) {
                     if (e is CancellationException) {
                         Log.d("OBD", "Lectura cancelada correctamente")
@@ -210,8 +240,6 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
                         e.printStackTrace()
                     }
                 }
-
-
                 val tiempo = System.currentTimeMillis() - start
                 Log.d("OBD", "Lectura completa en $tiempo ms")
                 if (tiempo < 3000) delay(3000 - tiempo)
@@ -255,11 +283,17 @@ object OBDManager {
         return obdConnection?.readAllParameters() ?: emptyMap()
     }
 
+    suspend fun leerBasic():Map<String,String>{
+        return obdConnection?.readBasicParameters()?: emptyMap()
+    }
+
     fun limpiarVin(vin: String): String {
         return vin.replace(Regex("[^\\x21-\\x7E]"), "")
     }
 
-
+    suspend fun borrarCodigos(): Boolean {
+        return obdConnection?.deleteCodes() ?: false
+    }
 
 }
 

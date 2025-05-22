@@ -51,27 +51,38 @@ interface ErroresCocheDao {
     suspend fun borrarErroresPorVin(vin: String)
 }
 
-fun guardarErrores(context: Context, vin: String ,errores: List<ErroresCoche>) {
+fun guardarErrores(context: Context, vin: String, errores: List<ErroresCoche>) {
     val db = AppDatabase.getDatabase(context)
     CoroutineScope(Dispatchers.IO).launch {
         try {
-            db.erroresDao().insertarErroresCoche(errores)
+            val erroresAGuardar = errores.ifEmpty {
+                listOf(
+                    ErroresCoche(
+                        codigoError = "NO_ERROR",
+                        vin = vin,
+                        descripcion = "No se detectaron errores en el análisis"
+                    )
+                )
+            }
+
+            db.erroresDao().insertarErroresCoche(erroresAGuardar)
 
             val pa = db.erroresDao().obtenerErroresCoche(vin)
             Log.d("BBDD", pa.toString())
 
             withContext(Dispatchers.Main) {
                 Toast.makeText(context, "Errores guardados correctamente", Toast.LENGTH_SHORT).show()
-                Log.d("OBD","Guardados correctamente")
+                Log.d("OBD", "Guardados correctamente")
             }
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {
                 Toast.makeText(context, "Error al guardar los errores: ${e.message}", Toast.LENGTH_LONG).show()
-                Log.d("OBD","Error al guardar")
+                Log.d("OBD", "Error al guardar")
             }
         }
     }
 }
+
 
 
 fun obtenerErrores(context: Context, vin: String,callback: (List<ErroresCoche>) -> Unit) {

@@ -139,9 +139,11 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                     }
                 } else {
                     Log.i("VIN", "El VIN ya estaba registrado")
+                    /*
                     withContext(Dispatchers.Main) {
                         Toast.makeText(context, "Coche ya registrado", Toast.LENGTH_SHORT).show()
                     }
+                     */
                 }
             } ?: Log.e("VIN", "No se pudo decodificar el VIN")
         }
@@ -463,7 +465,7 @@ fun VehicleInfoCard(info: VehicleInfo, valor: String) {
                 Text(
                     text = valor,
                     color = Color.Black,
-                    fontSize = 12.sp,
+                    fontSize = 16.sp,
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.align(Alignment.Center)
                 )
@@ -520,7 +522,6 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .weight(1f)
                    .padding(8.dp)
                    .clickable {
-                       /*
                        if (isConnected) {
                            navController.navigate("errores")
                        } else {
@@ -528,9 +529,7 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                                .makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT)
                                .show()
                        }
-
-                        */
-                       navController.navigate("errores")
+                       //navController.navigate("errores")
                    },
                shape = RoundedCornerShape(12.dp),
                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
@@ -563,14 +562,13 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .weight(1f)
                    .padding(8.dp)
                    .clickable {
-                       /*
+
                        if (isConnected) {
+                           navController.navigate("parametros")
                        } else {
                            Toast.makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT).show()
                        }
 
-                        */
-                       navController.navigate("parametros")
                    },
                shape = RoundedCornerShape(12.dp),
                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)

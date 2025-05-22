@@ -85,7 +85,7 @@ fun Datos(navController: NavController, database: AppDatabase) {
 
     var parametros by remember { mutableStateOf<ParametrosCoche?>(null) }
     var errores by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
-    val context = LocalContext.current
+    //val context = LocalContext.current
 
 
     LaunchedEffect(Unit) {
@@ -213,7 +213,7 @@ fun Datos(navController: NavController, database: AppDatabase) {
                     .padding(start = 22.dp, end = 22.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Box { // Contenedor para el botón + menú desplegable
+                Box {
                     Button(
                         onClick = { expandedVin = !expandedVin },
                         modifier = Modifier.width(145.dp).height(35.dp),
@@ -265,7 +265,7 @@ fun Datos(navController: NavController, database: AppDatabase) {
                         expanded = expandedOption,
                         onDismissRequest = { expandedOption = false },
                         modifier = Modifier.background(Color(0xFF1E88E5)),
-                        offset = DpOffset(x = 25.dp, y = 0.dp)
+                        offset = DpOffset(x = 25.dp, y = 5.dp)
                     ) {
                         DropdownMenuItem(
                             onClick = {

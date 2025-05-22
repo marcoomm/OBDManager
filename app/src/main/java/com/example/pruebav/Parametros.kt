@@ -1,6 +1,5 @@
 package com.example.pruebav
 
-import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.background
@@ -33,6 +32,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,18 +58,26 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.pruebav.database.Parametro
 import com.example.pruebav.database.guardarParametros
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
 fun Parametros(context: Context, navController: NavController, viewModel: OBDViewModel) {
+
     val vin by viewModel.vin.collectAsState()
     val datosMap by viewModel.parametros.collectAsState()
-    val listaParametros by rememberUpdatedState(datosMap.map { (nombre, valor) -> Parametro(nombre, valor, categoria = "") })
-
+    val listaParametros = remember(datosMap) {
+        datosMap.map { (nombre, valor) ->
+            Parametro(nombre, valor, categoria = categoriaSegunNombre(nombre))
+        }
+    }
+    
+    val isLoading by remember { derivedStateOf { datosMap.isEmpty() } }
     var expanded by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf("Todo") }
     val coroutineScope = rememberCoroutineScope()
     val lifecycleOwner = LocalLifecycleOwner.current
+
 
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
@@ -88,28 +96,8 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
         }
     }
 
-    /*
-    val lifecycleOwner = LocalLifecycleOwner.current
-
-    LaunchedEffect(Unit) {
-        val observer = LifecycleEventObserver { _, event ->
-            when (event) {
-                Lifecycle.Event.ON_RESUME -> {
-                    viewModel.lecturaParametros()
-                }
-                Lifecycle.Event.ON_PAUSE -> {
-                }
-                else -> {}
-            }
-        }
-
-        lifecycleOwner.lifecycle.addObserver(observer)
-    }
-
-     */
-
     Scaffold(
-        containerColor = Color.Black, // Fondo de la pantalla
+        containerColor = Color.Black,
         bottomBar = {
             NavigationBar(modifier = Modifier.fillMaxWidth()) {
                 NavItem(onClickAction = {  }) {
@@ -179,103 +167,92 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // FILTER BUTTON
-            /*
+// BOTÓN DE FILTRO
             Row(
-                modifier = Modifier.fillMaxWidth().height(40.dp).padding(start=35.dp,end=22.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(40.dp)
+                    .padding(start = 35.dp, end = 22.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
                     "Mostrando : $selectedOption",
-                    modifier = Modifier.padding(top=6.dp),
-                    fontSize = 14.sp, color = Color.White
+                    modifier = Modifier.padding(top = 6.dp),
+                    fontSize = 14.sp,
+                    color = Color.White
                 )
-                Button(
-                    onClick = { expanded = !expanded },
-                    modifier = Modifier.width(110.dp).height(35.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = ButtonColors(contentColor = Color.White, containerColor = Color(0xFF1E88E5), disabledContentColor = Color.White, disabledContainerColor =Color(0xFF1E88E5)),
-                ) {
-
-                    IconF(
-                        painter = painterResource(id = R.drawable.filterarrows),
-                        contentDescription = "icon"
-                    )
-                    Text(text = "Filtrar")
-
-                    Row(horizontalArrangement = Arrangement.Absolute.Right, modifier = Modifier.fillMaxWidth().padding(top=30.dp,start=25.dp)){
-                        DropdownMenu(modifier = Modifier.background(Color(0xFF1E88E5)),
-                            expanded = expanded,
-                            onDismissRequest = { expanded = false
-                            }, scrollState = rememberScrollState()
+                Box {
+                    Button(
+                        onClick = { expanded = !expanded },
+                        modifier = Modifier.width(110.dp).height(35.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = ButtonColors(
+                            contentColor = Color.White,
+                            containerColor = Color(0xFF1E88E5),
+                            disabledContentColor = Color.White,
+                            disabledContainerColor = Color(0xFF1E88E5)
                         )
-                        {
-                            DropdownMenuItem(onClick = {
-                                selectedOption = "Todo"
-                                expanded = false
-                            },  text = { Text("Todo", color = Color.White, fontSize = 16.sp) })
-                            HorizontalDivider()
-                            DropdownMenuItem(onClick = {
-                                selectedOption = "Presión"
-                                expanded = false
-                            },  text = { Text("Presión", color = Color.White, fontSize = 16.sp) })
-                            HorizontalDivider()
-                            DropdownMenuItem(onClick = {
-                                selectedOption = "Combustible"
-                                expanded = false
-                            },  text = { Text("Combustible", color = Color.White, fontSize = 16.sp) })
-                            HorizontalDivider()
-                            DropdownMenuItem(onClick = {
-                                selectedOption = "Motor"
-                                expanded = false
-                            },  text = { Text("Motor", color = Color.White, fontSize = 16.sp) })
-                            HorizontalDivider()
-                            DropdownMenuItem(onClick = { selectedOption = "Temperatura"
-                                expanded = false
-                            },  text = { Text("Temperatura", color = Color.White, fontSize = 16.sp) })
-
-                        }
+                    ) {
+                        IconF(
+                            painter = painterResource(id = R.drawable.filterarrows),
+                            contentDescription = "icon"
+                        )
+                        Text(text = "Filtrar")
                     }
 
+                    DropdownMenu(
+                        expanded = expanded,
+                        onDismissRequest = { expanded = false },
+                        modifier = Modifier.background(Color(0xFF1E88E5))
+                    ) {
+                        val categorias = listOf("Todo", "Presión", "Combustible", "Motor", "Temperatura")
+                        categorias.forEach { categoria ->
+                            DropdownMenuItem(
+                                onClick = {
+                                    selectedOption = categoria
+                                    expanded = false
+                                },
+                                text = {
+                                    Text(text = categoria, color = Color.White, fontSize = 16.sp)
+                                }
+                            )
+                            HorizontalDivider()
+                        }
+                    }
                 }
-
-
             }
-            */
+
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            /*
-            val filtrados = when (selectedOption) {
-                "Presión" -> parametros.filter { it.categoria == "Presión" }
-                "Motor" -> parametros.filter { it.categoria == "Motor" }
-                "Temperatura" -> parametros.filter { it.categoria == "Temperatura" }
-                "Combustible" -> parametros.filter { it.categoria == "Combustible" }
-                else -> parametros
-            }
-            */
+            if (isLoading) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(
+                        color = Color(0xFF1E88E5),
+                        strokeWidth = 4.dp
+                    )
+                }
+            } else {
+                // Mostrar filtros y parámetros si ya no está cargando
+                Column {
+                    // ... tu Row con el DropdownMenu
 
-            Box(modifier = Modifier.weight(1f)) {
-               /* if(isLoading){
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(color = Color.White)
-                    }
-                }else{
-                    */
-                    ParametersScreen(datosMap)
-                    /*
-                    LazyColumn(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-                        items(listaParametros) { param ->
-                            ParameterCard(info = param)
-                        }
+                    val filtrados = when (selectedOption) {
+                        "Presión" -> listaParametros.filter { it.categoria == "Presión" }
+                        "Motor" -> listaParametros.filter { it.categoria == "Motor" }
+                        "Temperatura" -> listaParametros.filter { it.categoria == "Temperatura" }
+                        "Combustible" -> listaParametros.filter { it.categoria == "Combustible" }
+                        "Otros" -> listaParametros.filter { it.categoria == "Otros" }
+                        else -> listaParametros
                     }
 
-                     */
-                //}
+                    ParametersScreen(filtrados)
+                }
             }
+
 
             // BOTÓN FIJO ARRIBA DE LA NAVIGATION BAR
             Button(
@@ -462,7 +439,14 @@ fun IconF(painter: Painter, contentDescription: String) {
 
 // funciones, clases y objetos
 
-
+fun categoriaSegunNombre(nombre: String): String {
+    return when (nombre) {
+        "RPM", "Speed", "Engine Load" -> "Motor"
+        "Fuel Level", "Fuel Pressure", "Fuel Rail Pressure" -> "Combustible"
+        "Engine Coolant Temperature", "Oil Temperature", "Air Intake Temperature" -> "Temperatura"
+        else -> "Otros"
+    }
+}
 
 
 

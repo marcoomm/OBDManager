@@ -26,6 +26,7 @@ import java.net.URL
 )
 data class NumeroVin(
     @PrimaryKey val vin: String,
+
     @ColumnInfo(name = "marca", defaultValue = "'Desconocida'")
     val marca: String = "Desconocida",
 
