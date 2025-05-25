@@ -20,10 +20,6 @@ import kotlinx.coroutines.withContext
 
 @Entity(
     tableName = "errores_coche",
-    foreignKeys = [
-        ForeignKey(entity = Coche::class, parentColumns = ["vin"], childColumns = ["vin"], onDelete = ForeignKey.CASCADE),
-        ForeignKey(entity = CodigosError::class, parentColumns = ["codigoError"], childColumns = ["codigoError"], onDelete = ForeignKey.CASCADE)
-    ],
     indices = [
         Index(value = ["vin", "codigoError"], unique = true),
         Index(value = ["codigoError"])
@@ -38,15 +34,12 @@ data class ErroresCoche(
 
 @Dao
 interface ErroresCocheDao {
-    // Insertar un error
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertarErroresCoche(errores:List<ErroresCoche>)
 
-    // Obtener todos los errores
     @Query("SELECT * FROM errores_coche WHERE vin = :vin")
     suspend fun obtenerErroresCoche(vin: String): List<ErroresCoche>?
 
-    // Borrar errores por VIN
     @Query("DELETE FROM errores_coche WHERE vin = :vin")
     suspend fun borrarErroresPorVin(vin: String)
 }
@@ -102,11 +95,13 @@ fun obtenerErrores(context: Context, vin: String,callback: (List<ErroresCoche>) 
         }
     }
 }
+
+
 fun borrarErrores(context: Context, vin: String) {
     val db = AppDatabase.getDatabase(context)
     CoroutineScope(Dispatchers.IO).launch {
         try {
-            db.erroresDao().borrarErroresPorVin(vin) // Llamamos al DAO para borrar los errores
+            db.erroresDao().borrarErroresPorVin(vin)
             CoroutineScope(Dispatchers.Main).launch {
                 Toast.makeText(context, "Errores borrados correctamente", Toast.LENGTH_SHORT).show()
             }

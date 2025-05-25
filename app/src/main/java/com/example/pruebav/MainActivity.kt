@@ -14,15 +14,35 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -34,10 +54,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.example.pruebav.database.NumeroVin
-import com.example.pruebav.database.NumeroVinDao
 import com.example.pruebav.ui.theme.PruebaVTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -51,10 +69,12 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+    private val viewModel: OBDViewModel by viewModels()
     private val enableBluetoothLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 Log.i("OBD", "Bluetooth activado correctamente.")
+                viewModel.setBluetoothReady(true)
             } else {
                 Log.e("OBD", "El usuario rechazó activar Bluetooth.")
             }
@@ -90,6 +110,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
 
     val scope = rememberCoroutineScope()
     var showDeviceList by remember { mutableStateOf(false) }
+    val bluetoothReady by viewModel.bluetoothReady.collectAsState()
     var pairedDevices by remember { mutableStateOf(emptyList<BluetoothDevice>()) }
     val mostrar = remember { mutableStateOf(false) }
     val currentTime by viewModel.fecha.collectAsState()
@@ -123,6 +144,27 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
         }
     }
 
+    LaunchedEffect(bluetoothReady) {
+        if (bluetoothReady && !isConnected) {
+            val adapter = BluetoothAdapter.getDefaultAdapter()
+            if (adapter != null && adapter.isEnabled) {
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+                    == PackageManager.PERMISSION_GRANTED
+                ) {
+                    val devices = adapter.bondedDevices.toList()
+                    if (devices.isNotEmpty()) {
+                        pairedDevices = devices
+                        showDeviceList = true
+                    } else {
+                        viewModel.setConnectionStatus("No hay dispositivos emparejados")
+                    }
+                } else {
+                    viewModel.setConnectionStatus("Permiso BLUETOOTH_CONNECT no concedido")
+                }
+            }
+        }
+    }
+    
     LaunchedEffect(vin) {
         if (isConnected && ecuReady && viewModel.shouldProcessVin(vin)) {
             val numeroVin = NumeroVin.decodeVinHttpClient(vin)
@@ -236,33 +278,28 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
             ) {
                 Button(modifier = Modifier, colors = ButtonColors(Color(0xFF1E88E5), Color.White,Color(0xFF1E88E5),Color.White),
                     onClick = {
-                        scope.launch {
-                            val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-                            if (bluetoothAdapter == null) {
-                                viewModel.setConnectionStatus("Bluetooth no disponible")
-                                Log.e("OBD", "Bluetooth no disponible en este dispositivo.")
-                                return@launch
-                            }
-                            if (!bluetoothAdapter.isEnabled) {
-                                viewModel.setConnectionStatus("Activando Bluetooth...")
-                                enableBluetoothLauncher.launch(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE))
-                                return@launch
-                            }
-                            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                                viewModel.setConnectionStatus("Permiso de Bluetooth no concedido")
-                                return@launch
-                            }
-                            pairedDevices = bluetoothAdapter.bondedDevices.toList()
-                            if (pairedDevices.isNotEmpty()) {
-                                showDeviceList = true
-                            } else {
-                                viewModel.setConnectionStatus("No hay dispositivos emparejados")
-                            }
+                    scope.launch {
+                        val adapter = BluetoothAdapter.getDefaultAdapter()
+                        if (adapter == null) {
+                            viewModel.setConnectionStatus("Bluetooth no disponible")
+                            return@launch
                         }
-                    }) {
+                        if (!adapter.isEnabled) {
+                            enableBluetoothLauncher.launch(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE))
+                            return@launch
+                        }
+                        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+                            != PackageManager.PERMISSION_GRANTED
+                        ) {
+                            viewModel.setConnectionStatus("Permiso no concedido")
+                            return@launch
+                        }
+                        viewModel.setBluetoothReady(true)
+                        showDeviceList=true
+                    }
+                }) {
                     Text("Conectar OBD-II")
                 }
-
                 if (showDeviceList) {
                     AlertDialog(
                         onDismissRequest = { showDeviceList = false },
@@ -275,7 +312,6 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                                             try {
                                                 viewModel.conectarDispositivo(device)
                                                 viewModel.onConnected(device.name ?: "desconocido")
-
                                             } catch (e: Exception) {
                                                 viewModel.setConnectionStatus("Error al conectar")
                                             }
@@ -298,9 +334,9 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                             OBDManager.desconectar()
 
                             vinprueba.value=""
-                            viewModel.setVin("")
-                            viewModel.setKM("")
-                            viewModel.setNErrores("")
+                            viewModel.setVin("NO DATA")
+                            viewModel.setKM("NO DATA")
+                            viewModel.setNErrores("NO DATA")
 
                         }
                     }) {
@@ -563,11 +599,15 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .padding(8.dp)
                    .clickable {
 
+                       /*
                        if (isConnected) {
                            navController.navigate("parametros")
+
                        } else {
                            Toast.makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT).show()
                        }
+                       */
+                       navController.navigate("parametros")
 
                    },
                shape = RoundedCornerShape(12.dp),

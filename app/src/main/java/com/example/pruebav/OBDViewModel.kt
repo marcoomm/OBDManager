@@ -26,6 +26,14 @@ import kotlin.coroutines.cancellation.CancellationException
 
 class OBDViewModel(application: Application) : AndroidViewModel(application) {
 
+    //bluetooth
+    private var _bluetoothReady = MutableStateFlow(false)
+    var bluetoothReady :StateFlow<Boolean> = _bluetoothReady
+
+    fun setBluetoothReady(value: Boolean) {
+        _bluetoothReady.value = value
+    }
+
     //main activity
 
     //variables de estado
@@ -50,7 +58,6 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     fun setECUReady(ready: Boolean) {
         _ecuReady.value = ready
     }
-
 
     //variables obd
     private var _vin = MutableStateFlow("NO DATA")
@@ -133,9 +140,7 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-
     private var lastCheckedVin: String? = null
-
     fun shouldProcessVin(currentVin: String): Boolean {
         return if (currentVin.isNotBlank() && currentVin != lastCheckedVin) {
             lastCheckedVin = currentVin
@@ -145,37 +150,32 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-
     private var lecturaIniciada = false
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun lecturaInicial() {
-        if (lecturaIniciada) return // Solo se ejecuta una vez
+        if (lecturaIniciada) return
         lecturaIniciada = true
 
         viewModelScope.launch {
             runCatching {
-                // Iniciar conexión OBD y leer datos iniciales
                 val datosIniciales = withContext(Dispatchers.IO) {
                     OBDManager.iniciar(obdConnection)
                     OBDManager.leerDatosIniciales()
                 }
 
-                // Asigna los valores obtenidos al StateFlow
                 val vinLimpio = OBDManager.limpiarVin(datosIniciales["vin"] ?: "")
                 _vin.value = vinLimpio
                 _km.value = datosIniciales["km"] ?: ""
                 _nerrores.value = datosIniciales["numerCodes"] ?: ""
 
-                delay(1000) // Espera para simular proceso de lectura
+                delay(1000)
 
-                // Leer los códigos de error
                 val errores = withContext(Dispatchers.IO) {
                     OBDManager.leerCodigos()
                 }
                 _codigosError.value = errores
 
-                // Establecer la fecha y hora actual
                 val fechaActual = LocalDateTime.now()
                 val formato = DateTimeFormatter.ofPattern("HH:mm")
                 _fecha.value = fechaActual.format(formato)
@@ -216,15 +216,8 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
 
                 try {
 
-                    /*
-                    val rpm = withContext(Dispatchers.IO){
-                        OBDManager.leerRPM()
-                    }
-                    _rpm.value = rpm!!
-                    */
-
                     val datos = withContext(Dispatchers.IO) {
-                        OBDManager.leerBasic()
+                        OBDManager.leerParametros()
                     }
                     _parametros.value = datos.map { (nombre, valor) ->
                         Log.d("VIEWMODEL", "Parametro $nombre = $valor")
@@ -253,7 +246,6 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         lecturaJob = null
         leyendoParametros = false
     }
-
 
 }
 

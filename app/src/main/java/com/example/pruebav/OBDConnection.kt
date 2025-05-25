@@ -1,84 +1,54 @@
 package com.example.pruebav
 
-import  android.Manifest
+import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
 import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.core.app.ActivityCompat
 import com.github.eltonvs.obd.command.NonNumericResponseException
 import com.github.eltonvs.obd.command.ObdCommand
 import com.github.eltonvs.obd.command.ObdProtocols
 import com.github.eltonvs.obd.command.ObdRawResponse
-import com.github.eltonvs.obd.command.ObdResponse
-import com.github.eltonvs.obd.command.RegexPatterns
-import com.github.eltonvs.obd.command.RegexPatterns.BUS_INIT_PATTERN
-import com.github.eltonvs.obd.command.RegexPatterns.STARTS_WITH_ALPHANUM_PATTERN
-import com.github.eltonvs.obd.command.RegexPatterns.WHITESPACE_PATTERN
 import com.github.eltonvs.obd.command.Switcher
-import com.github.eltonvs.obd.command.control.DistanceMILOnCommand
-import com.github.eltonvs.obd.command.control.TroubleCodesCommand
-import com.github.eltonvs.obd.command.control.VINCommand
-import com.github.eltonvs.obd.command.engine.LoadCommand
-import com.github.eltonvs.obd.command.engine.RPMCommand
-import com.github.eltonvs.obd.command.engine.RuntimeCommand
-import com.github.eltonvs.obd.command.engine.ThrottlePositionCommand
-import com.github.eltonvs.obd.command.fuel.FuelConsumptionRateCommand
-import com.github.eltonvs.obd.command.fuel.FuelLevelCommand
-import com.github.eltonvs.obd.command.pressure.BarometricPressureCommand
-import com.github.eltonvs.obd.command.pressure.FuelPressureCommand
-import com.github.eltonvs.obd.command.pressure.FuelRailPressureCommand
-import com.github.eltonvs.obd.command.pressure.IntakeManifoldPressureCommand
-import com.github.eltonvs.obd.command.temperature.AirIntakeTemperatureCommand
-import com.github.eltonvs.obd.command.temperature.EngineCoolantTemperatureCommand
-import com.github.eltonvs.obd.connection.ObdDeviceConnection
 import com.github.eltonvs.obd.command.at.DescribeProtocolCommand
 import com.github.eltonvs.obd.command.at.ResetAdapterCommand
 import com.github.eltonvs.obd.command.at.SelectProtocolCommand
 import com.github.eltonvs.obd.command.at.SetEchoCommand
-import com.github.eltonvs.obd.command.at.SetHeadersCommand
 import com.github.eltonvs.obd.command.at.SetLineFeedCommand
-import com.github.eltonvs.obd.command.at.SetSpacesCommand
 import com.github.eltonvs.obd.command.at.SetTimeoutCommand
 import com.github.eltonvs.obd.command.control.DTCNumberCommand
 import com.github.eltonvs.obd.command.control.DistanceSinceCodesClearedCommand
 import com.github.eltonvs.obd.command.control.ResetTroubleCodesCommand
-import com.github.eltonvs.obd.command.control.TimeSinceCodesClearedCommand
-import com.github.eltonvs.obd.command.egr.CommandedEgrCommand
-import com.github.eltonvs.obd.command.egr.EgrErrorCommand
-import com.github.eltonvs.obd.command.engine.AbsoluteLoadCommand
-import com.github.eltonvs.obd.command.engine.MassAirFlowCommand
-import com.github.eltonvs.obd.command.engine.RelativeThrottlePositionCommand
+import com.github.eltonvs.obd.command.control.TroubleCodesCommand
+import com.github.eltonvs.obd.command.engine.LoadCommand
+import com.github.eltonvs.obd.command.engine.RPMCommand
 import com.github.eltonvs.obd.command.engine.SpeedCommand
-import com.github.eltonvs.obd.command.fuel.EthanolLevelCommand
-import com.github.eltonvs.obd.command.fuel.FuelAirEquivalenceRatioCommand
+import com.github.eltonvs.obd.command.engine.ThrottlePositionCommand
+import com.github.eltonvs.obd.command.fuel.FuelLevelCommand
 import com.github.eltonvs.obd.command.fuel.FuelTrimCommand
 import com.github.eltonvs.obd.command.fuel.FuelTypeCommand
-import com.github.eltonvs.obd.command.pressure.FuelRailGaugePressureCommand
-import com.github.eltonvs.obd.command.removeAll
+import com.github.eltonvs.obd.command.pressure.FuelPressureCommand
+import com.github.eltonvs.obd.command.pressure.FuelRailPressureCommand
+import com.github.eltonvs.obd.command.pressure.IntakeManifoldPressureCommand
+import com.github.eltonvs.obd.command.temperature.AirIntakeTemperatureCommand
 import com.github.eltonvs.obd.command.temperature.AmbientAirTemperatureCommand
+import com.github.eltonvs.obd.command.temperature.EngineCoolantTemperatureCommand
 import com.github.eltonvs.obd.command.temperature.OilTemperatureCommand
-import kotlinx.coroutines.CoroutineScope
+import com.github.eltonvs.obd.connection.ObdDeviceConnection
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 import java.util.UUID
 import java.util.concurrent.TimeoutException
-import kotlin.math.log
 
 class OBDConnection(private val context: Context) {
     private val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
@@ -121,13 +91,6 @@ class OBDConnection(private val context: Context) {
             outputStream = sockeT?.outputStream
             obdConnection = ObdDeviceConnection(inputStream!!, outputStream!!)
             Log.d("OBD", "Conectado a OBD-II exitosamente")
-
-
-            /*
-            val buffer = ByteArray(1024)
-            while ((inputStream?.available() ?: 0) > 0) {
-                inputStream?.read(buffer)
-            }*/
 
 
             val describeProtocol = DescribeProtocolCommand()
@@ -299,7 +262,7 @@ class OBDConnection(private val context: Context) {
             } catch (e: Exception) {
                 datos["RPM"] = "No Data"
             }
-            Log.d("rpm", ": ${datos["RPM"]}")
+           // Log.d("rpm", ": ${datos["RPM"]}")
 
             try {
                 val speed = obdConnection!!.run(SafeObdCommand1(SpeedCommand()))
@@ -307,7 +270,7 @@ class OBDConnection(private val context: Context) {
             } catch (e: Exception) {
                 datos["Speed"] = "No Data"
             }
-            Log.d("speed", ": ${datos["Speed"]}")
+            //Log.d("speed", ": ${datos["Speed"]}")
             delay(150)
 
             /*
@@ -334,7 +297,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Engine Load"] = load?.formattedValue ?: "No Data"
-            Log.d("engineLoad", ": ${datos["Engine Load"]}")
+            //Log.d("engineLoad", ": ${datos["Engine Load"]}")
             delay(150)
 
             /*
@@ -353,7 +316,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Throttle Position"] = throttle?.formattedValue ?: "No Data"
-            Log.d("throttlePosition", ": ${datos["Throttle Position"]}")
+            //Log.d("throttlePosition", ": ${datos["Throttle Position"]}")
             delay(150)
 
             /*
@@ -372,7 +335,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Type"] = fuelType?.formattedValue ?: "No Data"
-            Log.d("fuelType", ": ${datos["Fuel Type"]}")
+            //Log.d("fuelType", ": ${datos["Fuel Type"]}")
             delay(150)
 
             val fuelLevel = try {
@@ -381,7 +344,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Level"] = fuelLevel?.formattedValue ?: "No Data"
-            Log.d("fuelLevel", ": ${datos["Fuel Level"]}")
+            //Log.d("fuelLevel", ": ${datos["Fuel Level"]}")
             delay(150)
 
             /*
@@ -400,7 +363,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Intake Manifold Pressure"] = intakeManifoldPressure?.formattedValue ?: "No Data"
-            Log.d("intakeManifoldPressure", ": ${datos["Intake Manifold Pressure"]}")
+            //Log.d("intakeManifoldPressure", ": ${datos["Intake Manifold Pressure"]}")
             delay(150)
 
             val fuelPressure = try {
@@ -409,7 +372,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Pressure"] = fuelPressure?.formattedValue ?: "No Data"
-            Log.d("fuelPressure", ": ${datos["Fuel Pressure"]}")
+            //Log.d("fuelPressure", ": ${datos["Fuel Pressure"]}")
             delay(150)
 
             val fuelRailPressure = try {
@@ -418,9 +381,10 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Rail Pressure"] = fuelRailPressure?.formattedValue ?: "No Data"
-            Log.d("fuelRailPressure", ": ${datos["Fuel Rail Pressure"]}")
+            //Log.d("fuelRailPressure", ": ${datos["Fuel Rail Pressure"]}")
             delay(150)
 
+            /*
             val fueltrim = try{
                 obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.LONG_TERM_BANK_1)))
                 obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.LONG_TERM_BANK_2)))
@@ -429,7 +393,8 @@ class OBDConnection(private val context: Context) {
             }  catch(e:Exception){
                 null
             }
-            Log.d("fuelTrim", fueltrim!!.formattedValue)
+            //Log.d("fuelTrim", fueltrim!!.formattedValue)
+            */
 
             /*
             val fuelRailGaugePressure = try {
@@ -447,7 +412,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Air Intake Temperature"] = airIntakeTemperature?.formattedValue ?: "No Data"
-            Log.d("airIntakeTemperature", ": ${datos["Air Intake Temperature"]}")
+            //Log.d("airIntakeTemperature", ": ${datos["Air Intake Temperature"]}")
             delay(150)
 
             val ambientAirTemperature = try {
@@ -456,7 +421,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Ambient Air Temperature"] = ambientAirTemperature?.formattedValue ?: "No Data"
-            Log.d("ambientAirTemperature", ": ${datos["Ambient Air Temperature"]}")
+            //Log.d("ambientAirTemperature", ": ${datos["Ambient Air Temperature"]}")
             delay(150)
 
             val engineCoolantTemperature = try {
@@ -465,7 +430,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Engine Coolant Temperature"] = engineCoolantTemperature?.formattedValue ?: "No Data"
-            Log.d("engineCoolantTemperature", ": ${datos["Engine Coolant Temperature"]}")
+            //Log.d("engineCoolantTemperature", ": ${datos["Engine Coolant Temperature"]}")
             delay(150)
 
             val oilTemperature = try {
@@ -474,7 +439,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Oil Temperature"] = oilTemperature?.formattedValue ?: "No Data"
-            Log.d("oilTemperature", ": ${datos["Oil Temperature"]}")
+            //Log.d("oilTemperature", ": ${datos["Oil Temperature"]}")
             delay(150)
 
 

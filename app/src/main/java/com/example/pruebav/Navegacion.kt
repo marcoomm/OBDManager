@@ -3,7 +3,9 @@ package com.example.pruebav
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -12,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun NavegacionEntreVentanas(
     context: Context,
@@ -37,7 +40,7 @@ fun NavegacionEntreVentanas(
             CError(context, controlador, viewModel)
         }
         composable("datos") {
-            Datos(controlador, db)
+            Datos(controlador, db,context)
         }
     }
 }

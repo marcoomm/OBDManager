@@ -12,12 +12,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -38,7 +38,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.DpOffset
@@ -58,30 +57,27 @@ import com.example.pruebav.database.ErroresCoche
 import com.example.pruebav.database.ErroresCocheDao
 import com.example.pruebav.database.NumeroVin
 import com.example.pruebav.database.NumeroVinDao
-import com.example.pruebav.database.Parametro
 import com.example.pruebav.database.ParametrosCoche
 import com.example.pruebav.database.ParametrosDao
-import com.example.pruebav.database.obtenerParametros
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.example.pruebav.database.borrarErrores
+import com.example.pruebav.database.borrarParametros
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlin.coroutines.cancellation.CancellationException
 
 @Composable
-fun Datos(navController: NavController, database: AppDatabase) {
+fun Datos(navController: NavController, database: AppDatabase,context: Context) {
 
     val coroutineScope = rememberCoroutineScope()
     var expandedVin by remember { mutableStateOf(false) }
     var expandedOption by remember { mutableStateOf(false) }
-    var option by remember { mutableStateOf("") }
+    var option by remember { mutableStateOf("Parámetros") }
     var cargando by remember { mutableStateOf(false) }
 
     var todosVin  by remember { mutableStateOf<List<String>>(emptyList()) }
     var seleccionadoVin by remember{ mutableStateOf("") }
 
     var todosCoches by remember { mutableStateOf<List<CocheMarcaModelo>>(emptyList()) }
-    var seleccionadoCoche by remember { mutableStateOf<CocheMarcaModelo?>(null) }
+    //var seleccionadoCoche by remember { mutableStateOf<CocheMarcaModelo?>(null) }
 
     var parametros by remember { mutableStateOf<ParametrosCoche?>(null) }
     var errores by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
@@ -111,23 +107,28 @@ fun Datos(navController: NavController, database: AppDatabase) {
 
         }
     }
+
     LaunchedEffect(seleccionadoVin, option) {
         if (seleccionadoVin.isNotBlank()) {
-            try {
-                if (option == "Parámetros") {
-                    //parametros = obtenerParametros(context, vin = seleccionadoVin)
-                    val resultado = database.parametrosDao().obtenerParametros(seleccionadoVin.trim().uppercase())
-                    Log.d("debug", "Resultado obtenerParametros: $resultado")
+            cargando = true
 
-                } else {
+            try {
+                delay(2000)
+
+                if (option == "Parámetros") {
+                    parametros = database.parametrosDao().obtenerParametros(seleccionadoVin.trim().uppercase())
+                    Log.d("debug", "Resultado obtenerParametros: $parametros")
+                }else {
                     errores = database.erroresDao().obtenerErroresCoche(seleccionadoVin.trim().uppercase()) ?: emptyList()
+                    Log.d("debug", "Resultado obtenerErrores: $errores")
                 }
             } catch (e: Exception) {
                 Log.e("OBD_Database", "Error al leer datos: ${e.message}")
+            } finally {
+                cargando = false
             }
         }
     }
-
 
 
     Scaffold(
@@ -188,11 +189,13 @@ fun Datos(navController: NavController, database: AppDatabase) {
         ) {
             Spacer(modifier = Modifier.height(35.dp))
 
-            // TOP APP BAR
             Row(modifier = Modifier.padding(16.dp)) {
                 Icon(
                     onClick = { navController.navigate("inicio") },
-                    modifier = Modifier.width(30.dp).height(28.dp).rotate(180.0F),
+                    modifier = Modifier
+                        .width(30.dp)
+                        .height(28.dp)
+                        .rotate(180.0F),
                     painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),
                     contentDescription = "icon"
                 )
@@ -216,7 +219,9 @@ fun Datos(navController: NavController, database: AppDatabase) {
                 Box {
                     Button(
                         onClick = { expandedVin = !expandedVin },
-                        modifier = Modifier.width(145.dp).height(35.dp),
+                        modifier = Modifier
+                            .width(145.dp)
+                            .height(35.dp),
                         shape = RoundedCornerShape(12.dp),
                         colors = ButtonDefaults.buttonColors(
                             contentColor = Color.White,
@@ -251,7 +256,9 @@ fun Datos(navController: NavController, database: AppDatabase) {
                 Box {
                     Button(
                         onClick = { expandedOption = !expandedOption },
-                        modifier = Modifier.width(170.dp).height(35.dp),
+                        modifier = Modifier
+                            .width(170.dp)
+                            .height(35.dp),
                         shape = RoundedCornerShape(12.dp),
                         colors = ButtonDefaults.buttonColors(
                             contentColor = Color.White,
@@ -290,12 +297,10 @@ fun Datos(navController: NavController, database: AppDatabase) {
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // CONTENIDO SCROLLEABLE
             Box(modifier = Modifier.weight(1f)) {
 
-                if (seleccionadoCoche != null) {
+                if (seleccionadoVin != "") {
                     if (cargando) {
-                        // Mostrar loading mientras se obtienen los datos
                         Box(
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
@@ -304,53 +309,34 @@ fun Datos(navController: NavController, database: AppDatabase) {
                         }
                     } else {
                         when (option) {
-                            "Parametros" -> {
+                            "Parámetros" -> {
                                 if (parametros != null) {
-                                    ListaParametros(parametros!!)
+                                    ListaParametros(
+                                        parametros = parametros!!,
+                                        vin = seleccionadoVin,
+                                        context = context,
+                                        onUpdate = {
+                                            parametros = null
+                                        }
+                                    )
+
                                 } else {
-                                    DatosVacios()
+                                    DatosVacios(option)
                                 }
                             }
-                            "Codigos de error" -> {
+                            "Códigos de error" -> {
                                 if (errores.isNotEmpty()) {
-                                    ListaErrores(errores)
+                                    ListaErrores(errores, seleccionadoVin, context)
                                 } else {
-                                    DatosVacios()
+                                    DatosVacios(option)
                                 }
                             }
                         }
+
                     }
                 } else {
-                    // No se ha seleccionado un coche
                     PantallaCarga()
                 }
-
-
-                /*
-                if(seleccionadoVin.isNotEmpty()){
-                    PantallaCarga()
-
-                    when (option) {
-                        "Parametros" -> {
-                            if (parametros != null) {
-                                ListaParametros(parametros!!)
-                            } else {
-                                DatosVacios()
-                            }
-                        }
-                        "Codigos de error" -> {
-                            if (errores.isNotEmpty()) {
-                                ListaErrores(errores)
-                            } else {
-                                DatosVacios()
-                            }
-                        }
-                    }
-                }else{
-                    DatosVacios()
-                }
-                */
-
             }
         }
     }
@@ -358,105 +344,153 @@ fun Datos(navController: NavController, database: AppDatabase) {
 
 
 @Composable
-fun ListaParametros(parametros: ParametrosCoche) {
-    // Lista de parámetros con el contenido de la base de datos
-    LazyColumn {
-        items(parametros.parametros) { parametro ->
-            Card(
+fun ListaParametros(
+    parametros: ParametrosCoche,
+    vin: String,
+    context: Context,
+    onUpdate: () -> Unit
+)
+ {
+
+    Scaffold(
+        bottomBar = {
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 8.dp, horizontal = 16.dp),
-                shape = RoundedCornerShape(12.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
             ) {
-                Row(
-                    modifier = Modifier.padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                Button(
+                    onClick = {
+                        borrarParametros(context, vin)
+                        onUpdate() // Forzar actualización del estado
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF670000))
                 ) {
-                    Box(
-                        modifier = Modifier
-                            .width(145.dp)
-                            .height(70.dp)
-                            .background(Color.White, shape = RoundedCornerShape(8.dp)),
-                        contentAlignment = Alignment.Center
+                    Text("Eliminar parámetros", color = Color.White)
+                }
+
+            }
+        },
+        containerColor = Color.Black
+    ) { innerPadding ->
+        LazyColumn(
+            contentPadding = innerPadding
+        ) {
+            items(parametros.parametros) { parametro ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp, horizontal = 16.dp),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(
-                            text = parametro.valor,
-                            color = Color.Black,
-                            fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold
-                        )
+                        Box(
+                            modifier = Modifier
+                                .width(145.dp)
+                                .height(70.dp)
+                                .background(Color.White, shape = RoundedCornerShape(8.dp)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = parametro.valor,
+                                color = Color.Black,
+                                fontSize = 18.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.width(30.dp))
+
+                        Column {
+                            Text(
+                                text = parametro.nombre,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White,
+                                fontSize = 16.sp
+                            )
+                            Text(
+                                text = parametro.categoria,
+                                color = Color.Gray,
+                                fontSize = 14.sp
+                            )
+                        }
                     }
+                }
+            }
+        }
+    }
+}
 
-                    Spacer(modifier = Modifier.width(30.dp))
 
-                    Column {
+@Composable
+fun ListaErrores(errores: List<ErroresCoche>,vin:String, context: Context) {
+    Scaffold(
+        bottomBar = {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Button(
+                    onClick = { borrarErrores(context,vin) },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
+                ) {
+                    Text("Eliminar errores", color = Color.Black)
+                }
+            }
+        },
+        containerColor = Color.Black
+    ) { innerPadding ->
+        LazyColumn(
+            contentPadding = innerPadding
+        ) {
+            items(errores) { error ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp, horizontal = 16.dp),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .width(145.dp)
+                                .height(70.dp)
+                                .background(Color.White, shape = RoundedCornerShape(8.dp)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = error.codigoError,
+                                color = Color.Black,
+                                fontSize = 18.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.width(30.dp))
+
                         Text(
-                            text = parametro.nombre,
+                            text = error.descripcion ?: "Sin descripción",
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
                             fontSize = 16.sp
                         )
-                        Text(
-                            text = parametro.categoria,
-                            color = Color.Gray,
-                            fontSize = 14.sp
-                        )
-                        // Si quieres añadir hora de lectura, tendrías que incluirla en Parametro
-                        // Text(text = "Comprobado a las: 12:45", color = Color.Gray, fontSize = 12.sp)
                     }
                 }
             }
         }
     }
 }
-
-
-@Composable
-fun ListaErrores(errores: List<ErroresCoche>) {
-    LazyColumn {
-        items(errores) { error ->
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp, horizontal = 16.dp),
-                shape = RoundedCornerShape(12.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-            ) {
-                Row(
-                    modifier = Modifier.padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .width(145.dp)
-                            .height(70.dp)
-                            .background(Color.White, shape = RoundedCornerShape(8.dp)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = error.codigoError,
-                            color = Color.Black,
-                            fontSize = 18.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-
-                    Spacer(modifier = Modifier.width(30.dp))
-
-                    Text(
-                        text = error.descripcion ?: "Sin descripción",
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White,
-                        fontSize = 16.sp
-                    )
-
-                }
-            }
-        }
-    }
-}
-
 
 @Composable
 fun PantallaCarga(){
@@ -480,30 +514,45 @@ fun PantallaCarga(){
 }
 
 @Composable
-fun DatosVacios(){
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .padding(16.dp),
-        contentAlignment = Alignment.Center)
-    {
+fun DatosVacios(tipo: String) {
+    val mensaje = when (tipo) {
+        "Parámetros" -> "No hay parámetros guardados para este coche"
+        "Codigos de error" -> "No hay códigos de error guardados"
+        else -> "No hay datos guardados"
+    }
 
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        contentAlignment = Alignment.Center
+    ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Icon(
+                painter = painterResource(id = R.drawable.baseline_announcement_24),
+                contentDescription = "icon",
+                modifier = Modifier.size(50.dp)
+            )
+            Spacer(modifier = Modifier.height(12.dp))
             Text(
-                text = "No hay datos guardados",
-                color = Color.White
+                text = mensaje,
+                color = Color.White,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
             )
         }
     }
 }
+
 
 data class CocheMarcaModelo(
     val marca: String,
     val modelo: String
 )
 
-@Database(entities = [ParametrosCoche::class, ErroresCoche::class, NumeroVin::class, Coche::class, CodigosError::class], version = 2, exportSchema = false)
+@Database(entities = [ParametrosCoche::class, ErroresCoche::class, NumeroVin::class, Coche::class, CodigosError::class], version = 3, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun parametrosDao(): ParametrosDao
