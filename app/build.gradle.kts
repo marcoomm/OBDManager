@@ -40,6 +40,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig=true
         compose = true
     }
     composeOptions {
@@ -58,6 +59,10 @@ ksp {
 dependencies {
 
     implementation(files("libs/kotlin-obd-api-1.3.0.jar"))
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)

@@ -344,13 +344,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
 
 
 @Composable
-fun ListaParametros(
-    parametros: ParametrosCoche,
-    vin: String,
-    context: Context,
-    onUpdate: () -> Unit
-)
- {
+fun ListaParametros(parametros: ParametrosCoche, vin: String, context: Context, onUpdate: () -> Unit) {
 
     Scaffold(
         bottomBar = {
@@ -363,7 +357,7 @@ fun ListaParametros(
                 Button(
                     onClick = {
                         borrarParametros(context, vin)
-                        onUpdate() // Forzar actualización del estado
+                        onUpdate()
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF670000))
                 ) {
@@ -428,63 +422,95 @@ fun ListaParametros(
 
 
 @Composable
-fun ListaErrores(errores: List<ErroresCoche>,vin:String, context: Context) {
+fun ListaErrores(errores: List<ErroresCoche>, vin: String, context: Context, onUpdate: () -> Unit = {}) {
+    val esSinErrores = errores.size == 1 && errores.first().codigoError == "NO_ERROR"
+
     Scaffold(
         bottomBar = {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Button(
-                    onClick = { borrarErrores(context,vin) },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
+            if (!esSinErrores) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Text("Eliminar errores", color = Color.Black)
+                    Button(
+                        onClick = {
+                            borrarErrores(context, vin)
+                            onUpdate()
+                        },
+                        colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
+                    ) {
+                        Text("Eliminar errores", color = Color.Black)
+                    }
                 }
             }
         },
         containerColor = Color.Black
     ) { innerPadding ->
-        LazyColumn(
-            contentPadding = innerPadding
-        ) {
-            items(errores) { error ->
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 8.dp, horizontal = 16.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-                ) {
-                    Row(
-                        modifier = Modifier.padding(16.dp),
-                        verticalAlignment = Alignment.CenterVertically
+        if (esSinErrores) {
+            // Mostrar aviso visual cuando no hay errores
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+                    .padding(20.dp)
+                    .background(Color(0xFF2E7D32), shape = RoundedCornerShape(12.dp)),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = errores.first().descripcion ?: "No se detectaron errores.",
+                    color = Color.White,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+        } else {
+            LazyColumn(contentPadding = innerPadding) {
+                items(errores) { error ->
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp, horizontal = 16.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
                     ) {
-                        Box(
-                            modifier = Modifier
-                                .width(145.dp)
-                                .height(70.dp)
-                                .background(Color.White, shape = RoundedCornerShape(8.dp)),
-                            contentAlignment = Alignment.Center
+                        Row(
+                            modifier = Modifier.padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text(
-                                text = error.codigoError,
-                                color = Color.Black,
-                                fontSize = 18.sp,
-                                fontWeight = FontWeight.Bold
-                            )
+                            Box(
+                                modifier = Modifier
+                                    .width(145.dp)
+                                    .height(70.dp)
+                                    .background(Color.White, shape = RoundedCornerShape(8.dp)),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = error.codigoError,
+                                    color = Color.Black,
+                                    fontSize = 18.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+
+                            Spacer(modifier = Modifier.width(30.dp))
+
+                            Column {
+                                Text(
+                                    text = "Código de error",
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White,
+                                    fontSize = 16.sp
+                                )
+                                Text(
+                                    text = error.descripcion ?: "Sin descripción",
+                                    color = Color.Gray,
+                                    fontSize = 14.sp
+                                )
+                            }
                         }
-
-                        Spacer(modifier = Modifier.width(30.dp))
-
-                        Text(
-                            text = error.descripcion ?: "Sin descripción",
-                            fontWeight = FontWeight.Bold,
-                            color = Color.White,
-                            fontSize = 16.sp
-                        )
                     }
                 }
             }
