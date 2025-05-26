@@ -112,7 +112,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                 NavItem(onClickAction = { navController.navigate("") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon3),
                                 contentDescription = "Manager icon"
                             )
@@ -124,7 +124,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                 NavItem(onClickAction = { navController.navigate("inicio") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon2),
                                 contentDescription = "Inicio icon"
                             )
@@ -140,13 +140,17 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                 NavItem(onClickAction = { navController.navigate("datos") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon1),
                                 contentDescription = "Asistente icon"
                             )
                         }
                     }
-                    LabelText(texto = "Manager")
+                    Text(
+                        "Manager",
+                        modifier = Modifier.padding(top = 25.dp, start = 5.dp, end = 5.dp),
+                        fontSize = 13.sp, color = Color.White, fontWeight = FontWeight.Bold
+                    )
                 }
             }
         }
@@ -160,7 +164,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
             Spacer(modifier = Modifier.height(35.dp))
 
             Row(modifier = Modifier.padding(16.dp)) {
-                Icon(
+                IconM(
                     onClick = { navController.navigate("inicio") },
                     modifier = Modifier.width(30.dp).height(28.dp).rotate(180.0F),
                     painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),
@@ -209,7 +213,7 @@ fun ErrorList(context: Context, vin: String, listaErrores: List<ErroresCoche>,vi
                 contentAlignment = Alignment.Center
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Icon(
+                    IconM(
                         painter = painterResource(id = R.drawable.baseline_check_24),
                         contentDescription = "icon",
                         modifier = Modifier.size(50.dp)

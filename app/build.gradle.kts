@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.firebase.crashlytics.buildtools)
     implementation(libs.androidx.databinding.adapters)
+    implementation(libs.firebase.ai)
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.gson)

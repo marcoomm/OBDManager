@@ -111,10 +111,10 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                     Text("Guardar Datos", fontSize = 16.sp, fontWeight = FontWeight.Bold)
                 }
                 NavigationBar(modifier = Modifier.fillMaxWidth()) {
-                    NavItem(onClickAction = {  }) {
+                    NavItem(onClickAction = { navController.navigate("asistente") }) {
                         IconContainer {
                             StateLayer {
-                                Icon(
+                                IconM(
                                     painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon3),
                                     contentDescription = "Manager icon"
                                 )
@@ -126,7 +126,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                     NavItem(onClickAction = { navController.navigate("inicio") }) {
                         IconContainer {
                             StateLayer {
-                                Icon(
+                                IconM(
                                     painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon2),
                                     contentDescription = "Inicio icon"
                                 )
@@ -134,7 +134,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                         }
                         Text(
                             "Inicio",
-                            modifier = Modifier.padding(top = 30.dp, start = 14.dp, end = 5.dp),
+                            modifier = Modifier.padding(top = 25.dp, start = 14.dp, end = 5.dp),
                             fontSize = 13.sp, color = Color.White, fontWeight = FontWeight.Bold
                         )
                     }
@@ -142,13 +142,17 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                     NavItem(onClickAction = { navController.navigate("datos") }) {
                         IconContainer {
                             StateLayer {
-                                Icon(
+                                IconM(
                                     painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon1),
                                     contentDescription = "Asistente icon"
                                 )
                             }
                         }
-                        LabelText(texto = "Manager")
+                        Text(
+                            "Manager",
+                            modifier = Modifier.padding(top = 25.dp, start = 5.dp, end = 5.dp),
+                            fontSize = 13.sp, color = Color.White, fontWeight = FontWeight.Bold
+                        )
                     }
                 }
             }
@@ -164,7 +168,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
 
             // TOP APP BAR
             Row(modifier = Modifier.padding(16.dp)) {
-                Icon(
+                IconM(
                     onClick = { navController.navigate("inicio") },
                     modifier = Modifier.width(30.dp).height(28.dp).rotate(180.0F),
                     painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),

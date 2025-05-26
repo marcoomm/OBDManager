@@ -135,10 +135,10 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
         containerColor = Color.Black,
         bottomBar = {
             NavigationBar(modifier = Modifier.fillMaxWidth()) {
-                NavItem(onClickAction = { navController.navigate("") }) {
+                NavItem(onClickAction = { navController.navigate("asistente") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon3),
                                 contentDescription = "Manager icon"
                             )
@@ -150,7 +150,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
                 NavItem(onClickAction = { navController.navigate("inicio") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon2),
                                 contentDescription = "Inicio icon"
                             )
@@ -158,7 +158,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
                     }
                     Text(
                         "Inicio",
-                        modifier = Modifier.padding(top = 30.dp, start = 14.dp, end = 5.dp),
+                        modifier = Modifier.padding(top = 25.dp, start = 14.dp, end = 5.dp),
                         fontSize = 13.sp, color = Color.White, fontWeight = FontWeight.Bold
                     )
                 }
@@ -166,7 +166,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
                 NavItem(onClickAction = {}) {
                     IconContainer {
                         StateLayer(modifier = Modifier.background(Color(0xFF1E88E5), shape = RoundedCornerShape(50.dp))){
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon1),
                                 contentDescription = "Asistente icon"
                             )
@@ -174,7 +174,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
                     }
                     Text(
                         "Manager",
-                        modifier = Modifier.padding(top = 30.dp, start = 14.dp, end = 5.dp),
+                        modifier = Modifier.padding(top = 30.dp, start = 5.dp, end = 5.dp),
                         fontSize = 13.sp, color = Color.White, fontWeight = FontWeight.Bold
                     )
                 }
@@ -190,7 +190,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
             Spacer(modifier = Modifier.height(35.dp))
 
             Row(modifier = Modifier.padding(16.dp)) {
-                Icon(
+                IconM(
                     onClick = { navController.navigate("inicio") },
                     modifier = Modifier
                         .width(30.dp)
@@ -556,7 +556,7 @@ fun DatosVacios(tipo: String) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Icon(
+            IconM(
                 painter = painterResource(id = R.drawable.baseline_announcement_24),
                 contentDescription = "icon",
                 modifier = Modifier.size(50.dp)

@@ -146,46 +146,47 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
 
     LaunchedEffect(bluetoothReady) {
         if (bluetoothReady && !isConnected) {
-            val adapter = BluetoothAdapter.getDefaultAdapter()
-            if (adapter != null && adapter.isEnabled) {
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
-                    == PackageManager.PERMISSION_GRANTED
-                ) {
-                    val devices = adapter.bondedDevices.toList()
-                    if (devices.isNotEmpty()) {
-                        pairedDevices = devices
-                        showDeviceList = true
+            withContext(Dispatchers.IO) {
+                val adapter = BluetoothAdapter.getDefaultAdapter()
+                if (adapter != null && adapter.isEnabled) {
+                    if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+                        == PackageManager.PERMISSION_GRANTED
+                    ) {
+                        val devices = adapter.bondedDevices.toList()
+                        withContext(Dispatchers.Main) {
+                            if (devices.isNotEmpty()) {
+                                pairedDevices = devices
+                                showDeviceList = true
+                            } else {
+                                viewModel.setConnectionStatus("No hay dispositivos emparejados")
+                            }
+                        }
                     } else {
-                        viewModel.setConnectionStatus("No hay dispositivos emparejados")
+                        withContext(Dispatchers.Main) {
+                            viewModel.setConnectionStatus("Permiso BLUETOOTH_CONNECT no concedido")
+                        }
                     }
-                } else {
-                    viewModel.setConnectionStatus("Permiso BLUETOOTH_CONNECT no concedido")
                 }
             }
         }
     }
-    
+
     LaunchedEffect(vin) {
         if (isConnected && ecuReady && viewModel.shouldProcessVin(vin)) {
             val numeroVin = NumeroVin.decodeVinHttpClient(vin)
             numeroVin?.let { vinData ->
-                Log.d("VIN", "Marca: ${vinData.marca}")
+                withContext(Dispatchers.IO) {
+                    val dao = database.numeroVinDao()
+                    val existingVin = dao.getNumeroVin(vin)
 
-                val dao = database.numeroVinDao()
-                val existingVin = dao.getNumeroVin(vin)
-
-                if (existingVin == null) {
-                    dao.insertNumeroVin(vinData)
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT).show()
+                    if (existingVin == null) {
+                        dao.insertNumeroVin(vinData)
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Log.i("VIN", "El VIN ya estaba registrado")
                     }
-                } else {
-                    Log.i("VIN", "El VIN ya estaba registrado")
-                    /*
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "Coche ya registrado", Toast.LENGTH_SHORT).show()
-                    }
-                     */
                 }
             } ?: Log.e("VIN", "No se pudo decodificar el VIN")
         }
@@ -204,10 +205,10 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                NavItem(onClickAction = {  }) {
+                NavItem(onClickAction = { navController.navigate("asistente") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon3),
                                 contentDescription = "Manager icon"
                             )
@@ -223,7 +224,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                                 shape = RoundedCornerShape(50.dp)
                             )
                         ) {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon2),
                                 contentDescription = "Inicio icon"
                             )
@@ -240,14 +241,17 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 NavItem(onClickAction = { navController.navigate("datos") }) {
                     IconContainer {
                         StateLayer {
-                            Icon(
+                            IconM(
                                 painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon1),
                                 contentDescription = "Manager icon"
                             )
                         }
                     }
-                    LabelText(texto = "Manager")
-                }
+                    Text(
+                        "Manager",
+                        modifier = Modifier.padding(top = 25.dp, start = 5.dp, end = 5.dp),
+                        fontSize = 13.sp, color = Color.White, fontWeight = FontWeight.Bold
+                    )                }
             }
         }
     ) { paddingValues ->
@@ -445,7 +449,7 @@ fun VehicleInfoScreen(
 
             //Spacer(modifier = Modifier.width(8.dp))
 
-            Icon(
+            IconM(
                 onClick = {
                     if (vin.length == 17) {
                         mostrar.value = true
@@ -581,7 +585,7 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                        Text("Verifica el estado   del   vehículo", color = Color.LightGray, fontSize = 12.sp)
                    }
 
-                   Icon(
+                   IconM(
                        painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),
                        contentDescription = "Icono de diagnóstico",
                        modifier = Modifier
@@ -624,7 +628,7 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                        Text("Monitorea datos en tiempo real", color = Color.LightGray, fontSize = 12.sp)
                    }
 
-                   Icon(
+                   IconM(
                        painter = painterResource(id = R.drawable.examples_detailed_view_mobile_icon),
                        contentDescription = "Icono de parámetros",
                        modifier = Modifier
@@ -691,7 +695,7 @@ fun StateLayer(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
 }
 
 @Composable
-fun Icon(
+fun IconM(
    modifier: Modifier = Modifier,
    painter: Painter,
    contentDescription: String,
