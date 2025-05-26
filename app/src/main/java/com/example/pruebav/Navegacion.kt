@@ -43,7 +43,7 @@ fun NavegacionEntreVentanas(
             Datos(controlador, db,context)
         }
         composable("asistente"){
-            AI(controlador,db,context)
+            AI(controlador,db)
         }
     }
 }

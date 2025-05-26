@@ -1,10 +1,8 @@
 package com.example.pruebav
 
-import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,7 +18,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -42,25 +40,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+import com.example.pruebav.ai.GeminiViewModel
 import com.example.pruebav.ai.Message
-import com.example.pruebav.ai.OpenAIService
+import com.example.pruebav.ai.OpenAIViewModel
 import com.example.pruebav.database.ErroresCoche
 import com.example.pruebav.database.ParametrosCoche
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun AI(navController: NavController,database: AppDatabase,context: Context) {
+fun AI(navController: NavController,database: AppDatabase) {
     var userInput by remember { mutableStateOf("") }
     val messages = remember { mutableStateListOf<Message>() }
+    val chatOpenAI: OpenAIViewModel = viewModel()
+    val chatGemini: GeminiViewModel = viewModel()
 
     val scope = rememberCoroutineScope()
     var mostrarDialogo by remember { mutableStateOf(false) }
@@ -165,7 +163,7 @@ fun AI(navController: NavController,database: AppDatabase,context: Context) {
             )
             .fillMaxSize()
         ){
-            Spacer(modifier = Modifier.height(35.dp))
+            //Spacer(modifier = Modifier.height(35.dp))
             Row(modifier = Modifier.padding(16.dp)) {
                 IconM(
                     onClick = { navController.navigate("inicio") },
@@ -183,6 +181,26 @@ fun AI(navController: NavController,database: AppDatabase,context: Context) {
                 )
             }
 
+            Button(
+                onClick = {
+                    chatGemini.listarModelos(
+                        onResultado = { modelos ->
+                            Log.d("MODELOS", modelos.toString())
+                        },
+                        onError = { error ->
+                            Log.e("ERROR_MODELOS", error)
+                        }
+                    )
+                },
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50)), // Verde por ejemplo
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text(text = "Probar", color = Color.White, fontSize = 14.sp)
+            }
+
+
             ChatScreen(
                 messages = messages,
                 userInput = userInput,
@@ -190,28 +208,23 @@ fun AI(navController: NavController,database: AppDatabase,context: Context) {
                 onSendClick = {
                     if (userInput.isNotBlank()) {
                         val prompt = userInput.trim()
-                        if (prompt.isNotBlank()) {
-                            messages.add(Message("user", prompt))
-                            userInput = ""
+                        messages.add(Message("user", prompt))
+                        userInput = ""
 
-                            scope.launch {
-                                val result = OpenAIService().sendMessage(messages)
-                                result
-                                    .onSuccess { response ->
-                                        messages.add(Message("assistant", response))
-                                    }
-                                    .onFailure { error ->
-                                        messages.add(Message("assistant", "Error: ${error.localizedMessage ?: "Error desconocido"}"))
-                                    }
+                        chatGemini.enviarMensaje(
+                            prompt,
+                            onResultado = { respuesta ->
+                                messages.add(Message("assistant", respuesta))
+                            },
+                            onError = { error ->
+                                messages.add(Message("assistant", "Error: $error"))
                             }
-                        }
-
+                        )
                     }
                 },
-                onButton1Click = {  mostrarDialogo=true  },
+                onButton1Click = { mostrarDialogo = true },
                 onButton2Click = { mostrarSelectorDatos = true },
-
-                )
+            )
 
             if (mostrarDialogo) {
                 AlertDialog(
@@ -367,7 +380,7 @@ fun ChatScreen(
                         enabled = userInput.isNotBlank()
                     ) {
                         Icon(
-                            imageVector = Icons.Default.Send,
+                            imageVector = Icons.AutoMirrored.Filled.Send,
                             contentDescription = "Enviar",
                             tint = if (userInput.isNotBlank()) Color.White else Color.Gray
                         )
