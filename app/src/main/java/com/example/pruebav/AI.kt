@@ -18,7 +18,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -31,7 +31,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -48,17 +47,16 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.pruebav.ai.GeminiViewModel
 import com.example.pruebav.ai.Message
-import com.example.pruebav.ai.OpenAIViewModel
 import com.example.pruebav.database.ErroresCoche
 import com.example.pruebav.database.ParametrosCoche
 import kotlinx.coroutines.launch
 
 @Composable
 fun AI(navController: NavController,database: AppDatabase) {
-    var userInput by remember { mutableStateOf("") }
-    val messages = remember { mutableStateListOf<Message>() }
-    val chatOpenAI: OpenAIViewModel = viewModel()
+
     val chatGemini: GeminiViewModel = viewModel()
+    var userInput by remember { mutableStateOf("") }
+    val messages = chatGemini.messages
 
     val scope = rememberCoroutineScope()
     var mostrarDialogo by remember { mutableStateOf(false) }
@@ -97,7 +95,6 @@ fun AI(navController: NavController,database: AppDatabase) {
             }
         }
     }
-
 
 
     Scaffold(
@@ -163,7 +160,7 @@ fun AI(navController: NavController,database: AppDatabase) {
             )
             .fillMaxSize()
         ){
-            //Spacer(modifier = Modifier.height(35.dp))
+            Spacer(modifier = Modifier.height(35.dp))
             Row(modifier = Modifier.padding(16.dp)) {
                 IconM(
                     onClick = { navController.navigate("inicio") },
@@ -181,6 +178,7 @@ fun AI(navController: NavController,database: AppDatabase) {
                 )
             }
 
+            /*
             Button(
                 onClick = {
                     chatGemini.listarModelos(
@@ -199,6 +197,7 @@ fun AI(navController: NavController,database: AppDatabase) {
             ) {
                 Text(text = "Probar", color = Color.White, fontSize = 14.sp)
             }
+            */
 
 
             ChatScreen(
@@ -208,20 +207,18 @@ fun AI(navController: NavController,database: AppDatabase) {
                 onSendClick = {
                     if (userInput.isNotBlank()) {
                         val prompt = userInput.trim()
-                        messages.add(Message("user", prompt))
                         userInput = ""
 
                         chatGemini.enviarMensaje(
                             prompt,
-                            onResultado = { respuesta ->
-                                messages.add(Message("assistant", respuesta))
-                            },
+                            onResultado = { },
                             onError = { error ->
-                                messages.add(Message("assistant", "Error: $error"))
+                                chatGemini.agregarMensaje(Message("model", "Error: $error"))
                             }
                         )
                     }
-                },
+                }
+,
                 onButton1Click = { mostrarDialogo = true },
                 onButton2Click = { mostrarSelectorDatos = true },
             )
@@ -255,7 +252,6 @@ fun AI(navController: NavController,database: AppDatabase) {
                     }
                 )
             }
-
             if (mostrarSelectorDatos) {
                 AlertDialog(
                     onDismissRequest = { mostrarSelectorDatos = false },
@@ -316,7 +312,7 @@ fun ChatScreen(
                 .weight(1f)
                 .fillMaxWidth()
                 .background(Color.Transparent)
-                .border(2.dp,Color.Magenta)
+                .border(2.dp,Color.White.copy(alpha = 0.6f),shape= RoundedCornerShape(16.dp))
         ) {
             LazyColumn(
                 modifier = Modifier
@@ -352,7 +348,6 @@ fun ChatScreen(
             }
         }
 
-        // Zona de entrada de texto con botón enviar integrado
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -380,7 +375,7 @@ fun ChatScreen(
                         enabled = userInput.isNotBlank()
                     ) {
                         Icon(
-                            imageVector = Icons.AutoMirrored.Filled.Send,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                             contentDescription = "Enviar",
                             tint = if (userInput.isNotBlank()) Color.White else Color.Gray
                         )
@@ -418,7 +413,6 @@ fun ChatScreen(
                 }
 
             }
-
         }
     }
 }
@@ -445,11 +439,10 @@ fun formatearParametrosParaIA(parametrosCoche: ParametrosCoche?): String {
 fun formatearCodigosErrorParaIA(errores: List<ErroresCoche>): String {
     if (errores.isEmpty()) return "No hay errores guardados para este vehículo."
 
-    // Caso especial de "NO_ERROR" que indica sin errores reales
     val esSinErrores = errores.size == 1 && errores.first().codigoError == "NO_ERROR"
     if (esSinErrores) return "No se detectaron códigos de error para este vehículo."
 
-    val vin = errores.first().vin // Asumimos todos del mismo vehículo
+    val vin = errores.first().vin 
 
     val sb = StringBuilder()
     sb.append("Códigos de error del vehículo con VIN $vin:\n")

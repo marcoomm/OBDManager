@@ -562,14 +562,15 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .weight(1f)
                    .padding(8.dp)
                    .clickable {
+                       /*
                        if (isConnected) {
                            navController.navigate("errores")
                        } else {
                            Toast
                                .makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT)
                                .show()
-                       }
-                       //navController.navigate("errores")
+                       }*/
+                       navController.navigate("errores")
                    },
                shape = RoundedCornerShape(12.dp),
                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)

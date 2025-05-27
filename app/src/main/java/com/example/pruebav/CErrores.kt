@@ -65,6 +65,20 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
     }
     var erroresEncontrados by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
 
+    val vinDePrueba = "VF1AB123456789XYZ"
+    val erroresDeEjemplo = listOf(
+        ErroresCoche(
+            codigoError = "P0301",
+            vin = vinDePrueba,
+            descripcion = "Fallo de encendido en el cilindro 1"
+        ),
+        ErroresCoche(
+            codigoError = "P0420",
+            vin = vinDePrueba,
+            descripcion = "Eficiencia del catalizador por debajo del umbral"
+        )
+    )
+
     LaunchedEffect(Unit) {
         delay(1000)
 
@@ -312,42 +326,51 @@ fun ErrorCard(info: ErroresCoche) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp)
-            .height(80.dp),
-        shape = RoundedCornerShape(8.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+            .padding(horizontal = 8.dp, vertical = 6.dp),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF1C1C1E)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
         Row(
-            modifier = Modifier.padding(8.dp),
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(
                 modifier = Modifier
-                    .width(80.dp)
-                    .height(60.dp)
-                    .background(Color.White, shape = RoundedCornerShape(8.dp))
-            )
-
-            Spacer(modifier = Modifier.width(16.dp))
-
-            Column {
+                    .size(width = 90.dp, height = 65.dp)
+                    .background(Color(0xFFEF5350), shape = RoundedCornerShape(12.dp)),
+                contentAlignment = Alignment.Center
+            ) {
                 Text(
                     text = info.codigoError,
-                    fontWeight = FontWeight.Bold,
                     color = Color.White,
-                    fontSize = 14.sp
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp
+                )
+            }
+
+            Spacer(modifier = Modifier.width(20.dp))
+
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "Código detectado",
+                    color = Color.LightGray,
+                    fontSize = 13.sp
                 )
                 Text(
-                    text = info.descripcion.toString(),
-                    color = Color.Gray,
-                    fontSize = 12.sp
+                    text = info.descripcion ?: "Sin descripción disponible",
+                    color = Color.White,
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier.padding(top = 4.dp)
                 )
             }
         }
     }
 }
 
-//funciones
 
 fun mapearErrores(pid: List<String>, listaErrores: List<CodigosError>): List<CodigosError> {
     return pid.map { codigo ->

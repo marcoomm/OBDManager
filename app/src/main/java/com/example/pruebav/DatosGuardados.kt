@@ -17,6 +17,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -25,6 +28,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,6 +44,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -81,7 +86,6 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
 
     var parametros by remember { mutableStateOf<ParametrosCoche?>(null) }
     var errores by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
-    //val context = LocalContext.current
 
 
     LaunchedEffect(Unit) {
@@ -422,7 +426,12 @@ fun ListaParametros(parametros: ParametrosCoche, vin: String, context: Context, 
 
 
 @Composable
-fun ListaErrores(errores: List<ErroresCoche>, vin: String, context: Context, onUpdate: () -> Unit = {}) {
+fun ListaErrores(
+    errores: List<ErroresCoche>,
+    vin: String,
+    context: Context,
+    onUpdate: () -> Unit = {}
+) {
     val esSinErrores = errores.size == 1 && errores.first().codigoError == "NO_ERROR"
 
     Scaffold(
@@ -439,9 +448,15 @@ fun ListaErrores(errores: List<ErroresCoche>, vin: String, context: Context, onU
                             borrarErrores(context, vin)
                             onUpdate()
                         },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.Red)
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F))
                     ) {
-                        Text("Eliminar errores", color = Color.Black)
+                        Icon(
+                            imageVector = Icons.Default.Delete,
+                            contentDescription = "Eliminar errores",
+                            tint = Color.White
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Eliminar errores", color = Color.White)
                     }
                 }
             }
@@ -449,22 +464,45 @@ fun ListaErrores(errores: List<ErroresCoche>, vin: String, context: Context, onU
         containerColor = Color.Black
     ) { innerPadding ->
         if (esSinErrores) {
-            // Mostrar aviso visual cuando no hay errores
+            // Visual bonito cuando no hay errores
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)
-                    .padding(20.dp)
-                    .background(Color(0xFF2E7D32), shape = RoundedCornerShape(12.dp)),
+                    .padding(24.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = errores.first().descripcion ?: "No se detectaron errores.",
-                    color = Color.White,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(16.dp)
-                )
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(250.dp),
+                    shape = RoundedCornerShape(20.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color(0xFF388E3C)),
+                    elevation = CardDefaults.cardElevation(8.dp)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(24.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.CheckCircle,
+                            contentDescription = null,
+                            tint = Color.White,
+                            modifier = Modifier.size(64.dp)
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = errores.first().descripcion ?: "¡No se detectaron errores en el vehículo!",
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
             }
         } else {
             LazyColumn(contentPadding = innerPadding) {
@@ -473,37 +511,41 @@ fun ListaErrores(errores: List<ErroresCoche>, vin: String, context: Context, onU
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 8.dp, horizontal = 16.dp),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+                        shape = RoundedCornerShape(16.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF212121)),
+                        elevation = CardDefaults.cardElevation(6.dp)
                     ) {
                         Row(
-                            modifier = Modifier.padding(16.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Box(
                                 modifier = Modifier
-                                    .width(145.dp)
-                                    .height(70.dp)
-                                    .background(Color.White, shape = RoundedCornerShape(8.dp)),
+                                    .width(130.dp)
+                                    .height(65.dp)
+                                    .background(Color(0xFFEF5350), shape = RoundedCornerShape(10.dp)),
                                 contentAlignment = Alignment.Center
                             ) {
                                 Text(
                                     text = error.codigoError,
-                                    color = Color.Black,
+                                    color = Color.White,
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             }
 
-                            Spacer(modifier = Modifier.width(30.dp))
+                            Spacer(modifier = Modifier.width(20.dp))
 
-                            Column {
+                            Column(modifier = Modifier.weight(1f)) {
                                 Text(
                                     text = "Código de error",
-                                    fontWeight = FontWeight.Bold,
+                                    fontWeight = FontWeight.SemiBold,
                                     color = Color.White,
                                     fontSize = 16.sp
                                 )
+                                Spacer(modifier = Modifier.height(4.dp))
                                 Text(
                                     text = error.descripcion ?: "Sin descripción",
                                     color = Color.Gray,

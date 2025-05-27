@@ -21,6 +21,8 @@ import com.github.eltonvs.obd.command.at.SetLineFeedCommand
 import com.github.eltonvs.obd.command.at.SetTimeoutCommand
 import com.github.eltonvs.obd.command.control.DTCNumberCommand
 import com.github.eltonvs.obd.command.control.DistanceSinceCodesClearedCommand
+import com.github.eltonvs.obd.command.control.PendingTroubleCodesCommand
+import com.github.eltonvs.obd.command.control.PermanentTroubleCodesCommand
 import com.github.eltonvs.obd.command.control.ResetTroubleCodesCommand
 import com.github.eltonvs.obd.command.control.TroubleCodesCommand
 import com.github.eltonvs.obd.command.engine.LoadCommand
@@ -215,29 +217,34 @@ class OBDConnection(private val context: Context) {
 
     suspend fun readCodes(): Map<String, String> {
         val datos = mutableMapOf<String, String>()
+        val erroresSet = linkedSetOf<String>()
 
         try {
+            val comandos = listOf(
+                SafeObdCommand(TroubleCodesCommand()),
+                SafeObdCommand(PendingTroubleCodesCommand()),
+                SafeObdCommand(PermanentTroubleCodesCommand())
+            )
 
-            val troubleCodesCommand = SafeObdCommand(TroubleCodesCommand())
-            val result = obdConnection!!.run(troubleCodesCommand)
-
-            val listaErrores = if (result.formattedValue.isEmpty()) {
-                null
-                //Log.d("OBD:Lectura","no hay errores")
-            } else {
-                result.formattedValue.trim().split(',', ' ').filter { it.isNotBlank() }
+            for (comando in comandos) {
+                val result = obdConnection!!.run(comando)
+                if (result.formattedValue.isNotEmpty()) {
+                    val codigos = result.formattedValue
+                        .trim()
+                        .split(',', ' ', '\n')
+                        .filter { it.isNotBlank() }
+                    erroresSet.addAll(codigos)
+                }
             }
 
-            listaErrores?.let {
-                datos["listaErrores"] = it.joinToString(separator = "\n")
-            }
-            Log.d("OBD:Lectura", "Codigos de error leidos $datos")
+            datos["listaErrores"] = erroresSet.joinToString(separator = "\n")
 
         } catch (e: Exception) {
-            Log.e("OBD:Lectura", "Probablemente sin errores: ${e.message}")
+            Log.e("OBD:Lectura", "Error al leer códigos: ${e.message}")
             e.printStackTrace()
             datos["listaErrores"] = ""
         }
+
         return datos
     }
 
