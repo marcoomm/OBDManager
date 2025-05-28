@@ -431,11 +431,6 @@ fun VehicleInfoScreen(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(Color(0xFF1E1E1E), Color(0xFF121212))
-                )
-            )
             .padding(16.dp)
     ) {
         Row {

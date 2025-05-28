@@ -34,6 +34,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -88,15 +89,6 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
             ?.split("\n")
             ?.filter { it.isNotBlank() }
             ?: emptyList()
-
-        /*
-                listaErrores.find { it.codigoError == codigo } ?: CodigosError(
-            codigoError = codigo,
-            descripcion = "Descripción no disponible",
-            categoria = "Categoria no disponible",
-            componente = "Componente no disponible"
-        )
-         */
 
         erroresEncontrados = codigosPuros.mapNotNull { codigo ->
             val codigoError = listaerrores.find { it.codigoError == codigo }
@@ -173,7 +165,11 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .background(Color.Black)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color(0xFF1E1E1E), Color(0xFF121212))
+                    )
+                )
         ) {
             Spacer(modifier = Modifier.height(35.dp))
 

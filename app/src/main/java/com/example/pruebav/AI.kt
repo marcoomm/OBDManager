@@ -24,6 +24,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -35,11 +36,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -161,7 +164,7 @@ fun AI(navController: NavController,database: AppDatabase) {
             .fillMaxSize()
         ){
             Spacer(modifier = Modifier.height(35.dp))
-            Row(modifier = Modifier.padding(16.dp)) {
+            Row(modifier = Modifier.padding(start=16.dp,bottom = 8.dp)) {
                 IconM(
                     onClick = { navController.navigate("inicio") },
                     modifier = Modifier
@@ -177,28 +180,6 @@ fun AI(navController: NavController,database: AppDatabase) {
                     fontWeight = FontWeight.Bold, color = Color.White, fontSize = 24.sp
                 )
             }
-
-            /*
-            Button(
-                onClick = {
-                    chatGemini.listarModelos(
-                        onResultado = { modelos ->
-                            Log.d("MODELOS", modelos.toString())
-                        },
-                        onError = { error ->
-                            Log.e("ERROR_MODELOS", error)
-                        }
-                    )
-                },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50)), // Verde por ejemplo
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 8.dp)
-            ) {
-                Text(text = "Probar", color = Color.White, fontSize = 14.sp)
-            }
-            */
-
 
             ChatScreen(
                 messages = messages,
@@ -217,8 +198,7 @@ fun AI(navController: NavController,database: AppDatabase) {
                             }
                         )
                     }
-                }
-,
+                },
                 onButton1Click = { mostrarDialogo = true },
                 onButton2Click = { mostrarSelectorDatos = true },
             )
@@ -238,15 +218,26 @@ fun AI(navController: NavController,database: AppDatabase) {
                                     },
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .padding(vertical = 4.dp)
-                                ) {
+                                        .height(56.dp),
+                                    shape = RoundedCornerShape(16.dp),
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = Color(0xFF1E88E5),
+                                        contentColor = Color.White
+                                    )
+                                ){
                                     Text("Marca: ${vehiculo.marca}, VIN: ${vehiculo.vin}")
                                 }
                             }
                         }
                     },
                     confirmButton = {
-                        TextButton(onClick = { mostrarDialogo = false }) {
+                        TextButton(
+                            onClick = { mostrarDialogo = false },
+                            colors = ButtonDefaults.textButtonColors(
+                                containerColor = Color(0xFF1E88E5),
+                                contentColor = Color.White),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
                             Text("Cancelar")
                         }
                     }
@@ -257,16 +248,31 @@ fun AI(navController: NavController,database: AppDatabase) {
                     onDismissRequest = { mostrarSelectorDatos = false },
                     title = { Text("¿Qué deseas cargar?") },
                     text = {
-                        Column {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp),
+                            verticalArrangement = Arrangement.spacedBy(12.dp)
+                        ) {
                             Button(
                                 onClick = {
                                     val textoParametros = formatearParametrosParaIA(parametros)
                                     userInput = textoParametros
                                     mostrarSelectorDatos = false
                                 },
-                                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(56.dp),
+                                shape = RoundedCornerShape(16.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Color(0xFF1E88E5),        // Azul personalizado
+                                    contentColor = Color.White                // Texto blanco
+                                )
                             ) {
-                                Text("Parámetros")
+                                Text(
+                                    text = "Parámetros",
+                                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
+                                )
                             }
 
                             Button(
@@ -275,17 +281,35 @@ fun AI(navController: NavController,database: AppDatabase) {
                                     userInput = textoErrores
                                     mostrarSelectorDatos = false
                                 },
-                                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(56.dp),
+                                shape = RoundedCornerShape(16.dp),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Color(0xFF1E88E5),
+                                    contentColor = Color.White
+                                )
                             ) {
-                                Text("Códigos de error")
+                                Text(
+                                    text = "Códigos de error",
+                                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
+                                )
                             }
                         }
+
                     },
                     confirmButton = {
-                        TextButton(onClick = { mostrarSelectorDatos = false }) {
+                        TextButton(
+                            onClick = { mostrarSelectorDatos = false },
+                            colors = ButtonDefaults.textButtonColors(
+                                containerColor = Color(0xFF1E88E5),
+                                contentColor = Color.White),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
                             Text("Cancelar")
                         }
                     }
+
                 )
             }
 
@@ -305,7 +329,7 @@ fun ChatScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(top=8.dp,start=16.dp,end=16.dp,bottom=16.dp)
     ) {
         Box(
             modifier = Modifier
@@ -314,34 +338,50 @@ fun ChatScreen(
                 .background(Color.Transparent)
                 .border(2.dp,Color.White.copy(alpha = 0.6f),shape= RoundedCornerShape(16.dp))
         ) {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(end = 8.dp),
-                reverseLayout = true
-            ) {
-                items(messages.reversed()) { message ->
-                    val isUser = message.role == "user"
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 4.dp),
-                        horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start
-                    ) {
-                        Box(
+            if (messages.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(24.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "¡Pregúntame algo!",
+                        color = Color.White.copy(alpha = 0.6f),
+                        fontSize = 22.sp,
+                        fontStyle = FontStyle.Italic
+                    )
+                }
+            } else {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(end = 8.dp),
+                    reverseLayout = true
+                ) {
+                    items(messages.reversed()) { message ->
+                        val isUser = message.role == "user"
+                        Row(
                             modifier = Modifier
-                                .background(
-                                    color = if (isUser) Color(0xFF3A3A3A) else Color(0xFF2A2A2A),
-                                    shape = RoundedCornerShape(16.dp)
-                                )
-                                .padding(12.dp)
-                                .widthIn(max = 280.dp)
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp),
+                            horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start
                         ) {
-                            Text(
-                                text = message.content,
-                                color = Color.White,
-                                fontSize = 15.sp
-                            )
+                            Box(
+                                modifier = Modifier
+                                    .background(
+                                        color = if (isUser) Color(0xFF3A3A3A) else Color(0xFF2A2A2A),
+                                        shape = RoundedCornerShape(16.dp)
+                                    )
+                                    .padding(12.dp)
+                                    .widthIn(max = 280.dp)
+                            ) {
+                                Text(
+                                    text = message.content,
+                                    color = Color.White,
+                                    fontSize = 15.sp
+                                )
+                            }
                         }
                     }
                 }
@@ -351,22 +391,22 @@ fun ChatScreen(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color.Black)
-                .padding(top = 12.dp)
+                .background(Color.Transparent)
+                .padding(top = 8.dp)
         ) {
             OutlinedTextField(
                 value = userInput,
                 onValueChange = onUserInputChange,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color.Black),
+                    .background(Color.Transparent),
                 placeholder = { Text("Escribe tu mensaje...", color = Color.White.copy(alpha = 0.6f)) },
                 maxLines = 4,
                 textStyle = androidx.compose.ui.text.TextStyle(color = Color.White),
                 colors = androidx.compose.material3.OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = Color.White,
-                    unfocusedBorderColor = Color.White,
-                    cursorColor = Color.White
+                    focusedBorderColor = Color.White.copy(alpha = 0.6f),
+                    unfocusedBorderColor = Color.White.copy(alpha = 0.6f),
+                    cursorColor = Color.White.copy(alpha = 0.6f)
                 ),
                 shape = RoundedCornerShape(16.dp),
                 trailingIcon = {
@@ -442,7 +482,7 @@ fun formatearCodigosErrorParaIA(errores: List<ErroresCoche>): String {
     val esSinErrores = errores.size == 1 && errores.first().codigoError == "NO_ERROR"
     if (esSinErrores) return "No se detectaron códigos de error para este vehículo."
 
-    val vin = errores.first().vin 
+    val vin = errores.first().vin
 
     val sb = StringBuilder()
     sb.append("Códigos de error del vehículo con VIN $vin:\n")

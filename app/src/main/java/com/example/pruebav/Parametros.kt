@@ -38,6 +38,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
@@ -162,7 +163,11 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .background(Color.Black)
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color(0xFF1E1E1E), Color(0xFF121212))
+                    )
+                )
         ) {
             Spacer(modifier = Modifier.height(35.dp))
 
