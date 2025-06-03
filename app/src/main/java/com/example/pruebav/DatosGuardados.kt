@@ -20,7 +20,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -38,7 +37,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -71,65 +70,46 @@ import com.example.pruebav.database.ParametrosCoche
 import com.example.pruebav.database.ParametrosDao
 import com.example.pruebav.database.borrarErrores
 import com.example.pruebav.database.borrarParametros
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @Composable
 fun Datos(navController: NavController, database: AppDatabase,context: Context) {
 
-    val coroutineScope = rememberCoroutineScope()
     var expandedVin by remember { mutableStateOf(false) }
     var expandedOption by remember { mutableStateOf(false) }
-    var option by remember { mutableStateOf("Parámetros") }
+    var option by rememberSaveable { mutableStateOf("Parámetros") }
     var cargando by remember { mutableStateOf(false) }
 
     var todosVin  by remember { mutableStateOf<List<String>>(emptyList()) }
-    var seleccionadoVin by remember{ mutableStateOf("") }
-
+    var seleccionadoVin by rememberSaveable { mutableStateOf("") }
     var todosCoches by remember { mutableStateOf<List<CocheMarcaModelo>>(emptyList()) }
-    //var seleccionadoCoche by remember { mutableStateOf<CocheMarcaModelo?>(null) }
 
     var parametros by remember { mutableStateOf<ParametrosCoche?>(null) }
     var errores by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
 
+    var dataLoaded by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
-        coroutineScope.launch {
-
+        withContext(Dispatchers.IO) {
             todosVin = database.numeroVinDao().getAllVins()!!
-            todosVin.forEach { vin ->
-                Log.d("VIN", "VIN leído: '${vin.uppercase()}' con longitud ${vin.length}")
-            }
-
             todosCoches = database.numeroVinDao().getCoches()
-            todosCoches.forEach{ coche ->
-                Log.d("Coche", "${coche.marca} ${coche.modelo}")
-            }
-
-            val listaVin = database.parametrosDao().verVinParametros()
-            listaVin.forEach{ vin->
-                Log.d("VIN en parametros",":${vin}' + ${vin.length}")
-            }
-
-            val vinsCoincidentes = database.numeroVinDao().obtenerVinesCoincidentes()
-            Log.d("VINs", vinsCoincidentes.joinToString())
-
         }
+        dataLoaded = true
     }
+
 
     LaunchedEffect(seleccionadoVin, option) {
         if (seleccionadoVin.isNotBlank()) {
             cargando = true
 
             try {
-                delay(2000)
+                //delay(2000)
 
                 if (option == "Parámetros") {
                     parametros = database.parametrosDao().obtenerParametros(seleccionadoVin.trim().uppercase())
-                    Log.d("debug", "Resultado obtenerParametros: $parametros")
                 }else {
                     errores = database.erroresDao().obtenerErroresCoche(seleccionadoVin.trim().uppercase()) ?: emptyList()
-                    Log.d("debug", "Resultado obtenerErrores: $errores")
                 }
             } catch (e: Exception) {
                 Log.e("OBD_Database", "Error al leer datos: ${e.message}")
@@ -312,7 +292,7 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
 
             Box(modifier = Modifier.weight(1f)) {
 
-                if (seleccionadoVin != "") {
+                if (seleccionadoVin != "" || !dataLoaded) {
                     if (cargando) {
                         Box(
                             modifier = Modifier.fillMaxSize(),
@@ -379,7 +359,7 @@ fun ListaParametros(parametros: ParametrosCoche, vin: String, context: Context, 
 
             }
         },
-        containerColor = Color.Black
+        containerColor = Color.Transparent
     ) { innerPadding ->
         LazyColumn(
             contentPadding = innerPadding
@@ -470,7 +450,7 @@ fun ListaErrores(
                 }
             }
         },
-        containerColor = Color.Black
+        containerColor = Color.Transparent
     ) { innerPadding ->
         if (esSinErrores) {
             Box(
@@ -677,6 +657,7 @@ fun DatosVacios(tipo: String) {
     }
 }
 
+//dataclasses y appdatabase
 
 data class CocheMarcaModelo(
     val marca: String,

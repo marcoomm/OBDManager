@@ -1,6 +1,5 @@
 package com.example.pruebav
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -35,6 +34,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,7 +58,7 @@ import kotlinx.coroutines.launch
 fun AI(navController: NavController,database: AppDatabase) {
 
     val chatGemini: GeminiViewModel = viewModel()
-    var userInput by remember { mutableStateOf("") }
+    var userInput by rememberSaveable { mutableStateOf("") }
     val messages = chatGemini.messages
 
     val scope = rememberCoroutineScope()
@@ -89,13 +89,8 @@ fun AI(navController: NavController,database: AppDatabase) {
 
     LaunchedEffect(cocheSeleccionado, seleccionado) {
         cocheSeleccionado?.let { coche ->
-            scope.launch {
-                parametros = database.parametrosDao().obtenerParametros(coche.vin.trim().uppercase())
-                Log.d("OBD:Parametros", parametros.toString())
-
-                errores = database.erroresDao().obtenerErroresCoche(coche.vin.trim().uppercase()) ?: emptyList()
-                Log.d("OBD:Codigos", errores.toString())
-            }
+            parametros = database.parametrosDao().obtenerParametros(coche.vin.trim().uppercase())
+            errores = database.erroresDao().obtenerErroresCoche(coche.vin.trim().uppercase()) ?: emptyList()
         }
     }
 
@@ -232,7 +227,10 @@ fun AI(navController: NavController,database: AppDatabase) {
                     },
                     confirmButton = {
                         TextButton(
-                            onClick = { mostrarDialogo = false },
+                            onClick = {
+                                mostrarDialogo = false 
+                                cocheSeleccionado=null
+                            },
                             colors = ButtonDefaults.textButtonColors(
                                 containerColor = Color(0xFF1E88E5),
                                 contentColor = Color.White),
@@ -265,8 +263,8 @@ fun AI(navController: NavController,database: AppDatabase) {
                                     .height(56.dp),
                                 shape = RoundedCornerShape(16.dp),
                                 colors = ButtonDefaults.buttonColors(
-                                    containerColor = Color(0xFF1E88E5),        // Azul personalizado
-                                    contentColor = Color.White                // Texto blanco
+                                    containerColor = Color(0xFF1E88E5),
+                                    contentColor = Color.White
                                 )
                             ) {
                                 Text(

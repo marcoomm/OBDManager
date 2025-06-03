@@ -89,7 +89,6 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
     }
 
     Scaffold(
-        containerColor = Color.Black,
         bottomBar = {
 
             Column{
@@ -227,7 +226,7 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                         modifier = Modifier.background(Color(0xFF1E88E5))
                     ) {
                         val categorias = listOf("Todo", "Presión", "Combustible", "Motor", "Temperatura")
-                        categorias.forEach { categoria ->
+                        categorias.forEachIndexed { index, categoria ->
                             DropdownMenuItem(
                                 onClick = {
                                     selectedOption = categoria
@@ -237,7 +236,9 @@ fun Parametros(context: Context, navController: NavController, viewModel: OBDVie
                                     Text(text = categoria, color = Color.White, fontSize = 16.sp)
                                 }
                             )
-                            HorizontalDivider()
+                            if (index < categorias.lastIndex) {
+                                HorizontalDivider(color = Color.White.copy(alpha = 0.2f))
+                            }
                         }
                     }
                 }
@@ -313,7 +314,7 @@ fun IconF(painter: Painter, contentDescription: String) {
     )
 }
 
-// funciones, clases y objetos
+// funciones
 
 fun categoriaSegunNombre(nombre: String): String {
     return when (nombre) {

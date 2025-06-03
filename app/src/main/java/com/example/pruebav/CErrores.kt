@@ -41,7 +41,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.pruebav.database.CodigosError
 import com.example.pruebav.database.ErroresCoche
 import com.example.pruebav.database.guardarErrores
 import kotlinx.coroutines.delay
@@ -364,18 +363,6 @@ fun ErrorCard(info: ErroresCoche) {
                 )
             }
         }
-    }
-}
-
-
-fun mapearErrores(pid: List<String>, listaErrores: List<CodigosError>): List<CodigosError> {
-    return pid.map { codigo ->
-        listaErrores.find { it.codigoError == codigo } ?: CodigosError(
-            codigoError = codigo,
-            descripcion = "Descripción no disponible",
-            categoria = "Categoria no disponible",
-            componente = "Componente no disponible"
-        )
     }
 }
 

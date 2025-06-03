@@ -34,8 +34,6 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         _bluetoothReady.value = value
     }
 
-    //main activity
-
     //variables de estado
     private var _connectionStatus = MutableStateFlow("Desconectado")
     var connectionStatus: StateFlow<String> = _connectionStatus
@@ -78,9 +76,6 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     fun setNErrores(new:String){
         _nerrores.value=new
     }
-    fun setFecha(new:String){
-        _fecha.value=new
-    }
 
     //variables vin
     private val _marca = MutableStateFlow("")
@@ -107,10 +102,6 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     fun setCaract(value: String) {
         _caract.value = value
     }
-
-    //variables codigos de error
-
-
 
     //composables
 
@@ -242,6 +233,7 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun detenerLectura() {
+        Log.d("OBD","Lectura detenida")
         lecturaJob?.cancel()
         lecturaJob = null
         leyendoParametros = false
@@ -277,6 +269,9 @@ object OBDManager {
 
     suspend fun leerBasic():Map<String,String>{
         return obdConnection?.readBasicParameters()?: emptyMap()
+    }
+    suspend fun leerFastParametros():Map<String,String>{
+        return obdConnection?.readAllFastParameters()?: emptyMap()
     }
 
     fun limpiarVin(vin: String): String {

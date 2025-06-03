@@ -30,7 +30,6 @@ import com.github.eltonvs.obd.command.engine.RPMCommand
 import com.github.eltonvs.obd.command.engine.SpeedCommand
 import com.github.eltonvs.obd.command.engine.ThrottlePositionCommand
 import com.github.eltonvs.obd.command.fuel.FuelLevelCommand
-import com.github.eltonvs.obd.command.fuel.FuelTrimCommand
 import com.github.eltonvs.obd.command.fuel.FuelTypeCommand
 import com.github.eltonvs.obd.command.pressure.FuelPressureCommand
 import com.github.eltonvs.obd.command.pressure.FuelRailPressureCommand
@@ -67,7 +66,7 @@ class OBDConnection(private val context: Context) {
             return@withContext
         }
         isConnecting = true
-        disconnectOBD() // Cerrar conexiones previas
+        disconnectOBD()
         try {
             if (bluetoothAdapter == null || !bluetoothAdapter.isEnabled) {
                 Log.e("OBD", "Bluetooth no disponible o desactivado")
@@ -100,7 +99,7 @@ class OBDConnection(private val context: Context) {
             Log.d("OBD-Protocol", "Protocolo actual: ${describeProtocol.format(response)}")
 
             try{
-                obdConnection!!.run(SetTimeoutCommand(50)) // en ms
+                obdConnection!!.run(SetTimeoutCommand(50))
                 obdConnection!!.run(ResetAdapterCommand())
                 delay(200)
                 obdConnection!!.run(SetEchoCommand(Switcher.OFF))
@@ -125,7 +124,7 @@ class OBDConnection(private val context: Context) {
 
             Log.d("OBD:Conexión","Conectado a la ECU")
             withContext(Dispatchers.Main) {
-                OBDManager.viewModel?.setECUReady(true) // <-- Necesitas pasar el ViewModel a OBDManager
+                OBDManager.viewModel?.setECUReady(true)
             }
 
         } catch (e: Exception) {
@@ -217,30 +216,24 @@ class OBDConnection(private val context: Context) {
 
     suspend fun readCodes(): Map<String, String> {
         val datos = mutableMapOf<String, String>()
-        val erroresSet = linkedSetOf<String>()
 
-        try {
-            val comandos = listOf(
-                SafeObdCommand(TroubleCodesCommand()),
-                SafeObdCommand(PendingTroubleCodesCommand()),
-                SafeObdCommand(PermanentTroubleCodesCommand())
-            )
+        try{
+            val troubleCodesCommand = SafeObdCommand(TroubleCodesCommand())
+            val result = obdConnection!!.run(troubleCodesCommand)
 
-            for (comando in comandos) {
-                val result = obdConnection!!.run(comando)
-                if (result.formattedValue.isNotEmpty()) {
-                    val codigos = result.formattedValue
-                        .trim()
-                        .split(',', ' ', '\n')
-                        .filter { it.isNotBlank() }
-                    erroresSet.addAll(codigos)
-                }
+            val listaErrores = if (result.formattedValue.isEmpty()) {
+                null
+            } else {
+                result.formattedValue.trim().split(',', ' ').filter { it.isNotBlank() }
             }
 
-            datos["listaErrores"] = erroresSet.joinToString(separator = "\n")
+            listaErrores?.let {
+                datos["listaErrores"] = it.joinToString(separator = "\n")
+            }
+            Log.d("OBD:Lectura", "Codigos de error leidos $datos")
 
         } catch (e: Exception) {
-            Log.e("OBD:Lectura", "Error al leer códigos: ${e.message}")
+            Log.e("OBD:Lectura", "Probablemente sin errores: ${e.message}")
             e.printStackTrace()
             datos["listaErrores"] = ""
         }
@@ -269,7 +262,6 @@ class OBDConnection(private val context: Context) {
             } catch (e: Exception) {
                 datos["RPM"] = "No Data"
             }
-           // Log.d("rpm", ": ${datos["RPM"]}")
 
             try {
                 val speed = obdConnection!!.run(SafeObdCommand1(SpeedCommand()))
@@ -277,26 +269,7 @@ class OBDConnection(private val context: Context) {
             } catch (e: Exception) {
                 datos["Speed"] = "No Data"
             }
-            //Log.d("speed", ": ${datos["Speed"]}")
             delay(150)
-
-            /*
-            val massAirFlow = try {
-                obdConnection!!.run(SafeObdCommand1(MassAirFlowCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["Mass Air Flow"] = massAirFlow?.formattedValue ?: "No Data"
-            Log.d("massAirFlow", ": ${datos["Mass Air Flow"]}")
-            delay(150)
-            try {
-                val runtime = obdConnection!!.run(SafeObdCommand1(RuntimeCommand()))
-                datos["Runtime"] = runtime.formattedValue
-            } catch (e: Exception) {
-                datos["Runtime"] = "No Data"
-            }
-            Log.d("runtime", ": ${datos["Runtime"]}")
-            delay(150)*/
 
             val load = try {
                 obdConnection!!.run(SafeObdCommand1(LoadCommand()))
@@ -304,7 +277,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Engine Load"] = load?.formattedValue ?: "No Data"
-            //Log.d("engineLoad", ": ${datos["Engine Load"]}")
             delay(150)
 
             /*
@@ -323,18 +295,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Throttle Position"] = throttle?.formattedValue ?: "No Data"
-            //Log.d("throttlePosition", ": ${datos["Throttle Position"]}")
             delay(150)
-
-            /*
-            val relativeThrottle = try {
-                obdConnection!!.run(SafeObdCommand1(RelativeThrottlePositionCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["Relative Throttle Position"] = relativeThrottle?.formattedValue ?: "No Data"
-            Log.d("relativeThrottlePosition", ": ${datos["Relative Throttle Position"]}")
-            delay(150)*/
 
             val fuelType = try {
                 obdConnection!!.run(SafeObdCommand1(FuelTypeCommand()))
@@ -342,7 +303,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Type"] = fuelType?.formattedValue ?: "No Data"
-            //Log.d("fuelType", ": ${datos["Fuel Type"]}")
             delay(150)
 
             val fuelLevel = try {
@@ -351,18 +311,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Level"] = fuelLevel?.formattedValue ?: "No Data"
-            //Log.d("fuelLevel", ": ${datos["Fuel Level"]}")
             delay(150)
-
-            /*
-            val barometricPressure = try {
-                obdConnection!!.run(SafeObdCommand1(BarometricPressureCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["Barometric Pressure"] = barometricPressure?.formattedValue ?: "No Data"
-            Log.d("barometricPressure", ": ${datos["Barometric Pressure"]}")
-            delay(150)*/
 
             val intakeManifoldPressure = try {
                 obdConnection!!.run(SafeObdCommand1(IntakeManifoldPressureCommand()))
@@ -370,7 +319,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Intake Manifold Pressure"] = intakeManifoldPressure?.formattedValue ?: "No Data"
-            //Log.d("intakeManifoldPressure", ": ${datos["Intake Manifold Pressure"]}")
             delay(150)
 
             val fuelPressure = try {
@@ -379,7 +327,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Pressure"] = fuelPressure?.formattedValue ?: "No Data"
-            //Log.d("fuelPressure", ": ${datos["Fuel Pressure"]}")
             delay(150)
 
             val fuelRailPressure = try {
@@ -388,30 +335,7 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Fuel Rail Pressure"] = fuelRailPressure?.formattedValue ?: "No Data"
-            //Log.d("fuelRailPressure", ": ${datos["Fuel Rail Pressure"]}")
             delay(150)
-
-            /*
-            val fueltrim = try{
-                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.LONG_TERM_BANK_1)))
-                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.LONG_TERM_BANK_2)))
-                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.SHORT_TERM_BANK_1)))
-                obdConnection!!.run(SafeObdCommand1(FuelTrimCommand(FuelTrimCommand.FuelTrimBank.SHORT_TERM_BANK_2)))
-            }  catch(e:Exception){
-                null
-            }
-            //Log.d("fuelTrim", fueltrim!!.formattedValue)
-            */
-
-            /*
-            val fuelRailGaugePressure = try {
-                obdConnection!!.run(SafeObdCommand1(FuelRailGaugePressureCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["Fuel Rail Gauge Pressure"] = fuelRailGaugePressure?.formattedValue ?: "No Data"
-            Log.d("fuelRailGaugePressure", ": ${datos["Fuel Rail Gauge Pressure"]}")
-            delay(150)*/
 
             val airIntakeTemperature = try {
                 obdConnection!!.run(SafeObdCommand1(AirIntakeTemperatureCommand()))
@@ -419,7 +343,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Air Intake Temperature"] = airIntakeTemperature?.formattedValue ?: "No Data"
-            //Log.d("airIntakeTemperature", ": ${datos["Air Intake Temperature"]}")
             delay(150)
 
             val ambientAirTemperature = try {
@@ -428,7 +351,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Ambient Air Temperature"] = ambientAirTemperature?.formattedValue ?: "No Data"
-            //Log.d("ambientAirTemperature", ": ${datos["Ambient Air Temperature"]}")
             delay(150)
 
             val engineCoolantTemperature = try {
@@ -437,7 +359,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Engine Coolant Temperature"] = engineCoolantTemperature?.formattedValue ?: "No Data"
-            //Log.d("engineCoolantTemperature", ": ${datos["Engine Coolant Temperature"]}")
             delay(150)
 
             val oilTemperature = try {
@@ -446,7 +367,6 @@ class OBDConnection(private val context: Context) {
                 null
             }
             datos["Oil Temperature"] = oilTemperature?.formattedValue ?: "No Data"
-            //Log.d("oilTemperature", ": ${datos["Oil Temperature"]}")
             delay(150)
 
 
@@ -465,7 +385,7 @@ class OBDConnection(private val context: Context) {
 
         val rpmDeferred = async {
             try {
-                "RPM" to obdConn.run(SafeObdCommand(RPMCommand())).formattedValue
+                "RPM" to obdConn.run(SafeObdCommand1(RPMCommand())).formattedValue
             } catch (e: Exception) {
                 "RPM" to "Error"
             }
@@ -473,7 +393,7 @@ class OBDConnection(private val context: Context) {
 
         val speedDeferred = async {
             try {
-                "Speed" to obdConn.run(SafeObdCommand(SpeedCommand())).formattedValue
+                "Speed" to obdConn.run(SafeObdCommand1(SpeedCommand())).formattedValue
             } catch (e: Exception) {
                 "Speed" to "Error"
             }
@@ -481,7 +401,7 @@ class OBDConnection(private val context: Context) {
 
         val tempDeferred = async {
             try {
-                "Engine Coolant Temperature" to obdConn.run(SafeObdCommand(EngineCoolantTemperatureCommand())).formattedValue
+                "Engine Coolant Temperature" to obdConn.run(SafeObdCommand1(EngineCoolantTemperatureCommand())).formattedValue
             } catch (e: Exception) {
                 "Engine Coolant Temperature" to "Error"
             }
@@ -588,87 +508,33 @@ class VINCommand1 : ObdCommand() {
     private fun parseVIN(rawValue: String): String {
         Log.d(tag, "Raw VIN response:\n$rawValue")
 
-        // Limpiar saltos de línea, espacios y caracteres innecesarios
         val lines = rawValue.lines()
             .map { it.trim() }
             .filter { it.contains("49 02") }
 
-        //Log.d(tag, "Filtered lines containing '49 02': $lines")
-
-        // Extraer solo los bytes útiles de cada línea (ignorando cabeceras CAN y metadatos)
         val hexData = lines.flatMap { line ->
             val parts = line.split(Regex("\\s+"))
-            //Log.d(tag, "Parts of line: $parts")
 
             val startIndex = parts.indexOf("49")
-            //Log.d(tag, "Index of '49' in parts: $startIndex")
 
             if (startIndex >= 0 && parts.size > startIndex + 3) {
                 val usefulData = parts.drop(startIndex + 3)
-                //Log.d(tag, "Useful data extracted from line: $usefulData")
                 usefulData
             } else {
-                //Log.w(tag, "Line skipped due to unexpected format: $line")
                 emptyList()
             }
         }
-
-        // Convertir hex a texto ASCII
         val vin = hexData.joinToString("") {
             try {
                 val char = Integer.parseInt(it, 16).toChar()
-                //Log.d(tag, "Hex '$it' -> Char '$char'")
                 char.toString()
             } catch (e: NumberFormatException) {
-                //Log.e(tag, "Invalid hex byte: $it", e)
                 ""
             }
         }.trim()
-
         Log.d(tag, "Parsed VIN: $vin")
         return vin
     }
 }
-
-class TurboRpmCommand : ObdCommand() {
-    override val tag = "TURBO_RPM"
-    override val name = "Turbocharger RPM"
-    override val mode = "01"
-    override val pid = "74"
-
-    override val defaultUnit = "RPM"
-
-    override val handler = { it: ObdRawResponse ->
-        val bytes = it.bufferedValue
-        if (bytes.size >= 3) {
-            val A = bytes[1] and 0xFF
-            val B = bytes[2] and 0xFF
-            val rpm = (A * 256) + B
-            rpm.toString()
-        } else {
-            "N/D"
-        }
-    }
-}
-class TurboTemperatureCommand : ObdCommand() {
-    override val tag = "TURBO_TEMPERATURE"
-    override val name = "Turbocharger Temperature"
-    override val mode = "01"
-    override val pid = "75"
-
-    override val defaultUnit = "°C"
-
-    override val handler = { it: ObdRawResponse ->
-        val bytes = it.bufferedValue
-        if (bytes.size >= 2) {
-            val A = bytes[1] and 0xFF
-            val temp = A - 40
-            temp.toString()
-        } else {
-            "N/D"
-        }
-    }
-}
-
 
 
