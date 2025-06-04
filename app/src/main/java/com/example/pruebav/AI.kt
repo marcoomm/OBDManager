@@ -1,5 +1,6 @@
 package com.example.pruebav
 
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -51,6 +52,7 @@ import androidx.navigation.NavController
 import com.example.pruebav.ai.GeminiViewModel
 import com.example.pruebav.ai.Message
 import com.example.pruebav.database.ErroresCoche
+import com.example.pruebav.database.NumeroVin
 import com.example.pruebav.database.ParametrosCoche
 import kotlinx.coroutines.launch
 
@@ -73,6 +75,7 @@ fun AI(navController: NavController,database: AppDatabase) {
 
     var parametros by remember { mutableStateOf<ParametrosCoche?>(null) }
     var errores by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
+    var infoVin by remember { mutableStateOf(NumeroVin(vin = "")) }
 
     LaunchedEffect(Unit) {
         scope.launch {
@@ -91,6 +94,7 @@ fun AI(navController: NavController,database: AppDatabase) {
         cocheSeleccionado?.let { coche ->
             parametros = database.parametrosDao().obtenerParametros(coche.vin.trim().uppercase())
             errores = database.erroresDao().obtenerErroresCoche(coche.vin.trim().uppercase()) ?: emptyList()
+            infoVin = database.numeroVinDao().getNumeroVin(coche.vin.trim().uppercase())!!
         }
     }
 
@@ -254,7 +258,7 @@ fun AI(navController: NavController,database: AppDatabase) {
                         ) {
                             Button(
                                 onClick = {
-                                    val textoParametros = formatearParametrosParaIA(parametros)
+                                    val textoParametros = formatearParametrosParaIA(parametros,infoVin)
                                     userInput = textoParametros
                                     mostrarSelectorDatos = false
                                 },
@@ -275,7 +279,7 @@ fun AI(navController: NavController,database: AppDatabase) {
 
                             Button(
                                 onClick = {
-                                    val textoErrores = formatearCodigosErrorParaIA(errores)
+                                    val textoErrores = formatearCodigosErrorParaIA(errores,infoVin)
                                     userInput = textoErrores
                                     mostrarSelectorDatos = false
                                 },
@@ -461,12 +465,18 @@ data class Vehiculo(
     val vin:String
 )
 
-fun formatearParametrosParaIA(parametrosCoche: ParametrosCoche?): String {
+fun formatearParametrosParaIA(parametrosCoche: ParametrosCoche?, info: NumeroVin): String {
     if (parametrosCoche == null || parametrosCoche.parametros.isEmpty())
         return "No hay parámetros guardados para este vehículo."
 
     val sb = StringBuilder()
-    sb.append("Datos del vehículo con VIN ${parametrosCoche.vin}:\n")
+    sb.append("Ofrece recomendaciones para el vehículo detectado a partir del VIN.\n")
+    sb.append("Puedes verificar la marca y modelo descifrando el VIN si encuentras incoherencias.\n\n")
+    sb.append("🔹 VIN: ${info.vin}\n")
+    sb.append("🔹 Marca: ${info.marca}\n")
+    sb.append("🔹 Modelo: ${info.modelo}\n")
+    info.anioFabricacion?.let { sb.append("🔹 Año de fabricación: $it\n") }
+    info.caract?.let { sb.append("🔹 Características: $it\n") }
     sb.append("Parámetros:\n")
     parametrosCoche.parametros.forEach { parametro ->
         sb.append("- ${parametro.nombre}: ${parametro.valor}\n")
@@ -474,22 +484,30 @@ fun formatearParametrosParaIA(parametrosCoche: ParametrosCoche?): String {
     return sb.toString()
 }
 
-fun formatearCodigosErrorParaIA(errores: List<ErroresCoche>): String {
+fun formatearCodigosErrorParaIA(errores: List<ErroresCoche>, info: NumeroVin): String {
     if (errores.isEmpty()) return "No hay errores guardados para este vehículo."
 
     val esSinErrores = errores.size == 1 && errores.first().codigoError == "NO_ERROR"
     if (esSinErrores) return "No se detectaron códigos de error para este vehículo."
 
-    val vin = errores.first().vin
-
     val sb = StringBuilder()
-    sb.append("Códigos de error del vehículo con VIN $vin:\n")
+    sb.append("Ofrece recomendaciones para el vehículo detectado a partir del VIN.\n")
+    sb.append("Puedes verificar la marca y modelo descifrando el VIN si encuentras incoherencias.\n\n")
+    sb.append("🔹 VIN: ${info.vin}\n")
+    sb.append("🔹 Marca: ${info.marca}\n")
+    sb.append("🔹 Modelo: ${info.modelo}\n")
+    info.anioFabricacion?.let { sb.append("🔹 Año de fabricación: $it\n") }
+    info.caract?.let { sb.append("🔹 Características: $it\n") }
+    sb.append("\n📋 Códigos de error detectados:\n")
+
     errores.forEach { error ->
         sb.append("- Código: ${error.codigoError}")
         if (!error.descripcion.isNullOrEmpty()) {
-            sb.append(" - Descripción: ${error.descripcion}")
+            sb.append(" – Descripción: ${error.descripcion}")
         }
         sb.append("\n")
     }
+
     return sb.toString()
 }
+

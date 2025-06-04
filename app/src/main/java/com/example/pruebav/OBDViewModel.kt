@@ -267,13 +267,6 @@ object OBDManager {
         return obdConnection?.readAllParameters() ?: emptyMap()
     }
 
-    suspend fun leerBasic():Map<String,String>{
-        return obdConnection?.readBasicParameters()?: emptyMap()
-    }
-    suspend fun leerFastParametros():Map<String,String>{
-        return obdConnection?.readAllFastParameters()?: emptyMap()
-    }
-
     fun limpiarVin(vin: String): String {
         return vin.replace(Regex("[^\\x21-\\x7E]"), "")
     }

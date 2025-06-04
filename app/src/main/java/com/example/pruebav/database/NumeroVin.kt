@@ -1,7 +1,6 @@
 package com.example.pruebav.database
 
-import android.content.Context
-import android.widget.Toast
+
 import androidx.room.ColumnInfo
 import androidx.room.Dao
 import androidx.room.Entity
@@ -10,11 +9,8 @@ import androidx.room.Insert
 import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.RewriteQueriesToDropUnusedColumns
-import com.example.pruebav.AppDatabase
 import com.example.pruebav.CocheMarcaModelo
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.HttpURLConnection
@@ -95,28 +91,42 @@ data class NumeroVin(
                 val json = JSONObject(response)
                 val result = json.getJSONArray("Results").getJSONObject(0)
 
+                val errorCode = result.optString("ErrorCode")
                 val marcaFinal = obtenerMarcaDesdeWMI(vin)
 
-                val fuelType = result.optString("FuelTypePrimary").takeIf { it.isNotBlank() }
-                val bodyClass = result.optString("BodyClass").takeIf { it.isNotBlank() }
-                val transmission = result.optString("TransmissionStyle").takeIf { it.isNotBlank() }
+                return@withContext if (errorCode != "0") {
+                    NumeroVin(
+                        vin = vin,
+                        marca = marcaFinal,
+                        modelo = "Desconocido",
+                        caract = null,
+                        anioFabricacion = null,
+                        numeroSerie = "-"
+                    )
+                } else {
+                    // ✅ VIN interpretado correctamente → usar datos reales
+                    val fuelType = result.optString("FuelTypePrimary").takeIf { it.isNotBlank() }
+                    val bodyClass = result.optString("BodyClass").takeIf { it.isNotBlank() }
+                    val transmission = result.optString("TransmissionStyle").takeIf { it.isNotBlank() }
 
-                val caractList = listOfNotNull(fuelType, bodyClass, transmission)
-                val caract = if (caractList.isNotEmpty()) caractList.joinToString(" | ") else null
+                    val caractList = listOfNotNull(fuelType, bodyClass, transmission)
+                    val caract = if (caractList.isNotEmpty()) caractList.joinToString(" | ") else null
 
-                NumeroVin(
-                    vin = vin,
-                    marca = marcaFinal,
-                    modelo = result.optString("Model", "Desconocido"),
-                    caract = caract,
-                    anioFabricacion = result.optString("ModelYear", null.toString()).toIntOrNull(),
-                    numeroSerie = result.optString("SerialNumber", "-")
-                )
+                    NumeroVin(
+                        vin = vin,
+                        marca = marcaFinal, // seguimos usando la marca desde el WMI, más fiable
+                        modelo = result.optString("Model").takeIf { it.isNotBlank() } ?: "Desconocido",
+                        caract = caract,
+                        anioFabricacion = result.optString("ModelYear").toIntOrNull(),
+                        numeroSerie = result.optString("SerialNumber").takeIf { it.isNotBlank() } ?: "-"
+                    )
+                }
 
             } catch (e: Exception) {
                 e.printStackTrace()
                 null
             }
+
         }
     }
 }
@@ -140,33 +150,8 @@ interface NumeroVinDao {
 
     @Query("SELECT marca, modelo FROM numero_vin")
     suspend fun getCoches(): List<CocheMarcaModelo>
-
-    @Query("""
-    SELECT numero_vin.vin 
-    FROM numero_vin 
-    INNER JOIN parametros ON numero_vin.vin = parametros.vin
-""")
-    suspend fun obtenerVinesCoincidentes(): List<String>
-
-
 }
-fun obtenerTodosLosVins(context: Context, callback: (List<String>) -> Unit) {
-    val db = AppDatabase.getDatabase(context)
-    CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val vins = db.numeroVinDao().getAllVins() // Llamamos al DAO para obtener los VINs
-            CoroutineScope(Dispatchers.Main).launch {
-                if (vins != null) {
-                    callback(vins)
-                } // Pasamos la lista obtenida al callback
-            }
-        } catch (e: Exception) {
-            CoroutineScope(Dispatchers.Main).launch {
-                Toast.makeText(context, "Error al obtener los VINs: ${e.message}", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-}
+
 
 /*
 companion object {

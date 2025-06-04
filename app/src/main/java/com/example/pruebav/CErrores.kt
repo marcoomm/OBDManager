@@ -194,7 +194,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
                     ) {
-                        CircularProgressIndicator(color = Color.White)
+                        CircularProgressIndicator(color = Color(0xFF1E88E5))
                     }
                 } else {
                     ErrorList(context,vin,listaErrores = erroresList,viewModel)

@@ -243,7 +243,7 @@ class OBDConnection(private val context: Context) {
 
     suspend fun deleteCodes(): Boolean {
         return try {
-            val delete = obdConnection?.run(SafeObdCommand1(ResetTroubleCodesCommand()))
+            val delete = obdConnection?.run(SafeObdCommand(ResetTroubleCodesCommand()))
             delete != null
         } catch (e: Exception) {
             Log.d("OBD:Delete", "Error al borrar los códigos: ${e.message}")
@@ -278,16 +278,6 @@ class OBDConnection(private val context: Context) {
             }
             datos["Engine Load"] = load?.formattedValue ?: "No Data"
             delay(150)
-
-            /*
-            val absoluteLoad = try {
-                obdConnection!!.run(SafeObdCommand1(AbsoluteLoadCommand()))
-            } catch (e: Exception) {
-                null
-            }
-            datos["Absolute Load"] = absoluteLoad?.formattedValue ?: "No Data"
-            Log.d("engineAbsoluteLoad", ": ${datos["Absolute Load"]}")
-            delay(150)*/
 
             val throttle = try {
                 obdConnection!!.run(SafeObdCommand1(ThrottlePositionCommand()))
@@ -379,76 +369,6 @@ class OBDConnection(private val context: Context) {
 
         return datos
     }
-
-    suspend fun readBasicParameters(): Map<String, String> = coroutineScope {
-        val obdConn = obdConnection ?: return@coroutineScope emptyMap<String, String>()
-
-        val rpmDeferred = async {
-            try {
-                "RPM" to obdConn.run(SafeObdCommand1(RPMCommand())).formattedValue
-            } catch (e: Exception) {
-                "RPM" to "Error"
-            }
-        }
-
-        val speedDeferred = async {
-            try {
-                "Speed" to obdConn.run(SafeObdCommand1(SpeedCommand())).formattedValue
-            } catch (e: Exception) {
-                "Speed" to "Error"
-            }
-        }
-
-        val tempDeferred = async {
-            try {
-                "Engine Coolant Temperature" to obdConn.run(SafeObdCommand1(EngineCoolantTemperatureCommand())).formattedValue
-            } catch (e: Exception) {
-                "Engine Coolant Temperature" to "Error"
-            }
-        }
-
-        listOf(
-            rpmDeferred.await(),
-            speedDeferred.await(),
-            tempDeferred.await()
-        ).toMap()
-    }
-
-    suspend fun readAllFastParameters(): Map<String, String> = coroutineScope {
-        val obdConn = obdConnection ?: return@coroutineScope emptyMap()
-
-        val comandos: List<Pair<String, ObdCommand>> = listOf(
-            "RPM" to RPMCommand(),
-            "Speed" to SpeedCommand(),
-            "Engine Load" to LoadCommand(),
-            "Throttle Position" to ThrottlePositionCommand(),
-            "Fuel Type" to FuelTypeCommand(),
-            "Fuel Level" to FuelLevelCommand(),
-            "Intake Manifold Pressure" to IntakeManifoldPressureCommand(),
-            "Fuel Pressure" to FuelPressureCommand(),
-            "Fuel Rail Pressure" to FuelRailPressureCommand(),
-            "Air Intake Temperature" to AirIntakeTemperatureCommand(),
-            "Ambient Air Temperature" to AmbientAirTemperatureCommand(),
-            "Engine Coolant Temperature" to EngineCoolantTemperatureCommand(),
-            "Oil Temperature" to OilTemperatureCommand()
-        )
-
-        val deferreds = comandos.map { (nombre, cmd) ->
-            async {
-                val resultado = try {
-                    val res = obdConn.run(SafeObdCommand1(cmd))
-                    nombre to res.formattedValue
-                } catch (e: Exception) {
-                    nombre to "No Data"
-                }
-                Log.d("OBD", "${resultado.first}: ${resultado.second}")
-                resultado
-            }
-        }
-
-        deferreds.awaitAll().toMap()
-    }
-
 }
 
 //clases
