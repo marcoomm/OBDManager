@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.room.ColumnInfo
 import androidx.room.Dao
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -75,28 +74,6 @@ fun guardarErrores(context: Context, vin: String, errores: List<ErroresCoche>) {
         }
     }
 }
-
-
-
-fun obtenerErrores(context: Context, vin: String,callback: (List<ErroresCoche>) -> Unit) {
-    val db = AppDatabase.getDatabase(context)
-    CoroutineScope(Dispatchers.IO).launch {
-        try {
-            val errores = db.erroresDao().obtenerErroresCoche(vin) // Llamamos al DAO para obtener los errores
-            CoroutineScope(Dispatchers.Main).launch {
-                if (errores != null) {
-                    callback(errores)
-                } // Pasamos la lista obtenida al callback
-            }
-        } catch (e: Exception) {
-            CoroutineScope(Dispatchers.Main).launch {
-                Toast.makeText(context, "Error al obtener los errores: ${e.message}", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-}
-
-
 fun borrarErrores(context: Context, vin: String) {
     val db = AppDatabase.getDatabase(context)
     CoroutineScope(Dispatchers.IO).launch {

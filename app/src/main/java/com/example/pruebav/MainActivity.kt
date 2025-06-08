@@ -42,7 +42,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -80,7 +79,14 @@ class MainActivity : ComponentActivity() {
                 Log.e("OBD", "El usuario rechazó activar Bluetooth.")
             }
         }
-
+    @RequiresApi(Build.VERSION_CODES.S)
+    private fun requestBluetoothPermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            requestBluetoothPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT)
+        }
+    }
 
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,15 +97,6 @@ class MainActivity : ComponentActivity() {
             PruebaVTheme {
                 NavegacionEntreVentanas(this, enableBluetoothLauncher)
             }
-        }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.S)
-    private fun requestBluetoothPermissions() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT)
-            != PackageManager.PERMISSION_GRANTED
-        ) {
-            requestBluetoothPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT)
         }
     }
 }
@@ -119,7 +116,6 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     val isConnected by viewModel.isConnected.collectAsState()
     val ecuReady by viewModel.ecuReady.collectAsState()
 
-
     //variables obd
     val vin by viewModel.vin.collectAsState()
     val km by viewModel.km.collectAsState()
@@ -131,10 +127,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     val anio by viewModel.anio.collectAsState()
     val caract by viewModel.caract.collectAsState()
 
-
-    // Variables de los comandos OBD-II -- Pagina principal
     val vinprueba = remember { mutableStateOf("-") }
-    //var mezcla = remember { mutableStateOf("-") }
 
     LaunchedEffect(isConnected, ecuReady) {
         if (isConnected && ecuReady) {
@@ -443,8 +436,6 @@ fun VehicleInfoScreen(
                 modifier = Modifier.padding(start = 12.dp, bottom = 8.dp)
             )
 
-            //Spacer(modifier = Modifier.width(8.dp))
-
             IconM(
                 onClick = {
                     if (vin.length == 17) {
@@ -558,15 +549,15 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .weight(1f)
                    .padding(8.dp)
                    .clickable {
-                       /*
+
                        if (isConnected) {
                            navController.navigate("errores")
                        } else {
                            Toast
                                .makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT)
                                .show()
-                       }*/
-                       navController.navigate("errores")
+                       }
+                        /*navController.navigate("errores")*/
                    },
                shape = RoundedCornerShape(12.dp),
                colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
@@ -600,15 +591,15 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
                    .padding(8.dp)
                    .clickable {
 
-                       /*
+
                        if (isConnected) {
                            navController.navigate("parametros")
 
                        } else {
                            Toast.makeText(context, "Conecta el OBD primero", Toast.LENGTH_SHORT).show()
                        }
-                       */
-                       navController.navigate("parametros")
+
+                       /*navController.navigate("parametros")*/
 
                    },
                shape = RoundedCornerShape(12.dp),

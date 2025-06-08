@@ -10,7 +10,7 @@ data class Part(
 )
 data class Content(
     val parts: List<Part>,
-    val role: String  //
+    val role: String
 )
 data class GeminiRequest(
     val contents: List<Content>
