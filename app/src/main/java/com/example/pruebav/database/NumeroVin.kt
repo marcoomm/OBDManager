@@ -104,7 +104,6 @@ data class NumeroVin(
                         numeroSerie = "-"
                     )
                 } else {
-                    // ✅ VIN interpretado correctamente → usar datos reales
                     val fuelType = result.optString("FuelTypePrimary").takeIf { it.isNotBlank() }
                     val bodyClass = result.optString("BodyClass").takeIf { it.isNotBlank() }
                     val transmission = result.optString("TransmissionStyle").takeIf { it.isNotBlank() }
@@ -114,7 +113,7 @@ data class NumeroVin(
 
                     NumeroVin(
                         vin = vin,
-                        marca = marcaFinal, // seguimos usando la marca desde el WMI, más fiable
+                        marca = marcaFinal,
                         modelo = result.optString("Model").takeIf { it.isNotBlank() } ?: "Desconocido",
                         caract = caract,
                         anioFabricacion = result.optString("ModelYear").toIntOrNull(),
@@ -152,7 +151,7 @@ interface NumeroVinDao {
     suspend fun getCoches(): List<CocheMarcaModelo>
 }
 
-
+//método de api de pago
 /*
 companion object {
         suspend fun decodeVinHttpClient(vin: String): NumeroVin? = withContext(Dispatchers.IO) {
@@ -176,7 +175,6 @@ companion object {
                 val anioFabricacion = data.optString("year").toIntOrNull()
                 val numeroSerie = data.optString("serial_number", "-")
 
-                // Puedes añadir más campos como quieras aquí:
                 val fuel = data.optString("fuel_type")
                 val body = data.optString("body_type")
                 val gearbox = data.optString("gearbox")

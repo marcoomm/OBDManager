@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 data class Coche(
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
     @ColumnInfo(name = "vin") val vin: String,
-    @ColumnInfo(name = "nombre") val nombre: String?, // ← ahora es nullable
+    @ColumnInfo(name = "nombre") val nombre: String?,
     @ColumnInfo(name = "fecha_conexion") val fechaConexion: String
 )
 @Dao

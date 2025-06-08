@@ -472,11 +472,11 @@ fun formatearParametrosParaIA(parametrosCoche: ParametrosCoche?, info: NumeroVin
     val sb = StringBuilder()
     sb.append("Ofrece recomendaciones para el vehículo detectado a partir del VIN.\n")
     sb.append("Puedes verificar la marca y modelo descifrando el VIN si encuentras incoherencias.\n\n")
-    sb.append("🔹 VIN: ${info.vin}\n")
-    sb.append("🔹 Marca: ${info.marca}\n")
-    sb.append("🔹 Modelo: ${info.modelo}\n")
-    info.anioFabricacion?.let { sb.append("🔹 Año de fabricación: $it\n") }
-    info.caract?.let { sb.append("🔹 Características: $it\n") }
+    sb.append("VIN: ${info.vin}\n")
+    sb.append("Marca: ${info.marca}\n")
+    sb.append("Modelo: ${info.modelo}\n")
+    info.anioFabricacion?.let { sb.append("Año de fabricación: $it\n") }
+    info.caract?.let { sb.append("Características: $it\n") }
     sb.append("Parámetros:\n")
     parametrosCoche.parametros.forEach { parametro ->
         sb.append("- ${parametro.nombre}: ${parametro.valor}\n")
@@ -493,11 +493,11 @@ fun formatearCodigosErrorParaIA(errores: List<ErroresCoche>, info: NumeroVin): S
     val sb = StringBuilder()
     sb.append("Ofrece recomendaciones para el vehículo detectado a partir del VIN.\n")
     sb.append("Puedes verificar la marca y modelo descifrando el VIN si encuentras incoherencias.\n\n")
-    sb.append("🔹 VIN: ${info.vin}\n")
-    sb.append("🔹 Marca: ${info.marca}\n")
-    sb.append("🔹 Modelo: ${info.modelo}\n")
-    info.anioFabricacion?.let { sb.append("🔹 Año de fabricación: $it\n") }
-    info.caract?.let { sb.append("🔹 Características: $it\n") }
+    sb.append("VIN: ${info.vin}\n")
+    sb.append("Marca: ${info.marca}\n")
+    sb.append("Modelo: ${info.modelo}\n")
+    info.anioFabricacion?.let { sb.append("Año de fabricación: $it\n") }
+    info.caract?.let { sb.append("Características: $it\n") }
     sb.append("\n📋 Códigos de error detectados:\n")
 
     errores.forEach { error ->

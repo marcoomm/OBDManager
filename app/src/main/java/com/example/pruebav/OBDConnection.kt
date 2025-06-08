@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothSocket
 import android.content.Context
 import android.content.pm.PackageManager
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.github.eltonvs.obd.command.NonNumericResponseException
 import com.github.eltonvs.obd.command.ObdCommand
@@ -21,8 +22,6 @@ import com.github.eltonvs.obd.command.at.SetLineFeedCommand
 import com.github.eltonvs.obd.command.at.SetTimeoutCommand
 import com.github.eltonvs.obd.command.control.DTCNumberCommand
 import com.github.eltonvs.obd.command.control.DistanceSinceCodesClearedCommand
-import com.github.eltonvs.obd.command.control.PendingTroubleCodesCommand
-import com.github.eltonvs.obd.command.control.PermanentTroubleCodesCommand
 import com.github.eltonvs.obd.command.control.ResetTroubleCodesCommand
 import com.github.eltonvs.obd.command.control.TroubleCodesCommand
 import com.github.eltonvs.obd.command.engine.LoadCommand
@@ -40,9 +39,6 @@ import com.github.eltonvs.obd.command.temperature.EngineCoolantTemperatureComman
 import com.github.eltonvs.obd.command.temperature.OilTemperatureCommand
 import com.github.eltonvs.obd.connection.ObdDeviceConnection
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import java.io.IOException
@@ -107,7 +103,7 @@ class OBDConnection(private val context: Context) {
                 obdConnection!!.run(SetLineFeedCommand(Switcher.OFF))
                 delay(300)
                 obdConnection!!.run(SelectProtocolCommand(ObdProtocols.ISO_15765_4_CAN))
-                delay(1000)
+                delay(300)
 
                 //obdConnection!!.run(SetSpacesCommand(Switcher.OFF))
                 //obdConnection!!.run(SetHeadersCommand(Switcher.OFF))
@@ -176,37 +172,9 @@ class OBDConnection(private val context: Context) {
                 "$rawKm km"
             }
 
-            /*
-
-            val fuelAirEquivalence1 = obdConnection!!.run(SafeObdCommand(FuelAirEquivalenceRatioCommand(FuelAirEquivalenceRatioCommand.OxygenSensor.OXYGEN_SENSOR_1))).formattedValue
-            delay(300)
-            val fuelAirEquivalence2 = obdConnection!!.run(SafeObdCommand(FuelAirEquivalenceRatioCommand(FuelAirEquivalenceRatioCommand.OxygenSensor.OXYGEN_SENSOR_2))).formattedValue
-            delay(300)
-            val fuelAirEquivalence3 = obdConnection!!.run(SafeObdCommand(FuelAirEquivalenceRatioCommand(FuelAirEquivalenceRatioCommand.OxygenSensor.OXYGEN_SENSOR_3))).formattedValue
-            delay(300)
-            val fuelAirEquivalence4 = obdConnection!!.run(SafeObdCommand(FuelAirEquivalenceRatioCommand(FuelAirEquivalenceRatioCommand.OxygenSensor.OXYGEN_SENSOR_4))).formattedValue
-            delay(300)
-            val fuelAirEquivalence5 = obdConnection!!.run(SafeObdCommand(FuelAirEquivalenceRatioCommand(FuelAirEquivalenceRatioCommand.OxygenSensor.OXYGEN_SENSOR_5))).formattedValue
-            delay(300)
-            val fuelAirEquivalence6 = obdConnection!!.run(SafeObdCommand(FuelAirEquivalenceRatioCommand(FuelAirEquivalenceRatioCommand.OxygenSensor.OXYGEN_SENSOR_6))).formattedValue
-            delay(300)
-
-            val mezcla = listOf(
-                fuelAirEquivalence1,
-                fuelAirEquivalence2,
-                fuelAirEquivalence3,
-                fuelAirEquivalence4,
-                fuelAirEquivalence5,
-                fuelAirEquivalence6
-            ).map { it.toDoubleOrNull() ?: 1.0 }.average()
-
-            */
-
             datos["numerCodes"] = numerCodes
             datos["vin"] = vinCommand
             datos["km"] = kmCodes
-            //datos["mezcla"] = mezcla.toString()
-
 
         }catch(e:Exception){
             Log.e("OBD:Lectura","Fallo lectura main: ${e.message}")

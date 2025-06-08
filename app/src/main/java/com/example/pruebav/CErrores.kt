@@ -65,6 +65,8 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
     }
     var erroresEncontrados by remember { mutableStateOf<List<ErroresCoche>>(emptyList()) }
 
+    //valores de prueba
+    /*
     val vinDePrueba = "VF1AB123456789XYZ"
     val erroresDeEjemplo = listOf(
         ErroresCoche(
@@ -77,7 +79,7 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
             vin = vinDePrueba,
             descripcion = "Eficiencia del catalizador por debajo del umbral"
         )
-    )
+    )*/
 
     LaunchedEffect(Unit) {
         delay(1000)
@@ -107,8 +109,10 @@ fun CError(context: Context, navController: NavController,viewModel: OBDViewMode
     LaunchedEffect(toastMessage) {
         toastMessage?.let { mensaje ->
             Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show()
+            viewModel.toastMessage.value = null
         }
     }
+
 
     Scaffold(
         containerColor = Color.Black,
@@ -255,7 +259,9 @@ fun ErrorList(context: Context, vin: String, listaErrores: List<ErroresCoche>,vi
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Button(
-                        onClick = { viewModel.borrarCodigos() },
+                        onClick = {
+                            viewModel.borrarCodigos()
+                        },
                         colors = ButtonColors(
                             contentColor =Color.White,
                             containerColor = Color(0xFF670000),

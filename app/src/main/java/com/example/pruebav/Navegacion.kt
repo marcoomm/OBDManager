@@ -12,7 +12,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pruebav.ai.GeminiViewModel
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -22,7 +21,6 @@ fun NavegacionEntreVentanas(
     enableBluetoothLauncher: ActivityResultLauncher<Intent>,
 ) {
 
-    // Crear ViewModel una sola vez aquí
     val application = context.applicationContext as Application
     val viewModel: OBDViewModel = viewModel(
         factory = ViewModelProvider.AndroidViewModelFactory(application)

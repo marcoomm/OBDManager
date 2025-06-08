@@ -13,7 +13,6 @@ import androidx.room.Query
 import com.example.pruebav.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -43,13 +42,6 @@ interface ParametrosDao {
 
     @Query("DELETE FROM parametros WHERE vin = :vin")
     suspend fun borrarParametros(vin: String)
-
-    @Query("SELECT * FROM parametros")
-    suspend fun verTodo(): List<ParametrosCoche>
-
-    @Query("SELECT vin FROM parametros")
-    suspend fun verVinParametros(): List<String>
-
 }
 
 
@@ -69,19 +61,6 @@ suspend fun guardarParametros(context: Context, vin: String, parametros: List<Pa
             Toast.makeText(context, "Error al guardar los datos", Toast.LENGTH_LONG).show()
             Log.e("OBD", "Error al guardar", e)
         }
-    }
-}
-
-// Modificación aquí para obtener un solo ParametrosCoche en vez de una lista
-suspend fun obtenerParametros(context: Context, vin: String): ParametrosCoche? {
-    val db = AppDatabase.getDatabase(context)
-    return try {
-        db.parametrosDao().obtenerParametros(vin)
-    } catch (e: Exception) {
-        withContext(Dispatchers.Main) {
-            Toast.makeText(context, "Error al obtener los datos: ${e.message}", Toast.LENGTH_LONG).show()
-        }
-        null
     }
 }
 

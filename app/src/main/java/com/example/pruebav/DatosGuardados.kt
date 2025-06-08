@@ -98,7 +98,6 @@ fun Datos(navController: NavController, database: AppDatabase,context: Context) 
         dataLoaded = true
     }
 
-
     LaunchedEffect(seleccionadoVin, option) {
         if (seleccionadoVin.isNotBlank()) {
             cargando = true

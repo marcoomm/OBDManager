@@ -181,6 +181,18 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
     val toastMessage = mutableStateOf<String?>(null)
     private val deleteResult = mutableStateOf<Boolean?>(null)
 
+    fun leerCodigos(){
+        viewModelScope.launch {
+            runCatching {
+                val errores = withContext(Dispatchers.IO) {
+                    OBDManager.leerCodigos()
+                }
+                _codigosError.value = errores
+            }
+
+        }
+    }
+
     fun borrarCodigos() {
         viewModelScope.launch {
             val resultado = OBDManager.borrarCodigos()
@@ -188,11 +200,13 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
 
             if (resultado) {
                 toastMessage.value = "Códigos de error borrados correctamente"
+                leerCodigos()
             } else {
                 toastMessage.value = "No se pudieron borrar los códigos de error"
             }
         }
     }
+
 
     private var leyendoParametros = false
     private var lecturaJob: Job? = null
