@@ -1,0 +1,6236 @@
+[
+  {
+    "codigoError": "P0010",
+    "descripcion": "Arbol de Levas Posición Actuador CircuitOo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0011",
+    "descripcion": "Arbol de Levas Posición - Sinconización Avance Excesivo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0012",
+    "descripcion": "Arbol de Levas Posición - Sinconización Retraso Excesivo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0013",
+    "descripcion": "Arbol de Levas Posición - Actuador CircuitOo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0014",
+    "descripcion": "Arbol de Levas Posición - Sinconización Avance Excesivo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0015",
+    "descripcion": "Arbol de Levas Posición - Sinconización Retraso Excesivo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0016",
+    "descripcion": "Cigüeñal Posiciónica Árbol de Levas Posiciónía Correlación Banco 1 Sensor A",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0020",
+    "descripcion": "Arbol de Levas Posición Actuador CircuitOo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0021",
+    "descripcion": "Posición de Arbol de Levas - Sinconización Avance Excesivo o Rendimiento del Sistema (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0022",
+    "descripcion": "Arbol de Levas Posición - Sinconización Retraso Excesivo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0023",
+    "descripcion": "Arbol de Levas Posición - Actuador CircuitOo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0024",
+    "descripcion": "Arbol de Levas Posición - Sinconización Avance Excesivo o Rendimiento del Sistema (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0025",
+    "descripcion": "Arbol de Levas Posición - Sinconización Retrodo Excesivo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0030",
+    "descripcion": "H02S Control Del Calentador Circuitoo (Banco 1 Sensor 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0031",
+    "descripcion": "Control H02S del calentador Circuitoo Bajo (sensor Banco 1 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0032",
+    "descripcion": "H02S Control del Calentador Circuitoo Alto (sensor Banco 1 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0033",
+    "descripcion": "Turbo Charger Bypass Válvula Control CircuitOo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0034",
+    "descripcion": "Turbo Charger Bypass Válvula Control Circuitoo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0035",
+    "descripcion": "Turbo Charger Bypass Válvula Control CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0036",
+    "descripcion": "H02S Control Del Calentador Circuitoo (Sensor Banco 1 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0037",
+    "descripcion": "H02S Control del Calentador Circuitoo Bajo (sensor Banco 1 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0038",
+    "descripcion": "H02S Control del Calentador CircuitOo Alto (sensor Banco 1 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0042",
+    "descripcion": "H02S Control Del Calentador Circuitoo (Banco 1 Sensor 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0043",
+    "descripcion": "H02S Control del Calentador Circuitoo Bajo (sensor Banco 1 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0044",
+    "descripcion": "H02S Control del Calentador Circuitoo Alto (sensor Banco 1 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0050",
+    "descripcion": "H02S Control Del Calentador Circuitoo (sensor Banco 2 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0051",
+    "descripcion": "Control H02S del calentador CircuitOo Bajo (sensor Banco 2 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0052",
+    "descripcion": "H02S Control del Calentador Circuitoo Alto (sensor Banco 2 1)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0056",
+    "descripcion": "H02S Control Del Calentador Circuitoo (sensor Banco 2 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0057",
+    "descripcion": "Control H02S del calentador Circuitoo Bajo (sensor Banco 2 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0058",
+    "descripcion": "H02S Control del Calentador Circuitoo Alto (sensor Banco 2 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0062",
+    "descripcion": "H02S Control Del Calentador Circuitoo (sensor Banco 2 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0063",
+    "descripcion": "Control H02S Del Calentador Circuitoo Bajo (sensor Banco 2 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0064",
+    "descripcion": "H02S Control del Calentador Circuitoo Alto (sensor Banco 2 3)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0065",
+    "descripcion": "Control de inyector asistido por aire rango / rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0066",
+    "descripcion": "Control de inyector asistido por aire Circuitoo o CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0067",
+    "descripcion": "Circuito de control de inyector asistido por aire Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0070",
+    "descripcion": "Ambient Temperatura del Aire Sensor CircuitOOO",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0071",
+    "descripcion": "Sensor de temperatura ambiente del aire rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0072",
+    "descripcion": "Ambient Temperatura del Aire Sensor Circuitoo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0073",
+    "descripcion": "Ambient Temperatura del Aire Sensor CircuitOo Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0074",
+    "descripcion": "Ambient Temperatura del Aire Sensor Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0075",
+    "descripcion": "Admisión Válvula Control Solenoide CircuitOo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0076",
+    "descripcion": "Admisión Válvula Control Solenoide CircuitOo Bajo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0077",
+    "descripcion": "Admisión Válvula Control Solenoide CircuitOo Alto (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0078",
+    "descripcion": "Escocia Válvula Control Solenoide CircuitOo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0079",
+    "descripcion": "Escape Válvula Control Solenoide CircuitOo Bajo (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0080",
+    "descripcion": "Equipo de válvula Control Solenoide CircuitOo Alto (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0081",
+    "descripcion": "Admisión Válvula Control Solenoide CircuitOo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0082",
+    "descripcion": "Admisión válvula Control Solenoide CircuitOo Bajo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0083",
+    "descripcion": "Admisión Válvula Control Solenoide CircuitOo Alto (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0084",
+    "descripcion": "Escocia Válvula Control Solenoide CircuitOo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0085",
+    "descripcion": "Ecuidad Válvula Control Solenoide CircuitOo Bajo (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0086",
+    "descripcion": "Ecuidad de control de válvula Solenoide CircuitOo Alto (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0030",
+    "descripcion": "Control del sensor de oxígeno calentado (H02S) Del Calentador Circuitor Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0031",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito del calentador Voltaje Bajo Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0032",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito del calentador Alto Voltaje Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0036",
+    "descripcion": "Control del sensor de oxígeno calentado (HO2S) Del Calentador Circuitor Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0037",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito del calentador Bajo Voltaje Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0038",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito del calentador Alto Voltaje Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0056",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuito del calentador Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0057",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito del calentador Bajo Voltaje Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0058",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito del calentador Alto Voltaje Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0068",
+    "descripcion": "Acelerador Body Airfbajo Rendimiento (PCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0100",
+    "descripcion": "Circuito del sensor MAF Actividad insuficiente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0101",
+    "descripcion": "Mass Air Fbajo (MAF) Sensor Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0102",
+    "descripcion": "Masa aire fbajo (maf) sensor circuito de sensor frecuencia de bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0103",
+    "descripcion": "Masa aire fbajo (maf) circuito sensor de frecuencia Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0104",
+    "descripcion": "Masa aire fbajo circuitoo intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0105",
+    "descripcion": "Circuito del sensor de mapa Actividad insuficiente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0106",
+    "descripcion": "Presión absoluta múltiple (MAP) Rendimiento del Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0107",
+    "descripcion": "Voltaje de circuito de sensor de presión absoluta (mapa) múltiple",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0108",
+    "descripcion": "Circuito de sensor de presión absoluta (MAP) múltiple voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0109",
+    "descripcion": "Circuito de presión absoluta múltiple intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0110",
+    "descripcion": "Admisión temperatura del circuito sensor del sensor del aire (IAT)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0111",
+    "descripcion": "Admisión temperatura del aire (IAT) Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0112",
+    "descripcion": "Admisión temperatura del aire (IAT) Circuito del sensor Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0113",
+    "descripcion": "Admisión temperatura del aire (IAT) Circuito del sensor ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0114",
+    "descripcion": "Admisión temperatura del aire circuitoo intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0115",
+    "descripcion": "Circuito del sensor de temperatura del motor del motor del refrigerante (ECT)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0116",
+    "descripcion": "Motor Temperatura del Refrigerante (ECT) Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0117",
+    "descripcion": "Motor temperatura del refrigerante (ECT) Circuito del sensor Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0118",
+    "descripcion": "Motor Temperatura del refrigerante (ECT) Circuito del sensor ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0119",
+    "descripcion": "Motor Temperatura del refrigerante Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0120",
+    "descripcion": "TP Rendimiento del Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0121",
+    "descripcion": "TP Sensor CircuitOo Actividad insuficiente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0122",
+    "descripcion": "Acelerador Posición (TP) Circuito del sensor Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0123",
+    "descripcion": "Acelerador Posición (TP) Circuito del sensor de voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0124",
+    "descripcion": "Acelerador Posición Sensor 1 Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0125",
+    "descripcion": "Motor Temperatura del Refrigerante (ECT) insuficiente para el control combustible de circuito cerrado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0126",
+    "descripcion": "ECT insuficiente para operación estable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0128",
+    "descripcion": "Termostato de refrigerante Bebajo Termostato Regular la temperatura",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0130",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) CircuitOO Circuito (CL) Rendimiento Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0131",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Bajo Voltaje Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0132",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Alto Voltaje Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0133",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) SBAJO Respuesta Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0134",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Actividad insuficiente Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0135",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Rendimiento Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0136",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0137",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Voltaje Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0138",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Alto Voltaje Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0139",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) SBAJO Respuesta Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0140",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Actividad insuficiente Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0141",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Rendimiento Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0142",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Banco 1 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0143",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Voltaje Banco 1 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0144",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Alto Voltaje Banco 1 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0145",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Banco 1 Sensor 2 Respuesta Sbajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0146",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Actividad insuficiente Banco 1 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0147",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Rendimiento Banco 1 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0150",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) CircuitOo Circuito (CL) Rendimiento Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0151",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Voltaje Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0152",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Alto Voltaje Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0153",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) SBAJO Respuesta Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0154",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Actividad insuficiente Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0155",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Rendimiento Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0156",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0157",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Voltaje Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0158",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Alto Voltaje Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0159",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) SBANTO BANCO 2 SENSOR 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0160",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Actividad insuficiente Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0161",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Rendimiento Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0162",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Banco 2 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0163",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Banco 2 Sensor 3 Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0164",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Banco 2 Sensor 3 Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0165",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) CircuitOo Banco 2 Sensor 3 Respuesta de Sbajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0166",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuitoo Banco 2 Sensor 3 Sin actividad detectada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0167",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Circuito del calentador Banco 2 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0169",
+    "descripcion": "Sensor de composición combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0170",
+    "descripcion": "TRIM BANCO 1 Combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0171",
+    "descripcion": "Sistema de ajuste combustible Sistema Lean Banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0172",
+    "descripcion": "Sistema de recorte combustible Rich Banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0173",
+    "descripcion": "TRIM BANCO 2 de combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0174",
+    "descripcion": "Trimen combustible Sistema Lean Banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0175",
+    "descripcion": "Sistema de recorte combustible Rich Banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0176",
+    "descripcion": "Circuito de sensor de composición combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0177",
+    "descripcion": "Circuito de sensor de composición combustible Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0178",
+    "descripcion": "Voltaje de Circuito de Sensor de Composiciónica Combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0179",
+    "descripcion": "Circuito de sensor de composición combustible de voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0180",
+    "descripcion": "Sensor de temperatura combustible 1 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0181",
+    "descripcion": "Temperatura combustible. ",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0182",
+    "descripcion": "Circuito de sensor de temperatura combustible Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0183",
+    "descripcion": "Circuito de sensor de temperatura combustible Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0184",
+    "descripcion": "Sensor de temperatura combustible 1 Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0185",
+    "descripcion": "Sensor de temperatura combustible 2 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0186",
+    "descripcion": "Temperatura combustible. ",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0187",
+    "descripcion": "Sensor de temperatura combustible 2 CircuitOO BAJO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0188",
+    "descripcion": "Sensor de temperatura combustible 2 CircuitOo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0189",
+    "descripcion": "Sensor de temperatura combustible 2 Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0190",
+    "descripcion": "Circuito de sensor de presión de riel combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0191",
+    "descripcion": "Circuito de sensor de presión de riel combustible Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0192",
+    "descripcion": "Circuito de presión de riel combustible Circuitoo Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0193",
+    "descripcion": "Circuito de presión de riel combustible Circuito de voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0194",
+    "descripcion": "Circuito de sensor de presión de riel combustible intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0195",
+    "descripcion": "Sensor de temperatura del aceite del motor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0196",
+    "descripcion": "Sensor de temperatura del aceite del motor Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0197",
+    "descripcion": "Sensor de temperatura de aceite del motor Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0198",
+    "descripcion": "Sensor de temperatura de aceite del motor Voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0199",
+    "descripcion": "Sensor de temperatura de aceite del motor intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0200",
+    "descripcion": "Circuito de control inyector",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0201",
+    "descripcion": "Inyector 1 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0202",
+    "descripcion": "Inyector 2 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0203",
+    "descripcion": "Inyector 3 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0204",
+    "descripcion": "Inyector 4 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0205",
+    "descripcion": "Inyector 5 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0206",
+    "descripcion": "Inyector 6 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0207",
+    "descripcion": "Inyector 7 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0208",
+    "descripcion": "Inyector 8 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0209",
+    "descripcion": "Inyector 9 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0210",
+    "descripcion": "Inyector 10 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0211",
+    "descripcion": "Inyector 11 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0212",
+    "descripcion": "Inyector 12 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0213",
+    "descripcion": "Inicio en frío inyector 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0214",
+    "descripcion": "Inicio en frío inyector 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0215",
+    "descripcion": "Circuito de control de apagado del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0216",
+    "descripcion": "Circuito de control de secuencia de inyección",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0217",
+    "descripcion": "Condición de revelación del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0218",
+    "descripcion": "Sobretemperatura del fluido de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0219",
+    "descripcion": "Condición de exceso de velocidad del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0220",
+    "descripcion": "Sensor de aplicaciones 2 CircuitOo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0221",
+    "descripcion": "Aplicación (Acelerador Posición) Sensor 2 CircuitOo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0222",
+    "descripcion": "APP (ACELERADOR POSICIÓN) SENSOR 2 CircuitOO BAJO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0223",
+    "descripcion": "APP (ACELERADOR POSICIÓN) SENSOR 2 CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0224",
+    "descripcion": "ACELERADOR POSICIÓN SENSOR 2 Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0225",
+    "descripcion": "Sensor de aplicaciones 3 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0226",
+    "descripcion": "Sensor de aplicaciones 3 CircuitOO Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0227",
+    "descripcion": "Sensor de aplicaciones 3 CircuitOO BAJO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0228",
+    "descripcion": "Sensor de aplicaciones 3 CircuitOo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0229",
+    "descripcion": "ACELERADOR SENSOR DE POSICIÓN 3 Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0230",
+    "descripcion": "Circuito de control de relé de bomba combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0231",
+    "descripcion": "Circuito de la bomba combustible Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0232",
+    "descripcion": "Circuito de retroalimentación de la bomba combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0233",
+    "descripcion": "Bomba combustible Circuito de secundaria intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0234",
+    "descripcion": "Condición de sobrecarga del motor del turbocompresor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0235",
+    "descripcion": "TurboCharger Boost Sensor 1 CircuitOo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0236",
+    "descripcion": "Boost de turbocompresor Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0237",
+    "descripcion": "Turbocompresor del sensor del sensor Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0238",
+    "descripcion": "Turbocompresor del sensor del sensor voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0239",
+    "descripcion": "TurboCharger Boost Sensor 2 CircuitOo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0240",
+    "descripcion": "TurboCharger Boost Sensor 2 Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0241",
+    "descripcion": "Sensor de refuerzo de turbocompresor 2 Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0242",
+    "descripcion": "Sensor de refuerzo de turbocompresor 2 CircuitOo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0243",
+    "descripcion": "Turbocompresor Solenoide 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0244",
+    "descripcion": "Turbocompresor Solenoide 1 Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0245",
+    "descripcion": "Turbocompresor solenoide de desechos 1 voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0246",
+    "descripcion": "Turbocompresor solenoide de desechos 1 voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0247",
+    "descripcion": "Turbocompresor Solenoide 2 de desecho 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0248",
+    "descripcion": "Turbocompresor Solenoide 2 Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0249",
+    "descripcion": "Turbocompresor solenoide 2 voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0250",
+    "descripcion": "Turbocompresor Solenoide de desechos 2 voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0251",
+    "descripcion": "Control de medición combustible de la bomba de inyección \"A\" Fallo (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0252",
+    "descripcion": "Bomba de inyección Control de medición combustible \"A\" rango/rendimiento (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0253",
+    "descripcion": "Control de medición combustible de la bomba de inyección \"A\" Bajo (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0254",
+    "descripcion": "Control de medición combustible de la bomba de inyección \"A\" Alto (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0255",
+    "descripcion": "Bomba de inyección Control de medición combustible \"A\" Intermitente (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0256",
+    "descripcion": "Bomba de inyección Control de medición combustible \"B\" Fallo (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0257",
+    "descripcion": "Bomba de inyección Control de medición combustible \"B\" rango/rendimiento (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0258",
+    "descripcion": "Bomba de inyección Control de medición combustible \"B\" Bajo (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0259",
+    "descripcion": "Control de medición combustible de la bomba de inyección \"B\" Alto (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0260",
+    "descripcion": "Bomba de inyección Control de medición combustible \"B\" Intermitente (leva/rotor/inyector)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0261",
+    "descripcion": "Cilindro 1 Inyector CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0262",
+    "descripcion": "Cilindro 1 Inyector CircuitOO Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0263",
+    "descripcion": "Cilindro 1 Contribución/falla de balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0264",
+    "descripcion": "Cilindro 2 Inyector CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0265",
+    "descripcion": "Cilindro 2 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0266",
+    "descripcion": "Falla de contribución/balance del cilindro 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0267",
+    "descripcion": "Cilindro 3 Inyector CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0268",
+    "descripcion": "Cilindro 3 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0269",
+    "descripcion": "Cilindro 3 Contribución/falla de balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0270",
+    "descripcion": "Cilindro 4 Inyector CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0271",
+    "descripcion": "Cilindro 4 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0272",
+    "descripcion": "Cilindro 4 Falla de contribución/balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0273",
+    "descripcion": "Cilindro 5 Inyector CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0274",
+    "descripcion": "Cilindro 5 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0275",
+    "descripcion": "Falla de contribución/balance de cilindro 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0276",
+    "descripcion": "Cilindro 6 Inyector CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0277",
+    "descripcion": "Cilindro 6 Inyector CircuitOO Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0278",
+    "descripcion": "Cilindro 6 Contribución/falla de balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0279",
+    "descripcion": "Cilindro 7 Inyector CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0280",
+    "descripcion": "Cilindro 7 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0281",
+    "descripcion": "Cilindro 7 Contribución/falla de balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0282",
+    "descripcion": "Cilindro 8 Inyector CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0283",
+    "descripcion": "Cilindro 8 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0284",
+    "descripcion": "Cilindro 8 Falla de contribución/balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0285",
+    "descripcion": "Cilindro 9 Inyector CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0286",
+    "descripcion": "Cilindro 9 Inyector CircuitOO Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0287",
+    "descripcion": "Cilindro 9 Falla de contribución/balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0288",
+    "descripcion": "Cilindro 10 Inyector CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0289",
+    "descripcion": "Cilindro 10 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0290",
+    "descripcion": "Falla de contribución/balance del cilindro 10",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0291",
+    "descripcion": "Cilindro 11 Inyector CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0292",
+    "descripcion": "Cilindro 11 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0293",
+    "descripcion": "Cilindro 11 Contribución/falla de balance",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0294",
+    "descripcion": "Cilindro 12 Inyector CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0295",
+    "descripcion": "Cilindro 12 Inyector CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0296",
+    "descripcion": "Cilindro 12 contribución/falla de rango",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0300",
+    "descripcion": "Disparado en el motor detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0301",
+    "descripcion": "Cilindro 1 fallo de fuego detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0302",
+    "descripcion": "Cilindro 2 fallo de fuego detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0303",
+    "descripcion": "Cilindro 3 fallo de fuego detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0304",
+    "descripcion": "Cilindro 4 fallo de fuego detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0305",
+    "descripcion": "Cilindro 5 fallo de fuego detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0306",
+    "descripcion": "Cilindro 6 falso detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0307",
+    "descripcion": "Cilindro 7 falso detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0308",
+    "descripcion": "Cilindro 8 Disparado detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0309",
+    "descripcion": "Cilindro 9 falso detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0310",
+    "descripcion": "Cilindro 10 fallo detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0311",
+    "descripcion": "Cilindro 11 fallo detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0312",
+    "descripcion": "Cilindro 12 falso detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0313",
+    "descripcion": "Disparado detectado con el nivel combustible de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0315",
+    "descripcion": "Los valores de variación de sistema de posición cigüedal (CKP) no se almacenan en la memoria PCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0318",
+    "descripcion": "Circuito de sensor de carreteras ásperas",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0320",
+    "descripcion": "Encendido/distribuidor Motor Velocidad Entrada CircuitOo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0321",
+    "descripcion": "Velocidad del motor de encendido/distribuidor Entrada Circuitoo Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0322",
+    "descripcion": "Módulo ic 4x Circuito de referencia sin frecuencia",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0323",
+    "descripcion": "Ignition/distribuidor Velocidad del motor Entrada Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0324",
+    "descripcion": "Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0325",
+    "descripcion": "PCM Detonacia Sensor CircuitOo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0326",
+    "descripcion": "Circuito del sensor detonácicoo Retraso excesivo de chispa",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0327",
+    "descripcion": "Circuito del sensor detonácido Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0328",
+    "descripcion": "Sensor de detonacia 1 Circuitoo Alto Entrada (Banco 1 o Sensor único)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0329",
+    "descripcion": "Sensor de detonacia 1 CircuitOo Intermitente (Banco 1 o Sensor único)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0330",
+    "descripcion": "Sensor de detonación (KS) Circuitoo Banco 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0331",
+    "descripcion": "Sensor de detonacia 2 CircuitOo Rango/Rendimiento (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0332",
+    "descripcion": "Sensor de detonacia 2 CircuitOo Bajo Entrada (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0333",
+    "descripcion": "Sensor de detonacia 2 CircuitOo Alto Entrada (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0334",
+    "descripcion": "Sensor de detonacia 2 CircuitOo Intermitente (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0335",
+    "descripcion": "Sensor CKP A CircuitOO Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0336",
+    "descripcion": "Cigüeñal Posición (CKP) Sensor A Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0337",
+    "descripcion": "Cigüeñal Posición (CKP) Circuito de sensor BAJO Ciclo de trabajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0338",
+    "descripcion": "Cigüeñal Posición (CKP) Circuito de sensor Ciclo de trabajo Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0339",
+    "descripcion": "Cigüeñal Posición (CKP) Circuito del sensor Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0340",
+    "descripcion": "Árbol de Levas Posición (CMP) Circuito sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0341",
+    "descripcion": "Árbol de Levas Posición (CMP) Sensor Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0342",
+    "descripcion": "Árbol de Levas Circuito del sensor Posicióo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0343",
+    "descripcion": "Árbol de Levas Posición Sensor CircuitOo Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0344",
+    "descripcion": "Árbol de Levas Posición Sensor CircuitOo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0350",
+    "descripcion": "Bobina de encendido Circuitoos primario/secundario Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0351",
+    "descripcion": "Circuito de control de la bobina de encendido 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0352",
+    "descripcion": "Circuito de control de la bobina de encendido 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0353",
+    "descripcion": "Circuito de control de la bobina de encendido 3",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0354",
+    "descripcion": "Circuito de control de la bobina de encendido 4",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0355",
+    "descripcion": "Circuito de control de la bobina de encendido 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0356",
+    "descripcion": "Circuito de control de la bobina de encendido 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0357",
+    "descripcion": "Circuito de control de la bobina de encendido 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0358",
+    "descripcion": "Circuito de control de la bobina de encendido 8",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0359",
+    "descripcion": "Bobina de encendido I Circuitoo primario/secundario Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0360",
+    "descripcion": "Bobina de encendido J Circuito primario/secundario Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0361",
+    "descripcion": "Bobina de encendido k circuito primario/secundario Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0362",
+    "descripcion": "Bobina de encendido l Circuitoo primario/secundario Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0370",
+    "descripcion": "Sincronización Referencia Alto Signación de resolución de un Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0371",
+    "descripcion": "Circuito de referencia de IC 24x demasiados pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0372",
+    "descripcion": "IC 24x Circuito de referencia Falta Pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0373",
+    "descripcion": "SINCRONIZACIÓN REFERENCIA SEÑAL DE RESOLUCIÓN ALTO UN PULSOS INTERMITENTE/ERRÁTICOS",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0374",
+    "descripcion": "Señal de resolución Alto de referencia de referencia de Sinconización A sin pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0375",
+    "descripcion": "SINCRONIZACION DE REFERENCIA ALTO SEÑAL DE RESOLUCIÓN B Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0376",
+    "descripcion": "Sincronización referencia de referencia de resolución Alto b Demasiados pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0377",
+    "descripcion": "Sincronización referencia de referencia de resolución Alto b muy pocos pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0378",
+    "descripcion": "SINCRONIZACIÓN REFERENCIA SEÑAL DE RESOLUCIÓN B Intermitente/pulsos erráticos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0379",
+    "descripcion": "Sincronización Referencia Alto SEÑAL DE RESOLUCIÓN B SIN PULSES",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0380",
+    "descripcion": "Circuito de gabra/calentador GBAJO \"A\" Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0381",
+    "descripcion": "Gbajo enchufe/calentador indicador Circuitoo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0382",
+    "descripcion": "Gas de recirculación de escape fbajo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0385",
+    "descripcion": "Cigüeñal Posición (CKP) Sensor B Circuitooo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0386",
+    "descripcion": "Cigüeñal Posición (CKP) Sensor B Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0387",
+    "descripcion": "Sensor de posición cigüeñal B CircuitOo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0388",
+    "descripcion": "Sensor de posición cigüeñal B Circuitoo Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0389",
+    "descripcion": "Sensor de posición cigüeñal B Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0400",
+    "descripcion": "Gas de recirculación de escape fbajo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0401",
+    "descripcion": "Gas de recirculación de escape (EGR) fbajo insuficiente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0402",
+    "descripcion": "Gas de recirculación de escape fbajo excesivo detectado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0403",
+    "descripcion": "Circuito de control de solenoidas de recirculación de gas de gas de",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0404",
+    "descripcion": "Gas de recirculación de escape (EGR) Open Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0405",
+    "descripcion": "Gas de recirculación de escape (EGR) Circuito sensor de posición Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0406",
+    "descripcion": "Sensor de recirculación de gases de gas de un circuito alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0407",
+    "descripcion": "Sensor de recirculación de gas de gas de Circuitoo Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0408",
+    "descripcion": "Sensor de recirculación de gases de gas de Circuitoo Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0410",
+    "descripcion": "Sistema de inyección de aire secundario (aire)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0411",
+    "descripcion": "Sistema de inyección de aire secundario (aire)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0412",
+    "descripcion": "Circuito de control de relevo de solenoide de inyección de aire secundario (aire) Bancoo 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0413",
+    "descripcion": "Inyección de aire secundario Sistema Sistema Válvula A CircuitOo abierto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0414",
+    "descripcion": "Inyección de aire secundario Sistema Switching Válvula A Circuitoo en cortocircuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0415",
+    "descripcion": "Inyección de aire secundario Sistema Switching Válvula B CircuitOO Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0416",
+    "descripcion": "Inyección de aire secundario Sistema Switching Válvula B Circuitoo Abierto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0417",
+    "descripcion": "Inyección de aire secundario Sistema Switching Válvula B Circuitoo cortado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0418",
+    "descripcion": "Inyección de aire secundario (aire) Circuito de control de relé de la bomba Banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0419",
+    "descripcion": "Inyección de aire secundario (aire) Circuito de control de relé de la bomba Banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0420",
+    "descripcion": "Catalyst Sistema Bajo Eficiencia",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0421",
+    "descripcion": "Calentamiento Catalyst Eficiencia Bebajo umbral (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0422",
+    "descripcion": "Catalyst Sistema Bajo Eficiencia Banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0423",
+    "descripcion": "Umbral de eficiencia de catalizador calentado (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0424",
+    "descripcion": "Umbral de temperatura de catalizador calentado (Banco 1)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0430",
+    "descripcion": "Catalyst Sistema Bajo Eficiencia Banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0431",
+    "descripcion": "Calentamiento Catalyst Eficiencia Bebajo umbral (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0432",
+    "descripcion": "Catalyst Sistema Bajo Eficiencia Banco 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0433",
+    "descripcion": "Umbral de eficiencia de catalizador calentado (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0434",
+    "descripcion": "Umbral de temperatura de catalizador calentado (Banco 2)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0440",
+    "descripcion": "Sistema de emisión evaporativa (EVAP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0441",
+    "descripcion": "Control de emisión evaporativo Sistema incorrecto purga fbajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0442",
+    "descripcion": "Sistema de emisión evaporativa (EVAP) Pequeña fuga detectada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0443",
+    "descripcion": "Evap Purge Solenoide Válvula 1 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0444",
+    "descripcion": "Control de emisión evaporativo Sistema Purge Control Válvula Circuitoo Abierto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0445",
+    "descripcion": "Control de emisión evaporativa Sistema Purge Control Válvula Circuitoo en corto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0446",
+    "descripcion": "Evap Vent Solenoide Válvula Control Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0447",
+    "descripcion": "Control de emisión evaporativo Sistema Vent CircuitOo Open",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0448",
+    "descripcion": "Control de emisión evaporativa Sistema Vent CircuitOo en cortocircuito",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0449",
+    "descripcion": "Circuito de control de solenoidas de emisión evaporativa (EVAP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0450",
+    "descripcion": "Circuito de sensor de presión del tanque combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0451",
+    "descripcion": "Control de emisión evaporativo sensor de presión de sistema rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0452",
+    "descripcion": "Sensor de presión del tanque combustible Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0453",
+    "descripcion": "Circuito de presión del tanque combustible Circuito de voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0454",
+    "descripcion": "Control de emisión evaporativa Sensor de presión de sistema intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0455",
+    "descripcion": "Fuga de sistema de emisión evaporativa (EVAP) detectada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0460",
+    "descripcion": "Circuito de sensor de nivel combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0461",
+    "descripcion": "Rendimiento de sensor de nivel combustible",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0462",
+    "descripcion": "Circuito de sensor de nivel combustible Voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0463",
+    "descripcion": "Circuito de sensor de nivel combustible Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0464",
+    "descripcion": "Circuito de sensor de nivel combustible intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0465",
+    "descripcion": "Purge FBajo Sensor CircuitOo Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0466",
+    "descripcion": "Purge FBajo Sensor CircuitOo Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0467",
+    "descripcion": "Purge FBajo Sensor Circuitoo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0468",
+    "descripcion": "Purge FBajo Sensor Circuitoo Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0469",
+    "descripcion": "Purge FBajo Sensor CircuitOo Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0470",
+    "descripcion": "Sensor de presión de escape Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0471",
+    "descripcion": "Sensor de presión de escape rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0472",
+    "descripcion": "Sensor de presión de escape Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0473",
+    "descripcion": "Sensor de presión de escape Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0474",
+    "descripcion": "Sensor de presión de escape intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0475",
+    "descripcion": "Control de presión de escape Válvula Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0476",
+    "descripcion": "Control de presión de escape Válvula Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0477",
+    "descripcion": "Control de presión de escape Válvula Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0478",
+    "descripcion": "Control de presión de escape Válvula Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0479",
+    "descripcion": "Control de presión de escape válvula intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0480",
+    "descripcion": "Relé del ventilador de enfriamiento 1 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0481",
+    "descripcion": "Relé del ventilador de enfriamiento 2 Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0482",
+    "descripcion": "Ventilador de enfriamiento 3 Circuito de control Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0483",
+    "descripcion": "Ventilador de enfriamiento Racionalidad de cheque Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0484",
+    "descripcion": "Ventilador de enfriamiento Circuitoo sobre corriente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0485",
+    "descripcion": "Encendido Ventilador de enfriamiento/Circuito de tierra Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0496",
+    "descripcion": "Sistema de emisión evaporativa (EVAP) FBAJO durante el no purgo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0500",
+    "descripcion": "Circuitoo del sensor de velocidad del vehículo (VSS)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0501",
+    "descripcion": "Sensor de velocidad del vehículo rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0502",
+    "descripcion": "Sensor de velocidad del vehículo (VSS) Circuitoo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0503",
+    "descripcion": "Circuitoo Intermitente del sensor de velocidad del vehículo (VSS)",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0505",
+    "descripcion": "Ralentí Control Sistema Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0506",
+    "descripcion": "Ralentí Speed ​​Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0507",
+    "descripcion": "Ralentí Speed ​​Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0510",
+    "descripcion": "Acelerador cerrado Switch Posición Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0512",
+    "descripcion": "Circuito de interruptor de arranque",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0520",
+    "descripcion": "Sensor de presión de aceite del motor/interruptor CircuitOo Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0521",
+    "descripcion": "Sensor de presión de aceite del motor/interruptor CircuitOo Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0522",
+    "descripcion": "Sensor de presión de aceite del motor/interruptor Circuitoo Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0523",
+    "descripcion": "Sensor de presión de aceite del motor/interruptor CircuitOo tensión Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0526",
+    "descripcion": "Circuito de sensor de velocidad del ventilador de enfriamiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0530",
+    "descripcion": "Circuito de sensor de presión de refrigerante de A/C Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0531",
+    "descripcion": "Circuito de sensor de presión refrigerante de A/C rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0532",
+    "descripcion": "Aire acondicionado (A/C) Circuito de sensor de presión refrigerante Voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0533",
+    "descripcion": "Aire acondicionado (A/C) Circuito de sensor de presión refrigerante Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0534",
+    "descripcion": "Aire acondicionado Pérdida de carga de refrigerante",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0550",
+    "descripcion": "Circuito de interruptor de presión de dirección asistida (PSP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0551",
+    "descripcion": "Circuito de sensor de presión de dirección asistida Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0552",
+    "descripcion": "Circuito de sensor de presión de dirección asistida Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0553",
+    "descripcion": "Circuito de sensor de presión de dirección asistida Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0554",
+    "descripcion": "Circuito del sensor de presión de dirección asistida intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0560",
+    "descripcion": "Voltaje de sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0561",
+    "descripcion": "Voltaje de sistema inestable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0562",
+    "descripcion": "Voltaje Sistema Bajo (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0563",
+    "descripcion": "Voltaje Sistema Alto (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0564",
+    "descripcion": "Control de crucero Circuito de interruptor multifunción (PCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0565",
+    "descripcion": "Control de crucero en la señal Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0566",
+    "descripcion": "Control de crucero fuera de la señal Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0567",
+    "descripcion": "Señal de currículum de control de crucero Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0568",
+    "descripcion": "Señal de ajuste de control de crucero Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0569",
+    "descripcion": "Costa de control de crucero Signal Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0570",
+    "descripcion": "CONTROL DE CRUCE ACCEL SEÑAL FALTO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0571",
+    "descripcion": "Interruptor de freno de control de crucero circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0573",
+    "descripcion": "Control de crucero/interruptor de freno A CircuitOo Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0574",
+    "descripcion": "Velocidad del vehículo también Alto - por encima de 110 mph - Control de crucero Desactivado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0575",
+    "descripcion": "Fallo relacionado con control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0576",
+    "descripcion": "Fallo relacionado con control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0576",
+    "descripcion": "Fallo relacionado con control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0578",
+    "descripcion": "Fallo relacionado con control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0579",
+    "descripcion": "Fallo relacionado con control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0580",
+    "descripcion": "Fallo relacionado con control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0600",
+    "descripcion": "Enlace de comunicación en serie Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0601",
+    "descripcion": "Módulo de control Leer solo memoria (ROM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0602",
+    "descripcion": "Módulo de control no programado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0603",
+    "descripcion": "Módulo de control Restablecimiento de memoria a largo plazo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0604",
+    "descripcion": "Módulo de control de memoria de acceso aleatorio (RAM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0605",
+    "descripcion": "Programación del módulo de control solo Leer memoria (ROM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0606",
+    "descripcion": "Módulo de control Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0607",
+    "descripcion": "Ecu Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0608",
+    "descripcion": "Módulo de control vss Salida \"A\" Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0609",
+    "descripcion": "Módulo de control vss salida \"B\" Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0610",
+    "descripcion": "Opciones de vehículo del módulo de control Incorrecto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0615",
+    "descripcion": "Circuito de control de relé de arranqueo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0616",
+    "descripcion": "Circuito de control de relé de inicio Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0617",
+    "descripcion": "Circuito de control de relé de inicio tensión Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0620",
+    "descripcion": "Circuito de control del generador Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0621",
+    "descripcion": "Generador L-terminal Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0622",
+    "descripcion": "Generador F-terminal Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0625",
+    "descripcion": "Generador F-terminal Circuitoo Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0626",
+    "descripcion": "Generador F-terminal Circuitoo voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0628",
+    "descripcion": "Voltaje de control de relé de relé de bomba combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0629",
+    "descripcion": "Circuito de control de relé de bomba combustible ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0638",
+    "descripcion": "Acelerador Actuador Control (TAC) Comando Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0641",
+    "descripcion": "Voltaje PCM fuera de la condición de tolerancia en el circuito de referencia de 5 voltios",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0645",
+    "descripcion": "Aire acondicionado (A/C) Circuito de control de relé del embragueo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0646",
+    "descripcion": "Aire acondicionado (A/C) Circuito de control de relé del embragueo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0647",
+    "descripcion": "Aire acondicionado (A/C) Circuito de control de relé del embragueo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0650",
+    "descripcion": "Lámpara indicadora de Fallo (MIL) Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0651",
+    "descripcion": "Voltaje PCM fuera de la condición de tolerancia en el circuito de referencia de 5 voltios",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0654",
+    "descripcion": "Motor RPM Salida CircuitOo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0655",
+    "descripcion": "Motor Lámpara caliente Salida Circuitoo Circuitoo Malfucntion",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0656",
+    "descripcion": "Nivel combustible Salida Circuitoo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0660",
+    "descripcion": "Circuito de control de solenoide Válvula Tuning (IMT) Válvula",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0661",
+    "descripcion": "Tuning de admisión (IMT) Válvula Solenoide Control CircuitOO Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0662",
+    "descripcion": "Circuito de control de solenoide de válvula Válvula Circuito de control de solenoide Válvula",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0685",
+    "descripcion": "Controles del motor Circuitoo de control del relé de encendido (PCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0691",
+    "descripcion": "Ventilador de enfriamiento Voltaje Bajoo BajoO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0693",
+    "descripcion": "Ventilador de enfriamiento Voltaje Bajoo BajoO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0692",
+    "descripcion": "Ventilador de enfriamiento Voltaje de control de relé del ventilador",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0694",
+    "descripcion": "Ventilador de enfriamiento Voltaje de control de relé del ventilador",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0700",
+    "descripcion": "Control de transmisión Sistema Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0701",
+    "descripcion": "Control de transmisión Sistema Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0702",
+    "descripcion": "Control de transmisión Sistema Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0703",
+    "descripcion": "Circuitoo de interruptor de freno Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0704",
+    "descripcion": "Interruptor de embrague entrada Circuitoo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0705",
+    "descripcion": "Circuito de interruptor trans rangooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0706",
+    "descripcion": "Trans rango switch rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0707",
+    "descripcion": "Transmisión rango sensor circuito de bajoo entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0708",
+    "descripcion": "Transmisión rango sensor Circuitoo Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0709",
+    "descripcion": "Transmisión rango sensor circuito intermitente intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0710",
+    "descripcion": "Circuito de sensor de temperatura de fluido de transmisión Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0711",
+    "descripcion": "TFT Sensor CircuitOo Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0712",
+    "descripcion": "Circuito del sensor de temperatura de fluido de transmisión (TFT) BAJO BAJO Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0713",
+    "descripcion": "Circuito de sensor de temperatura de fluido de transmisión (TFT) Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0714",
+    "descripcion": "Circuito de sensor de temperatura de fluido de transmisión intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0715",
+    "descripcion": "Circuito de sensor de velocidad de entrada/turbina Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0716",
+    "descripcion": "Circuito de sensor de velocidad de Entrada Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0717",
+    "descripcion": "Circuito de sensor de velocidad de Entrada Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0718",
+    "descripcion": "Circuito de sensor de velocidad de entrada/turbina intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0719",
+    "descripcion": "Circuito de freno Circuitoo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0720",
+    "descripcion": "Circuito de sensor de velocidad de Salida Fallo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0721",
+    "descripcion": "Sensor de velocidad de Salida Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0722",
+    "descripcion": "Salida Speed ​​Sensor CircuitOo Bajo Entrada",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0723",
+    "descripcion": "Sensor de velocidad de Salida Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P0724",
+    "descripcion": "Circuito de interruptor de freno Alto Entrada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0725",
+    "descripcion": "Velocidad del motor entrada circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0726",
+    "descripcion": "Velocidad del motor entrada circuitoo rango/rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0727",
+    "descripcion": "Circuito de velocidad del motor sin señal",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0728",
+    "descripcion": "Velocidad del motor Entrada Circuitoo Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0730",
+    "descripcion": "Relación de marcha incorrecta",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0731",
+    "descripcion": "Relación de primera marcha incorrecta",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0732",
+    "descripcion": "Relación incorrecta de 2da marcha",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0733",
+    "descripcion": "Relación incorrecta del tercer engranaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0734",
+    "descripcion": "Relación incorrecta de la cuarta marcha",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0735",
+    "descripcion": "Gear 5 Relación incorrecta",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0736",
+    "descripcion": "Relación inversa de engranaje incorrecto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0740",
+    "descripcion": "TCC habilita el circuito de solenoidas Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0741",
+    "descripcion": "TCC Sistema se quedó",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0742",
+    "descripcion": "TCC Sistema atascado en",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0743",
+    "descripcion": "TCC habilita el circuito de solenoidas Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0744",
+    "descripcion": "Circuito de embrague del convertidor de torque Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0745",
+    "descripcion": "Control de presión Solenoide Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0746",
+    "descripcion": "Control de presión solenoide Rendimiento o pegado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0747",
+    "descripcion": "Solenoide de control de presión atascado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0748",
+    "descripcion": "Control de presión Solenoide Circuitoo Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0749",
+    "descripcion": "Control de presión Solenoide Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0750",
+    "descripcion": "Cambiar solenoide un fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0751",
+    "descripcion": "1-2 Solenoide Válvula Rendimiento - Sin primera o cuarta marcha",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0752",
+    "descripcion": "1-2 Solenoide Válvula Rendimiento - Sin segunda o tercera marcha",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0753",
+    "descripcion": "1-2 Circuito de solenoide de cambio eléctrico",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0754",
+    "descripcion": "Solenoide de cambio un intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0755",
+    "descripcion": "Solenoide B Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0756",
+    "descripcion": "2-3 Solenoide de cambio Válvula Rendimiento - Sin primera o segunda marcha",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0757",
+    "descripcion": "2-3 Solenoide de cambio Válvula Rendimiento - Sin tercer o cuarto equipo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0758",
+    "descripcion": "2-3 Circuito de solenoide de cambio eléctrico",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0759",
+    "descripcion": "Solenoide de cambio B Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0760",
+    "descripcion": "Shift Solenoide C Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0761",
+    "descripcion": "Cambiar el solenoide c rendimiento o atascado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0762",
+    "descripcion": "Shift Solenoide C atascado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0763",
+    "descripcion": "SHIFT SOLENOIDE C Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0764",
+    "descripcion": "SHIFT SOLENOIDE C Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0765",
+    "descripcion": "Shift Solenoide D Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0766",
+    "descripcion": "Cambiar el solenoide d rendimiento o pegado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0767",
+    "descripcion": "SHILT SOLENOIDE D APARTADO EN",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0768",
+    "descripcion": "Solenoide de cambio d Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0769",
+    "descripcion": "Solenoide de cambio D Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0770",
+    "descripcion": "Solenoide E Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0771",
+    "descripcion": "Cambiar solenoide e rendimiento o pegado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0772",
+    "descripcion": "SHILT Solenoide E atascado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0773",
+    "descripcion": "Solenoide de cambio E Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0774",
+    "descripcion": "Shift Solenoide E Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0780",
+    "descripcion": "Cambiar fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0781",
+    "descripcion": "1-2 turno Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0782",
+    "descripcion": "2-3 turno Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0783",
+    "descripcion": "3-4 turno Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0784",
+    "descripcion": "4-5 turno Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0785",
+    "descripcion": "3-2 Circuito de solenoide de cambio eléctrico",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0786",
+    "descripcion": "Shift/Sinconización Solenoide Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0787",
+    "descripcion": "Shift/Sinconización Solenoide Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0788",
+    "descripcion": "Shift/Sincronizaciódón Solenoide Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0789",
+    "descripcion": "SHIFT/Sinconizaciódón Solenoide Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0790",
+    "descripcion": "Circuitoo de interruptor normal/rendimiento Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0801",
+    "descripcion": "Inhibir inversa de control CircuitOo Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0803",
+    "descripcion": "1-4 Circuito de control de solenoide 1-4 CIRCUITO DE CONTROLO DE SOLENOIDE",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0804",
+    "descripcion": "1-4 Circuito de control de la lámpara de cambio ascendente (omisión)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0850",
+    "descripcion": "Circuito de interruptor de parque/posición neutral (PNP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0856",
+    "descripcion": "El tren motriz indicó el control de tracción Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0894",
+    "descripcion": "Deslizamiento de componentes de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0897",
+    "descripcion": "PCM detecta una vida útil de fluido de transmisión calculada del 10 por ciento o menos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0962",
+    "descripcion": "Control de presión (PC) Control de solenoido Circuitoo Voltaje Bajo (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0963",
+    "descripcion": "Control de presión de línea (PC) Circuito de control de solenoado ALTO Voltaje (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0966",
+    "descripcion": "Control de presión de embrague (PC) Control de solenoado Circuitoo Voltaje Bajo (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0967",
+    "descripcion": "Control de presión de embrague (PC) Circuito de control de solenoado ALTO Voltaje (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0970",
+    "descripcion": "Control de presión de cambio (PC) Control de solenoado Circuitoo Voltaje Bajo (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0971",
+    "descripcion": "Control de presión de desplazamiento (PC) Control de solenoado Tensión Alto (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0973",
+    "descripcion": "PCM detecta una tierra abierta o corta en el 1-2 SS Válvula CircuitOOO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0974",
+    "descripcion": "PCM detecta un continuo corto a voltaje en el Circuito de Válvula 1-2 SS",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0976",
+    "descripcion": "PCM detecta un continuo abierto o corto a tierra en el Circuito de Válvula 2-3 SS",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0977",
+    "descripcion": "PCM detecta un corto de voltaje continuo en el Circuito de Válvula 2-3 SS",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0979",
+    "descripcion": "Solenoide de cambio (SS) 3 Circuito de control Voltaje Bajo (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0980",
+    "descripcion": "Solenoide de cambio (SS) 3 Circuito de control ALTO Voltaje (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0982",
+    "descripcion": "Solenoide de cambio (SS) 4 Circuito de control ALTO Voltaje (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0983",
+    "descripcion": "Solenoide de cambio (SS) 4 Circuito de control ALTO Voltaje (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0985",
+    "descripcion": "Solenoide de cambio (SS) 5 Circuito de control Voltaje Bajo (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P0986",
+    "descripcion": "Solenoide de cambio (SS) 5 Circuito de control ALTO Voltaje (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1031",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Corriente de control del calentador Circuito de control Bancos 1 y 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1032",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuito de control de calentamiento de calentador Bancos 1 y 2 sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1101",
+    "descripcion": "Airfbajo medido real de MAF, MAP, EGR y TP no está dentro del rango del Airfbajo calculado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1105",
+    "descripcion": "Circuito de sensor de vacío secundario",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1106",
+    "descripcion": "Circuito de sensor de presión absoluta (MAP) múltiple intermitente voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1107",
+    "descripcion": "Circuito de sensor de presión absoluta (MAP) múltiple Voltaje Bajo Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1108",
+    "descripcion": "Baro para mapear la comparación del sensor también Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1109",
+    "descripcion": "Puerto secundario Acelerador Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1111",
+    "descripcion": "Admisión temperatura del aire (IAT) Circuito del sensor Intermitente Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1112",
+    "descripcion": "Admisión temperatura del aire (IAT) Circuito del sensor Intermitente Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1113",
+    "descripcion": "Circuito de control de solenoide de interrupción de resonancia de admisión Circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1114",
+    "descripcion": "Motor temperatura del refrigerante (ECT) Circuito del sensor Intermitente Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1115",
+    "descripcion": "Motor temperatura del refrigerante (ECT) Circuito del sensor Intermitente Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1116",
+    "descripcion": "Señal ECT inestable o intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1117",
+    "descripcion": "Temperadora de refrigerante del motor. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1118",
+    "descripcion": "Temperadora de refrigerante del motor. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1119",
+    "descripcion": "Señal ECT fuera del rango con sensor TFT",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1120",
+    "descripcion": "Sensor de posición de acelerador (TP) 1 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1121",
+    "descripcion": "Acelerador Posición (TP) Circuito del sensor Intermitente Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1122",
+    "descripcion": "Acelerador Posición (TP) Circuito del sensor Intermitente Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1125",
+    "descripcion": "Sistema del acelerador Pedal (APP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1130",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Variance Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1131",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Varianza Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1132",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Circuitoo Bajo Variance Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1133",
+    "descripcion": "Sensor de oxígeno calentado (HO2) insuficiente Sensor Banco 1 de conmutación 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1134",
+    "descripcion": "Relación de tiempo de transición calentada Sensor de transición (HO2S) Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1135",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Media magra Banco 1 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1136",
+    "descripcion": "Sensor de oxígeno calentado (HO2) rico Sensor Banco 1 Banco 1 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1137",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 1 Sensor 2 Sistema magro o voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1138",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 1 Sensor 2 Rich o Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1139",
+    "descripcion": "Sensor de oxígeno calentado (HO2) insuff. ",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1140",
+    "descripcion": "Relación de tiempo de transición calentada Sensor de transición (HO2S) Sensor Banco 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1141",
+    "descripcion": "Control del sensor de oxígeno calentado (HO2S) Del Calentador Circuitor Banco 1 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1143",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 1 Sensor 3 Sistema magro o voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1144",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 1 Sensor 3 Rich o Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1145",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Cross Counts Banco 1 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1153",
+    "descripcion": "Sensor de oxígeno calentado (HO2) insuficiente Sensor Banco 2 de conmutación 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1154",
+    "descripcion": "Relación de tiempo de transición calentada Sensor de transición (HO2S) Sensor Banco 2 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1155",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Media del sensor Banco 2 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1156",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Rich Banco 2 Sensor 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1157",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 2 Sensor 2 Sistema magro o voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1158",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Banco 2 Sensor 2 Rich o Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1159",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Cross Counts Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1161",
+    "descripcion": "Control del sensor de oxígeno calentado (HO2S) Del Calentador Circuitor Banco 2 Sensor 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1163",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 2 Sensor 3 Sistema magro o voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1164",
+    "descripcion": "Sensor de oxígeno calentado (HO2) Banco 2 sensor 3 rico o voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1165",
+    "descripcion": "Sensor de oxígeno calentado (HO2S) Cross Counts Banco 2 Sensor 3",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1170",
+    "descripcion": "Banco a Banco Compensación de ajuste combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1171",
+    "descripcion": "Sistema combustible Lean durante la aceleración",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1172",
+    "descripcion": "Bomba de transferencia combustible fbajo insuficiente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1185",
+    "descripcion": "Circuito de temperatura del aceite del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1186",
+    "descripcion": "EOT Circuitoo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1187",
+    "descripcion": "Circuito de sensor EOT Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1188",
+    "descripcion": "Circuito del sensor EOT voltaje alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1189",
+    "descripcion": "Interruptor de presión de aceite del motor (EOP) Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1190",
+    "descripcion": "Fuga de aspiradora del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1191",
+    "descripcion": "Fuga de aire del conducto de aire de admisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1200",
+    "descripcion": "Circuito de control inyector",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1201",
+    "descripcion": "(Alt. Combustible) Circuito de sensor de masa de gas Rango/Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1202",
+    "descripcion": "(Alt. Combustible) Sensor de masa de gas Circuitoo Bajo Frecuencia",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1203",
+    "descripcion": "(Alt. Combustible) Circuito de masa de gas Circuitoo Alto Frecuencia",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1211",
+    "descripcion": "Masa aire fbajo circuitoo intermitente alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1212",
+    "descripcion": "Masa aire fbajo circuitoo intermitente bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1214",
+    "descripcion": "Bomba de inyección Sincronizació Offset",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1215",
+    "descripcion": "Detección de fallas a tierra indicada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1216",
+    "descripcion": "Tiempo de respuesta de solenoide combustible demasiado corto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1217",
+    "descripcion": "Tiempo de respuesta de solenoide combustible demasiado tiempo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1218",
+    "descripcion": "Circuito de calibración de la bomba de inyección",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1219",
+    "descripcion": "Voltaje de referencia del sensor de posición de Acelerador",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1220",
+    "descripcion": "Sensor de posición de acelerador (TP) 2 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1221",
+    "descripcion": "Bomba combustible Circuito de secundaria BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1222",
+    "descripcion": "Inyector Control CircuitOO Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1225",
+    "descripcion": "Inyector CircuitOO Cylinder 2 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1228",
+    "descripcion": "Inyector CircuitOO Cylinder 3 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1231",
+    "descripcion": "Inyector CircuitOO Cylinder 4 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1234",
+    "descripcion": "Inyector CircuitOO Cylinder 5 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1237",
+    "descripcion": "Inyector CircuitOO Cylinder 6 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1240",
+    "descripcion": "Inyector CircuitOO Cylinder 7 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1243",
+    "descripcion": "Inyector CircuitOO Cylinder 8 Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1245",
+    "descripcion": "Admisión plenum switchver válvula",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1250",
+    "descripcion": "Circuito de calentador de evaporación combustible temprano",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1257",
+    "descripcion": "Supercharger Sistema Sobrecosto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1258",
+    "descripcion": "Refrigerante de refrigerante del motor - por encima de 268 ° F - Modo de protección activo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1260",
+    "descripcion": "Última prueba falló fallida SCC Ingrese: Más información.",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1270",
+    "descripcion": "Pedal del acelerador Posición Sensor A/D Error del convertidor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1271",
+    "descripcion": "Pedal del acelerador Posición (APP) Sensor 1-2 Correlacia",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1272",
+    "descripcion": "Pedal del acelerador sensor de posición 2",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1273",
+    "descripcion": "\"Sensor de posición del pedal del acelerador 1",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1274",
+    "descripcion": "Inyectores conectados incorrectamente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1275",
+    "descripcion": "Sensor del acelerador del pedal del pedal (APP) Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1276",
+    "descripcion": "Pedal del acelerador Posición Sensor 1 Circuitoo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1277",
+    "descripcion": "Pedal del acelerador Sensor de posición 1 Voltaje de CircuitOo Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1278",
+    "descripcion": "Pedal del acelerador Posiciónón 1 CircuitOo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1280",
+    "descripcion": "Sensor de Pedal del Acelerador (APP) Sensor 2 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1281",
+    "descripcion": "Pedal del acelerador Posiciónón sensor 2 CircuitOo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1282",
+    "descripcion": "Pedal del acelerador Posiciónona Sensor 2 CircuitOO BAJO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1283",
+    "descripcion": "Pedal del acelerador Posición Sensor 2 CircuitOo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1285",
+    "descripcion": "Pedal del acelerador Sensor de posición 3 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1286",
+    "descripcion": "Pedal del acelerador Posiciónona Sensor 3 CircuitOo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1287",
+    "descripcion": "Pedal del acelerador Posición Sensor 3 Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1288",
+    "descripcion": "Pedal del acelerador Posiciónón del sensor 3 CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1300",
+    "descripcion": "Circuito de encendido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1305",
+    "descripcion": "Bobina de encendido 2 Circuito de retroalimentación primaria",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1310",
+    "descripcion": "Bobina de encendido 3 Circuito de retroalimentación primaria",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1315",
+    "descripcion": "Bobina de encendido 4 Circuito de retroalimentación primaria",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1320",
+    "descripcion": "IC 4x Circuito de referencia Intermitente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1321",
+    "descripcion": "Línea de falla de Sistema de encendido electrónico",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1322",
+    "descripcion": "Sistema EI o control de encendido extra o faltando",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1323",
+    "descripcion": "IC 24x Circuito de referencia Bajo Frecuencia",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1324",
+    "descripcion": "Crank Rpm también Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1335",
+    "descripcion": "CKP CircuitOO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1336",
+    "descripcion": "Variación de Sistema de Posiciónica Cigüeñal (CKP) No se aprende",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1345",
+    "descripcion": "Cigüeñal Posición (CKP) -Arbol de Levas Posición (CMP) Correlación",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1346",
+    "descripcion": "Admisión Árbol de Levas Posición [CMP] Sensor Rendimiento del Sistema",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1350",
+    "descripcion": "Sistema de control de encendido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1351",
+    "descripcion": "Circuito de control de la bobina de encendido voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1352",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1353",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1354",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1355",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1356",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1357",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1358",
+    "descripcion": "IC Salida Alto/Pulse detectado cuando Gnd_cyl. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1359",
+    "descripcion": "Circuito de control de Grupo 1 de bobina de encendido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1360",
+    "descripcion": "Circuito de control del Grupo 2 de la bobina de encendido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1361",
+    "descripcion": "Circuito de control de bobina de encendido Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1362",
+    "descripcion": "Cilindro IC 2 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1363",
+    "descripcion": "Cilindro IC 3 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1364",
+    "descripcion": "Cilindro IC 4 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1365",
+    "descripcion": "Cilindro IC 5 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1366",
+    "descripcion": "Cilindro IC 6 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1367",
+    "descripcion": "Cilindro IC 7 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1368",
+    "descripcion": "Cilindro IC 8 no alternando después de habilitar",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1370",
+    "descripcion": "IC 4x Circuito de referencia Demasiados pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1371",
+    "descripcion": "IC 4x Circuito de referencia muy pocos pulsos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1372",
+    "descripcion": "Cigüeñal Posición (CKP) Sensor A-B Correlación",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1374",
+    "descripcion": "3x Circuito de referencia",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1375",
+    "descripcion": "IC 24x Circuito de referencia Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1376",
+    "descripcion": "Circuito de tierra de encendido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1377",
+    "descripcion": "Pulso de la leva IC al pulso de referencia 4x",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1380",
+    "descripcion": "Disparado de fallo detectado: datos de carreteras difíciles no disponibles",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1381",
+    "descripcion": "Disparado detectado: no hay comunicación con el módulo de control de frenos",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1390",
+    "descripcion": "Sensor de velocidad de la rueda 1 - G - Circuito del sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1391",
+    "descripcion": "Sensor de velocidad de la rueda 1 - G - Circuito del sensor Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1392",
+    "descripcion": "Sensor de velocidad de la rueda 1 - G - Circuito del sensor Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1393",
+    "descripcion": "Sensor de velocidad de la rueda 1 - G - Circuito del sensor ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1394",
+    "descripcion": "Sensor de velocidad de la rueda 1 - G - Circuito del sensor Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1395",
+    "descripcion": "Sensor de velocidad de la rueda 2 - G - Circuito del sensor",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1396",
+    "descripcion": "Sensor de velocidad de la rueda 2 - G - Circuito del sensor Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1397",
+    "descripcion": "Sensor de velocidad de la rueda 2 - G - Sensor Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1398",
+    "descripcion": "Sensor de velocidad de la rueda 2 - G - Circuito del sensor ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1399",
+    "descripcion": "Sensor de velocidad de la rueda 2 - G - Circuito del sensor Intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1403",
+    "descripcion": "Gas de recirculación de escape Sistema Válvula 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1404",
+    "descripcion": "Gas de recirculación de escape (EGR) cerrada Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1405",
+    "descripcion": "Gas de recirculación de escape Sistema Válvula 3",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1406",
+    "descripcion": "EGR Válvula Pintle Posición Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1407",
+    "descripcion": "Intrusión de aire EGR en suministro de escape a Egr Válvula",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1408",
+    "descripcion": "Circuito del sensor de presión del múltiple de admisión",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1409",
+    "descripcion": "Fuga de sistema de vacío EGR",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1410",
+    "descripcion": "Sistema de presión del tanque combustible",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1415",
+    "descripcion": "Inyección secundaria (aire) Sistema Banco 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1416",
+    "descripcion": "Sistema Banco 2 de inyección de aire secundario (aire)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1418",
+    "descripcion": "Relé de sistema de inyección de aire secundario un circuito de control Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1420",
+    "descripcion": "Aire de admisión BAJO CIRTIVO DE PRESIÓN Circuitoo Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1421",
+    "descripcion": "Aire de admisión BAJO Circuito de presión Circuito de voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1423",
+    "descripcion": "Inmirador de aire Alto Interruptor de presión Circuito de voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1431",
+    "descripcion": "Sensor de nivel combustible 2 CircuitOo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1432",
+    "descripcion": "Sensor de nivel combustible 2 Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1433",
+    "descripcion": "Sensor de nivel combustible 2 CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1441",
+    "descripcion": "Sistema de emisión evaporativa (EVAP) FBAJO durante el no purgo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1442",
+    "descripcion": "Evap Vacuum SW. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1450",
+    "descripcion": "Circuito de sensor de presión barométrica",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1451",
+    "descripcion": "Prensa barométrica. ",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1460",
+    "descripcion": "Control de ventilador de enfriamiento Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1480",
+    "descripcion": "Ventilador de enfriamiento 1 Circuito de control Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1481",
+    "descripcion": "Circuito de sensor de velocidad del ventilador de enfriamiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1482",
+    "descripcion": "Velocidad del ventilador de enfriamiento Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1483",
+    "descripcion": "Rendimiento de enfriamiento del motor del sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1484",
+    "descripcion": "Ventilador de enfriamiento Rendimiento del Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1500",
+    "descripcion": "Circuito de señal de arranque",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1501",
+    "descripcion": "Sistema disuasorio de robo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1501",
+    "descripcion": "Circuito del sensor de velocidad del vehículo intermitente",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1502",
+    "descripcion": "Señal de captible disuasivo de robo de señal de habilitación no recibida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1503",
+    "descripcion": "La señal de habilitación de combustible disuasivo de robo no es correcta",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1504",
+    "descripcion": "Velocidad del vehículo Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1508",
+    "descripcion": "Ralentí Speed ​​Bajo - Ralentí Air Control (IAC) Sistema no respondiendo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1509",
+    "descripcion": "Ralentí Velocidad Alto - Ralentí Control de aire (IAC) Sistema no respondiendo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1510",
+    "descripcion": "Acelerador Control Rendimiento del Sistema - Acelerador Limitación activa",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1511",
+    "descripcion": "Acelerador Control Sistema - Backup Rendimiento del Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1514",
+    "descripcion": "Airfbajo a TP Sensor Correlació Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1515",
+    "descripcion": "Acelerador Sistema Acelerador Posició",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1516",
+    "descripcion": "Acelerador Actuador Control (TAC) Módulo Acelerador Actuador Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1517",
+    "descripcion": "Módulo de acelerador electrónico",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1518",
+    "descripcion": "Módulo de acelerador electrónico para la comunicación PCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1519",
+    "descripcion": "ACELERADOR ACTUADOR CONTROL (TAC) Módulo Circuito interno",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1520",
+    "descripcion": "Transmisión Rango Switch CircuitOOO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1521",
+    "descripcion": "Transmisión comprometida en el ángulo Alto Acelerador",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1522",
+    "descripcion": "Parque/neutral para conducir/revertir a Alto RPM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1523",
+    "descripcion": "Acelerador cerrado Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1524",
+    "descripcion": "Acelerador cerrado Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1525",
+    "descripcion": "Acelerador Cuerpo Servicioquired",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1526",
+    "descripcion": "Posicía mínima de Acelerador no aprendida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1527",
+    "descripcion": "Rango de transmisión a la correlación del interruptor de presión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1528",
+    "descripcion": "Gobernador",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1529",
+    "descripcion": "Problema de solicitud de parabrisas con calefacción",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1530",
+    "descripcion": "ACELERADOR ACTUADOR CONTROL (TAC) Módulo Circuito interno",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1531",
+    "descripcion": "Falla del sensor de temperatura lateral de A/C Bajo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1532",
+    "descripcion": "A/C Evaporador Temp. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1533",
+    "descripcion": "A/C Evaporador Temp. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1534",
+    "descripcion": "A/C Alto Temp. ",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1535",
+    "descripcion": "Circuito de sensor de temperatura lateral de A/C Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1536",
+    "descripcion": "Ofrontemperatura de refrigerante del motor: aire acondicionado (A/C) deshabilitado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1537",
+    "descripcion": "A/C Solicitud de Voltaje Bajoo Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1538",
+    "descripcion": "Circuito de solicitud de aire acondicionado Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1539",
+    "descripcion": "Estado del embrague de A/C CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1540",
+    "descripcion": "Aire acondicionado (a/c) sobrepresión de refrigerante - aire acondicionado (a/c) deshabilitado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1541",
+    "descripcion": "A/C Alto Side Over Tempermo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1542",
+    "descripcion": "A/C Sistema Alto Presión de temperatura",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1543",
+    "descripcion": "A/C Rendimiento del Sistema",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1544",
+    "descripcion": "Condición de refrigerante de A/C muy BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1545",
+    "descripcion": "Aire acondicionado (A/C) Circuito de control de relé del embragueo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1546",
+    "descripcion": "Estado del embrague de aire acondicionado Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1547",
+    "descripcion": "A/C Rendimiento del Sistema degradado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1548",
+    "descripcion": "Circuito de recirculación de A/C",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1551",
+    "descripcion": "Acelerador Válvula REST POSICIN no alcanzada durante el aprendizaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1554",
+    "descripcion": "Circuito de retroalimentación de control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1555",
+    "descripcion": "Orificio de variable electrónica salida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1558",
+    "descripcion": "El servo de control de crucero indica Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1559",
+    "descripcion": "Modo de gestión de energía de control de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1560",
+    "descripcion": "Transexle no en la unidad - control de crucero deshabilitado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1561",
+    "descripcion": "Solenoide de ventilación de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1562",
+    "descripcion": "Solenoide de aspiradora de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1563",
+    "descripcion": "Velocidad del vehículo de crucero/Diferencia de velocidad establecida también Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1564",
+    "descripcion": "Aceleración del vehículo TOMO ALTO - Control de crucero Desactivado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1565",
+    "descripcion": "Sensor de Servo Posició",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1566",
+    "descripcion": "RPM del motor también Alto - Control de crucero Desactivado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1567",
+    "descripcion": "Control activo de Bancoing Active - Control de crucero deshabilitado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1568",
+    "descripcion": "Cruise Servo Stroke Mayor de lo ordenado en Cruise",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1569",
+    "descripcion": "Cruise Servo Stroke Alto mientras no está en Cruise",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1570",
+    "descripcion": "Control de tracción Active - Control de crucero deshabilitado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1571",
+    "descripcion": "Solicitud de torque de control de tracción Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1572",
+    "descripcion": "ASR Active Circuitoo Bajo demasiado largo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1573",
+    "descripcion": "Circuito de datos serie PCM/EBTCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1574",
+    "descripcion": "Circuito de interruptor de tope",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1575",
+    "descripcion": "Circuito de freno de viaje extendido Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1576",
+    "descripcion": "Circuito del sensor BBV Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1577",
+    "descripcion": "Voltaje BBV Sensor CircuitOO BAJO",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1578",
+    "descripcion": "Sensor BBV Circuitoo Bajo Vacú",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1579",
+    "descripcion": "P/N a D/R en Alto Acelerador Angle - Modo de reducción de potencia activa",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1580",
+    "descripcion": "Cruise Move Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1581",
+    "descripcion": "Cruise Move CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1582",
+    "descripcion": "Dirección de crucero Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1583",
+    "descripcion": "Circuito de dirección de crucero Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1584",
+    "descripcion": "Control de crucero Desactivado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1585",
+    "descripcion": "El control de crucero inhibe a Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1586",
+    "descripcion": "Interruptor de freno de control de crucero 2 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1587",
+    "descripcion": "Control de crucero Circuito de control de embrague",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1588",
+    "descripcion": "Control de crucero Circuito de control de embrague",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1599",
+    "descripcion": "Puesta en el motor o detectado el puesto cercano",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1600",
+    "descripcion": "Operación de regalos internos de TCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1601",
+    "descripcion": "Comm. En serie. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1602",
+    "descripcion": "Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1603",
+    "descripcion": "Pérdida de datos en serie SDM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1604",
+    "descripcion": "Pérdida de datos en serie de IPC",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1605",
+    "descripcion": "Pérdida de datos serie de HVAC",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1606",
+    "descripcion": "Problema de comunicación en serie con dispositivo 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1607",
+    "descripcion": "Problema de comunicación en serie con dispositivo 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1608",
+    "descripcion": "Problema de comunicación en serie con dispositivo 8",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1609",
+    "descripcion": "Pérdida de datos en serie TCS",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1610",
+    "descripcion": "Pérdida de datos en serie PZM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1611",
+    "descripcion": "Pérdida de datos en serie CVRTD",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1612",
+    "descripcion": "Pérdida de datos en serie de IPM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1613",
+    "descripcion": "Pérdida de datos en serie DIM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1614",
+    "descripcion": "Pérdida de datos en serie de RIM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1615",
+    "descripcion": "Pérdida de datos en serie VTD",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1617",
+    "descripcion": "Circuito de interruptor de nivel de aceite del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1619",
+    "descripcion": "Monitor de vida de aceite del motor Restablecer Circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1620",
+    "descripcion": "Circuito de refrigerante de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1621",
+    "descripcion": "Módulo de control Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1622",
+    "descripcion": "Selección de cilindro",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1623",
+    "descripcion": "Resistencia de pull-up de temperatura de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1624",
+    "descripcion": "Instantánea del cliente solicitada: datos disponibles",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1625",
+    "descripcion": "Restablecimiento de Sistema TCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1626",
+    "descripcion": "Señal de captible disuasivo de robo de señal de habilitación no recibida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1627",
+    "descripcion": "A/D Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1628",
+    "descripcion": "Resistencia de pull-up ect",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1629",
+    "descripcion": "Sistema disuasorio de robo - señal de arranque",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1630",
+    "descripcion": "Modo de aprendizaje de disuasión de robo activo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1631",
+    "descripcion": "La señal de inicio de disuasión de robo no es correcta",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1632",
+    "descripcion": "SEÑAL DE INSCABLA DEL COMBUSTIBLE DEL DETERSENT DE ROBO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1633",
+    "descripcion": "Circuito de interruptor de encendido 0",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1634",
+    "descripcion": "Circuito de interruptores de encendido 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1635",
+    "descripcion": "Circuito de referencia de 5 voltios",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1636",
+    "descripcion": "PCM STACK DEBER",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1637",
+    "descripcion": "Generador L-terminal Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1638",
+    "descripcion": "Generador F-terminal Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1639",
+    "descripcion": "Referencia de 5 voltios 2 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1640",
+    "descripcion": "Conductor-1-Inrada de voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1641",
+    "descripcion": "Lámpara indicadora de Fallo (MIL) Circuito de control",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1642",
+    "descripcion": "Velocidad del vehículo Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1643",
+    "descripcion": "Velocidad del motor salida circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1644",
+    "descripcion": "Control de tracción Entregado Torque Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1645",
+    "descripcion": "Circuito de contador del solenoide de emisión evaporativa (EVAP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1646",
+    "descripcion": "Circuito de control de solenoidas de emisión evaporativa (EVAP)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1647",
+    "descripcion": "Conductor 1 Línea 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1650",
+    "descripcion": "Módulo de control Salida B CircuitOOO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1651",
+    "descripcion": "Ventilador 1 Circuito de control de relé",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1652",
+    "descripcion": "Chassis Pitch de chasis inducido por tren motriz Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1653",
+    "descripcion": "Circuito de control de lámpara de nivel de aceite",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1654",
+    "descripcion": "El control de crucero inhibe a Salida Circuitoo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1655",
+    "descripcion": "Evap Purge Solenoide Control CircuitOo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1656",
+    "descripcion": "Conductor 2 Línea 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1657",
+    "descripcion": "1-4 Circuito de control de solenoales de cambio ascendenteo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1658",
+    "descripcion": "Starter habilita el circuito de control de relé",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1660",
+    "descripcion": "Circuitos de control del ventilador de enfriamiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1661",
+    "descripcion": "Circuito de control MIL",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1662",
+    "descripcion": "Circuito de control de la lámpara de crucero",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1663",
+    "descripcion": "Circuito de control de la lámpara de vida útil del aceite",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1664",
+    "descripcion": "1-4 Circuito de control de la lámpara ascendente",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1665",
+    "descripcion": "Conductor 3 Línea 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1666",
+    "descripcion": "Conductor 3 Línea 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1667",
+    "descripcion": "Inhibir el circuito de control de solenoidas inverso",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1669",
+    "descripcion": "Unidad de ABS esperada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1670",
+    "descripcion": "Conductor 4",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1671",
+    "descripcion": "Conductor 4 Línea 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1672",
+    "descripcion": "Circuito de control de la lámpara de nivel de aceite de motor de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1673",
+    "descripcion": "Circuito de control de la lámpara caliente del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1674",
+    "descripcion": "Circuito de control de tacómetro",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1675",
+    "descripcion": "Evap Vent Solenoide Control CircuitOo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1676",
+    "descripcion": "Conductor 4 Línea 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1677",
+    "descripcion": "Conductor 4 Línea 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1680",
+    "descripcion": "Conductor 5 (ECU Fallo)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1681",
+    "descripcion": "Conductor 5 Línea 1",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1682",
+    "descripcion": "Conductor 5 Línea 2",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1683",
+    "descripcion": "Conductor 5 Línea 3",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1684",
+    "descripcion": "Conductor 5 Línea 4",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1685",
+    "descripcion": "Conductor 5 Línea 5",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1686",
+    "descripcion": "Conductor 5 Línea 6",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1687",
+    "descripcion": "Conductor 5 Línea 7",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1689",
+    "descripcion": "Circuito de torque entregado falla",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1690",
+    "descripcion": "Exceso de bucle ECM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1691",
+    "descripcion": "Circuito de refrigerante Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1692",
+    "descripcion": "Circuito de refrigerante Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1693",
+    "descripcion": "Tacómetro Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1694",
+    "descripcion": "Tacómetro CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1695",
+    "descripcion": "Circuito de entrada remoto sin llave BAJO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1696",
+    "descripcion": "Voltaje de entrada sin llave remoto Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1700",
+    "descripcion": "Módulo de control de transmisión (TCM) solicitado MIL Illumination",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1701",
+    "descripcion": "Trans. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1705",
+    "descripcion": "Señal P/N Salida CircuitOo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1719",
+    "descripcion": "Cambio incorrecto detectado (TCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1740",
+    "descripcion": "Circuito de señal de reducción de par",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1743",
+    "descripcion": "Señal TP de ECM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1760",
+    "descripcion": "TCM de voltaje de suministro interrumpido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1779",
+    "descripcion": "Torque del motor entregado a la señal TCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1780",
+    "descripcion": "Circuito de interruptores de parque/posición neutral [PNP]",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1781",
+    "descripcion": "Circuito de señal de torque del motor",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1790",
+    "descripcion": "Suma de verificación del módulo de control de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1791",
+    "descripcion": "Bucle del módulo de control de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1791",
+    "descripcion": "ACELERADOR/PEDAL POSICIÓN SEÑAL (2000+)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1792",
+    "descripcion": "Módulo de control de transmisión Memoria reprogramable",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1792",
+    "descripcion": "Señal de refrigerante del motor ECM a TCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1793",
+    "descripcion": "Módulo de control de transmisión pila",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1793",
+    "descripcion": "Señal de velocidad de la rueda (2000+)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1795",
+    "descripcion": "Can Bus - Acelerador Body Posicion",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1800",
+    "descripcion": "Circuito de control de relé de potencia TCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1801",
+    "descripcion": "Rendimiento Selector Switch Falla",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1804",
+    "descripcion": "Relé de control de tierra",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1810",
+    "descripcion": "TFP Válvula Posición Circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1811",
+    "descripcion": "Adaptación máxima y cambio largo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1812",
+    "descripcion": "Condición de transmisión sobre temperatura",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1813",
+    "descripcion": "Control de par",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1814",
+    "descripcion": "Convertidor de par demasiado estresado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1815",
+    "descripcion": "Interruptor de rango de transmisión: comienza en rango incorrecto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1816",
+    "descripcion": "TFP Válvula Posició SW. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1817",
+    "descripcion": "TFP Válvula Posició SW. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1818",
+    "descripcion": "TFP Válvula Posició SW. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1819",
+    "descripcion": "Interruptor de modo interno: sin startwrong rango",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1820",
+    "descripcion": "Circuito de interruptor de modo interno A Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1822",
+    "descripcion": "Circuito de interruptor de modo interno B Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1823",
+    "descripcion": "Circuito de interruptor de modo interno P Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1825",
+    "descripcion": "Interruptor de modo interno: rango no válido",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1826",
+    "descripcion": "Circuito de interruptor de modo interno C - Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1831",
+    "descripcion": "Control de presión (PC) Circuito de alimentación de solenoidas - Voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1832",
+    "descripcion": "Control de presión (PC)/Bloqueo de bloqueo Circuito de control de solenoado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1833",
+    "descripcion": "A/T Solenoides Circuito de alimentación - Voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1834",
+    "descripcion": "Circuito de control de control del convertidor del convertidor de par (TCC)/Solenoide de cambio (SS) Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1835",
+    "descripcion": "Circuitoo de interruptor de patada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1836",
+    "descripcion": "El interruptor de inauguración falló abierto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1837",
+    "descripcion": "El interruptor de inicio falló corto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1842",
+    "descripcion": "1-2 Circuito de solenoide de cambio Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1843",
+    "descripcion": "1-2 Circuito de solenoide de cambio de voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1844",
+    "descripcion": "Circuito de señal de reducción de pares deseado por TCM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1845",
+    "descripcion": "2-3 Circuito de solenoide de cambio Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1847",
+    "descripcion": "2-3 Circuito de solenoide de cambio de voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1850",
+    "descripcion": "Banda de freno Aplicar Solenoide CircuitOOO",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1851",
+    "descripcion": "Banda de freno aplicar solenoide rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1852",
+    "descripcion": "Banda de freno aplicar voltaje solenoidebajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1853",
+    "descripcion": "Banda de freno Aplicar voltaje de Solenoide Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1860",
+    "descripcion": "TCC PWM Solenoide CircuitOO Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1864",
+    "descripcion": "Circuito de embrague del convertidor de par",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1865",
+    "descripcion": "4-5 Solenoide de cambio (SS) Válvula Circuito de control de Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1866",
+    "descripcion": "Circuito de control de ancho de pulso (TCC) Modulación de ancho de pulso (PWM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1867",
+    "descripcion": "Circuito de control de la modulación del convertidor del convertidor de torque (TCC) Circuito de control de solenoide (PWM) Voltaje Alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1868",
+    "descripcion": "Vida fluida de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1870",
+    "descripcion": "Deslizamiento de componentes de transmisión",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1871",
+    "descripcion": "Relación de marcha indefinida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1873",
+    "descripcion": "TCC Stator Temp. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1874",
+    "descripcion": "TCC Stator Temp. ",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1875",
+    "descripcion": "Circuito de interruptor 4WD BAJD Electrical",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1884",
+    "descripcion": "TCC Enable/Circuito de luz de cambio",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1886",
+    "descripcion": "Cambiar el solenoide de Sinconizació",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1887",
+    "descripcion": "Circuitoo de interruptor de liberación de TCC",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1890",
+    "descripcion": "Circuitoo de entrada de datos ECM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1890",
+    "descripcion": "Acelerador Posición Signal Entrada",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1891",
+    "descripcion": "ACELERADOR POSICIÓN SENSOR PWM SEÑAL BAJO",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1892",
+    "descripcion": "ACELERADOR SENSOR DE POSIÓN PWM SEÑAL ALTO",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P1893",
+    "descripcion": "Señal de torque del motor voltaje de Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1894",
+    "descripcion": "Señal de par del motor voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P1895",
+    "descripcion": "Circuito de reducción de torque TCM a ECM",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2008",
+    "descripcion": "Circuito de control de solenoide controlador de corredor de control de control de admisión (IMRC) Circuitooo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2009",
+    "descripcion": "Circuito de control de solenoide controlador de control de corredor de control de control (IMRC)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2010",
+    "descripcion": "Circuito de control de solenoide controlador de control de controlador (IMRC) Circuito de controlo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2066",
+    "descripcion": "Sensor de nivel combustible 2 Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2067",
+    "descripcion": "Sensor de nivel combustible 2 Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2068",
+    "descripcion": "Sensor de nivel combustible 2 CircuitOO ALTO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2096",
+    "descripcion": "Post Catalyst Combustible Trim Sistema Bajo Bajo Límite",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2097",
+    "descripcion": "Post Catalyst Combustible Trim Sistema Alto Límite",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2098",
+    "descripcion": "Post Catalyst Combustible Trim Sistema Bajo Bajo Límite",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2099",
+    "descripcion": "Post Catalyst Combustible Trim Sistema Alto Límite",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2100",
+    "descripcion": "Circuito de control del motor Acelerador Actuador (TAC)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2101",
+    "descripcion": "Módulo de control Acelerador Actuador Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2105",
+    "descripcion": "Acelerador Actuador Control (TAC) Sistema - Apagado del motor forzado",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2107",
+    "descripcion": "ACELERADOR ACTUADOR CONTROL (TAC) Módulo Circuito interno",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2108",
+    "descripcion": "Acelerador Actuador Control (TAC) Módulo Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2119",
+    "descripcion": "Acelerador cerrado Posición Rendimiento",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2120",
+    "descripcion": "Sensor del acelerador del pedal del pedal (APP) Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2121",
+    "descripcion": "Pedal del acelerador Posición (APP) Sensor 1 Rendimiento",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2122",
+    "descripcion": "Pedal del acelerador Posición (APP) Sensor 1 Circuitoo Bajo Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2123",
+    "descripcion": "Sensor del pedal del acelerador (APP) Sensor 1 Circuitoo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2125",
+    "descripcion": "Sensor de Pedal del Acelerador (APP) Sensor 2 Circuitoo",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2127",
+    "descripcion": "Pedal del acelerador Posición (APP) Sensor 2 CircuitOO BAJO Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2128",
+    "descripcion": "Sensor de Pedal del Acelerador (APP) Sensor 2 Circuitoo Alto Voltaje",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2135",
+    "descripcion": "ACELERADOR POSICIÓN (TP) SENSOR 1-2 Correlacia",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2138",
+    "descripcion": "Pedal del acelerador Posición (APP) Sensor 1-2 Correlacia",
+    "categoria": "Motor",
+    "componente": "Sensor de motor"
+  },
+  {
+    "codigoError": "P2176",
+    "descripcion": "Posicía mínima de Acelerador no aprendida",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2500",
+    "descripcion": "Generador L-terminal Circuitoo Voltaje Bajo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2501",
+    "descripcion": "Generador L-terminal Circuitoo voltaje alto",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2535",
+    "descripcion": "Encendido 1 Circuito de interruptor Voltaje Alto (PCM)",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2610",
+    "descripcion": "Ecu Fallo",
+    "categoria": "Motor",
+    "componente": "Motor"
+  },
+  {
+    "codigoError": "P2763",
+    "descripcion": "Corto a voltaje en el solenoide TCC",
+    "categoria": "Motor",
+    "componente": "Motor"
+  }
+]
