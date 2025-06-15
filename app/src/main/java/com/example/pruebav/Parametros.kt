@@ -318,12 +318,19 @@ fun IconF(painter: Painter, contentDescription: String) {
 
 fun categoriaSegunNombre(nombre: String): String {
     return when (nombre) {
-        "RPM", "Speed", "Engine Load" -> "Motor"
-        "Fuel Level", "Fuel Pressure", "Fuel Rail Pressure" -> "Combustible"
-        "Engine Coolant Temperature", "Oil Temperature", "Air Intake Temperature" -> "Temperatura"
+        "RPM", "Speed", "Engine Load", "Throttle Position" -> "Motor"
+
+        "Fuel Type", "Fuel Level", "Fuel Pressure", "Fuel Rail Pressure" -> "Combustible"
+
+        "Intake Manifold Pressure" -> "Presión"
+
+        "Air Intake Temperature", "Ambient Air Temperature",
+        "Engine Coolant Temperature", "Oil Temperature" -> "Temperatura"
+
         else -> "Otros"
     }
 }
+
 
 
 
