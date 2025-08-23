@@ -1,3 +1,8 @@
+OBDManager
+
+<img width="368" height="360" alt="Captura de pantalla 2025-05-13 214237" src="https://github.com/user-attachments/assets/33ead279-c923-4740-ac7a-f753285aae86" />
+
+
 🚗 Smart Vehicle Maintenance Assistant
 This Android application is the result of my Final Degree Project (TFG). It connects to a vehicle's ECU using an OBD-II USB adapter and uses artificial intelligence to provide personalized maintenance recommendations based on real-time diagnostic data.
 
