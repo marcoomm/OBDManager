@@ -16,6 +16,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -48,8 +49,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
@@ -101,7 +105,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
 @SuppressLint("MissingPermission")
 @Composable
 fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,viewModel: OBDViewModel,database: AppDatabase) {
@@ -128,6 +131,17 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     val caract by viewModel.caract.collectAsState()
 
     val vinprueba = remember { mutableStateOf("-") }
+
+    //variables probar UI
+     val configuration = LocalConfiguration.current
+     val screenWidth = configuration.screenWidthDp  // ancho en dp
+     val screenHeight = configuration.screenHeightDp // alto en dp
+     val density = configuration.densityDpi
+
+    val titleFont = if (screenWidth < 360) 14.sp else 18.sp
+
+
+
 
     LaunchedEffect(isConnected, ecuReady) {
         if (isConnected && ecuReady) {
@@ -260,9 +274,18 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 )
                 .fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.height(35.dp))
+
+            //logo
+
+            TopAppBar(font=titleFont)
+
+            //
+
+            Spacer(modifier = Modifier.height(14.dp))
+
             Text(
                 text = "Conexión : $connectionStatus",
+                fontSize = titleFont,
                 modifier = Modifier.padding(start = 30.dp),
                 style = MaterialTheme.typography.titleLarge,
                 color = Color.White
@@ -272,7 +295,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
+                horizontalArrangement =  Arrangement.SpaceEvenly
             ) {
                 Button(modifier = Modifier, colors = ButtonColors(Color(0xFF1E88E5), Color.White,Color(0xFF1E88E5),Color.White),
                     onClick = {
@@ -630,6 +653,51 @@ fun Botones(context: Context,navController: NavController,isConnected:Boolean){
        }
    }
 }
+
+@Composable
+fun TopAppBar(modifier: Modifier = Modifier, font: TextUnit) {
+    Row(
+        modifier = modifier
+            .padding(top = 0.dp, start = 30.dp, end = 30.dp)
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Column de textos a la izquierda
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.Start
+        ) {
+            Text(
+                text = "OBDManager",
+                fontSize = font,
+                color = Color.White
+            )
+
+            Spacer(modifier = Modifier.height(4.dp)) // Pequeño espacio entre textos
+
+            Text(
+                text = "Developed by Marco",
+                fontSize = font * 0.7f, // Opcional: texto secundario más pequeño
+                color = Color.White
+            )
+        }
+
+        // Icono a la derecha
+        Box(
+            modifier = Modifier.size(160.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(R.drawable.iconremoved),
+                contentDescription = "Manager icon",
+                contentScale = ContentScale.Fit,
+                modifier = Modifier.fillMaxSize()
+            )
+        }
+    }
+}
+
 
 @Composable
 fun NavigationBar(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
