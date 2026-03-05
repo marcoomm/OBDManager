@@ -1,20 +1,52 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# ================================
+# Android / Gradle
+# ================================
+.gradle/
+build/
+**/build/
+.externalNativeBuild/
+.cxx/
+
+# ================================
+# Local configuration
+# ================================
 local.properties
-/app/src/main/java/com/example/pruebav/ai/KeyAI.kt
-/app/src/main/java/com/example/pruebav/enums/
-/app/src/main/java/com/example/pruebav/exception/
-/app/src/main/java/com/example/pruebav/ui/theme/
+/local.properties
+
+# ================================
+# IDE (Android Studio / IntelliJ)
+# ================================
+.idea/
+*.iml
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# ================================
+# System files
+# ================================
+.DS_Store
+
+# ================================
+# Generated / temporary
+# ================================
+/captures
+
+# ================================
+# APKs
+# ================================
+*.apk
 app-debug.apk
+
+# ================================
+# Sensitive / private project code
+# ================================
+app/src/main/java/com/example/pruebav/ai/KeyAI.kt
+
+# Optional: hide internal packages if needed
+app/src/main/java/com/example/pruebav/enums/
+app/src/main/java/com/example/pruebav/exception/
+app/src/main/java/com/example/pruebav/ui/theme/
