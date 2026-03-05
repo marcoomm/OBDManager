@@ -45,6 +45,11 @@ app-debug.apk
 # Sensitive / private project code
 # ================================
 app/src/main/java/com/example/pruebav/ai/KeyAI.kt
+build.gradle.kts
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle.kts
 
 # Optional: hide internal packages if needed
 app/src/main/java/com/example/pruebav/enums/
