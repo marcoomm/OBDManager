@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
+import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -66,6 +67,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
+
+    private val database by lazy { AppDatabase.getDatabase(this) }
+    private val viewModel: OBDViewModel by viewModels {
+        OBDViewModelFactory(application, database)  // ← añadir application
+    }
+
     private val requestBluetoothPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (!isGranted) {
@@ -73,7 +80,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-    private val viewModel: OBDViewModel by viewModels()
+    //private val viewModel: OBDViewModel by viewModels()
     private val enableBluetoothLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
@@ -107,7 +114,12 @@ class MainActivity : ComponentActivity() {
 
 @SuppressLint("MissingPermission")
 @Composable
-fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>, navController : NavController,viewModel: OBDViewModel,database: AppDatabase) {
+fun OBDConnectionScreen(
+    context: Context,
+    enableBluetoothLauncher: androidx.activity.result.ActivityResultLauncher<Intent>,
+    navController: NavController,
+    viewModel: OBDViewModel,
+) {
 
     val scope = rememberCoroutineScope()
     var showDeviceList by remember { mutableStateOf(false) }
@@ -130,7 +142,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     val anio by viewModel.anio.collectAsState()
     val caract by viewModel.caract.collectAsState()
 
-    val vinprueba = remember { mutableStateOf("-") }
+    //val vinprueba = remember { mutableStateOf("-") }
 
     //variables probar UI
      val configuration = LocalConfiguration.current
@@ -155,7 +167,8 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     LaunchedEffect(bluetoothReady) {
         if (bluetoothReady && !isConnected) {
             withContext(Dispatchers.IO) {
-                val adapter = BluetoothAdapter.getDefaultAdapter()
+                val bluetoothManager = context.getSystemService(BluetoothManager::class.java)
+                val adapter = bluetoothManager.adapter
                 if (adapter != null && adapter.isEnabled) {
                     if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
                         == PackageManager.PERMISSION_GRANTED
@@ -180,23 +193,8 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
     }
 
     LaunchedEffect(vin) {
-        if (isConnected && ecuReady && viewModel.shouldProcessVin(vin)) {
-            val numeroVin = NumeroVin.decodeVinHttpClient(vin)
-            numeroVin?.let { vinData ->
-                withContext(Dispatchers.IO) {
-                    val dao = database.numeroVinDao()
-                    val existingVin = dao.getNumeroVin(vin)
-
-                    if (existingVin == null) {
-                        dao.insertNumeroVin(vinData)
-                        withContext(Dispatchers.Main) {
-                            Toast.makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT).show()
-                        }
-                    } else {
-                        Log.i("VIN", "El VIN ya estaba registrado")
-                    }
-                }
-            } ?: Log.e("VIN", "No se pudo decodificar el VIN")
+        if (isConnected && ecuReady) {
+            viewModel.processVin(vin)
         }
     }
 
@@ -300,7 +298,8 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                 Button(modifier = Modifier, colors = ButtonColors(Color(0xFF1E88E5), Color.White,Color(0xFF1E88E5),Color.White),
                     onClick = {
                     scope.launch {
-                        val adapter = BluetoothAdapter.getDefaultAdapter()
+                        val bluetoothManager = context.getSystemService(BluetoothManager::class.java)
+                        val adapter = bluetoothManager.adapter
                         if (adapter == null) {
                             viewModel.setConnectionStatus("Bluetooth no disponible")
                             return@launch
@@ -354,7 +353,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
                             viewModel.onDisconnected()
                             OBDManager.desconectar()
 
-                            vinprueba.value=""
+                            //vinprueba.value=""
                             viewModel.setVin("NO DATA")
                             viewModel.setKM("NO DATA")
                             viewModel.setNErrores("NO DATA")
@@ -366,7 +365,7 @@ fun OBDConnectionScreen(context: Context, enableBluetoothLauncher: androidx.acti
             }
 
 
-            Spacer(modifier=Modifier.padding(top=25.dp))
+            //Spacer(modifier=Modifier.padding(top=25.dp))
 
             VehicleInfoScreen(
                 marca = marca,

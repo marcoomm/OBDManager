@@ -22,15 +22,15 @@ fun NavegacionEntreVentanas(
 ) {
 
     val application = context.applicationContext as Application
+    val db = AppDatabase.getDatabase(context)
     val viewModel: OBDViewModel = viewModel(
-        factory = ViewModelProvider.AndroidViewModelFactory(application)
+        factory = OBDViewModelFactory(application, db)
     )
     val controlador = rememberNavController()
-    val db = AppDatabase.getDatabase(context)
 
     NavHost(navController = controlador, startDestination = "inicio") {
         composable("inicio") {
-            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, viewModel,db)
+            OBDConnectionScreen(context, enableBluetoothLauncher, controlador, viewModel)
         }
         composable("parametros") {
             Parametros(context, controlador, viewModel)

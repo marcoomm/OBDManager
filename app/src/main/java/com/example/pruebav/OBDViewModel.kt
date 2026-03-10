@@ -6,11 +6,13 @@ import android.bluetooth.BluetoothDevice
 import android.content.Context
 import android.os.Build
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pruebav.database.CodigosError
+import com.example.pruebav.database.NumeroVin
 import com.example.pruebav.database.Parametro
 import com.example.pruebav.database.cargarCodigosDesdeJson
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +26,10 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.coroutines.cancellation.CancellationException
 
-class OBDViewModel(application: Application) : AndroidViewModel(application) {
+class OBDViewModel(
+    application: Application,
+    private val database: AppDatabase
+) : AndroidViewModel(application) {
 
     //bluetooth
     private var _bluetoothReady = MutableStateFlow(false)
@@ -193,6 +198,34 @@ class OBDViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun processVin(vin: String) {
+        if (!shouldProcessVin(vin)) return
+
+        viewModelScope.launch {
+            val numeroVin = withContext(Dispatchers.IO) {
+                NumeroVin.decodeVinHttpClient(vin)
+            }
+
+            if (numeroVin == null) {
+                Log.e("VIN", "No se pudo decodificar el VIN")
+                return@launch
+            }
+
+            withContext(Dispatchers.IO) {
+                val dao = database.numeroVinDao()     // usa this.database ✅
+                val existing = dao.getNumeroVin(vin)
+                if (existing == null) {
+                    dao.insertNumeroVin(numeroVin)
+                    withContext(Dispatchers.Main) {
+                        // context viene del AndroidViewModel ✅
+                        Toast.makeText(context, "Nuevo coche registrado", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Log.i("VIN", "El VIN ya estaba registrado")
+                }
+            }
+        }
+    }
     fun borrarCodigos() {
         viewModelScope.launch {
             val resultado = OBDManager.borrarCodigos()
